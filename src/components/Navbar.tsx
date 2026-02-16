@@ -15,11 +15,11 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
-      <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-5 py-2 shadow-soft border border-border/50">
+      <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-6 py-2.5 shadow-soft border border-border/50">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3 group">
-          <img src={logoSMIcon} alt="SM" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <span className="hidden sm:inline font-josefin font-normal text-foreground tracking-[0.1em] text-base uppercase whitespace-nowrap">
+        <a href="/" className="flex items-center gap-2 group">
+          <img src={logoSMIcon} alt="SM" className="h-7 w-auto opacity-90 transition-transform duration-300 group-hover:scale-105" />
+          <span className="hidden sm:inline font-josefin font-light text-foreground/80 tracking-[0.15em] text-[13px] uppercase whitespace-nowrap">
             Salomé Michaux
           </span>
         </a>
