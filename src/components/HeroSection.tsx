@@ -21,9 +21,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         {/* Eyebrow */}
-        <p className="font-handwriting text-xl text-primary mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          from drawing to reality ✨
-        </p>
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card border border-border/50 shadow-soft mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
@@ -37,7 +34,7 @@ const HeroSection = () => {
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           Je crée des{" "}
-          <span className="text-primary wavy-underline">produits digitaux</span>
+          <span className="text-gradient-blue">produits digitaux</span>
           {" "}qui font la différence
         </h1>
 
