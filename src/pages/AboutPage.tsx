@@ -9,33 +9,33 @@ const milestones = [
     year: "2018",
     icon: GraduationCap,
     title: "Solvay & Entrepreneuriat",
-    text: "Ingénieure de gestion à Solvay Brussels School. Premiers projets entrepreneuriaux en parallèle des études, dont un semestre Erasmus à Bilbao.",
+    text: "Diplômée en Ingénierie de Gestion. Premiers projets entrepreneuriaux et Erasmus à Bilbao.",
   },
   {
     year: "2020",
     icon: Rocket,
     title: "Co-fondatrice de HireRing",
-    text: "Lancement du MVP en 30 jours avec du no-code. Levée de 362 000$ et développement du matching IA pour connecter entreprises et agences de recrutement.",
+    text: "MVP no-code en 30 jours. Levée de 362K$ et matching IA recrutement.",
   },
   {
     year: "2023",
     icon: Briefcase,
     title: "Consultante chez dualoop",
-    text: "Product Owner coordonnant équipes cross-fonctionnelles (CISO, CTO, devs). Gestion de crise cybersécurité, automatisation de processus et déploiement de features à fort impact.",
+    text: "Product Owner. Coordination d'équipes tech, gestion de crise cyber et automatisation.",
   },
   {
     year: "2025",
     icon: Zap,
     title: "Freelance IA & Automatisation",
-    text: "Consultante indépendante pour de nombreux clients dont Boldys.ai. Conception d'agents IA, voicebots, workflows intelligents et MVPs rapides pour startups et PMEs.",
+    text: "Agents IA, voicebots et MVPs rapides pour startups et PMEs. Boldys.ai parmi mes clients.",
   },
 ];
 
 const expertise = [
-  { icon: Lightbulb, title: "IA appliquée", text: "Agents IA (WhatsApp, email, web), scoring intelligent, matching IA, extraction et génération de contenu avec GPT." },
-  { icon: Zap, title: "Automatisation", text: "Workflows métiers avancés avec Make, n8n, Zapier. Intégration multi-canaux : WhatsApp, CRM, webhooks." },
-  { icon: Rocket, title: "Prototypage rapide", text: "Création de MVPs avec Bubble, Lovable, Airtable. Du concept au produit en cycles courts." },
-  { icon: Briefcase, title: "Stratégie & conseil", text: "Diagnostic IA, cartographie de processus, roadmaps de transformation digitale et accompagnement au changement." },
+  { icon: Lightbulb, title: "IA appliquée", text: "Agents IA, scoring intelligent, extraction et génération de contenu." },
+  { icon: Zap, title: "Automatisation", text: "Workflows métiers avec Make, n8n, Zapier. Intégrations multi-canaux." },
+  { icon: Rocket, title: "Prototypage rapide", text: "MVPs fonctionnels avec Bubble, Lovable, Airtable. Du concept au produit." },
+  { icon: Briefcase, title: "Stratégie & conseil", text: "Diagnostic IA, cartographie de processus et roadmaps de transformation." },
 ];
 
 const AboutPage = () => {
@@ -63,10 +63,8 @@ const AboutPage = () => {
                 Salomé Michaux
               </h1>
               <p className="text-ink-soft leading-relaxed">
-                Ingénieure de gestion diplômée de <strong className="text-foreground">Solvay</strong>, 
-                avec 4+ ans d'expérience en automatisation IA, product management et développement no-code. 
-                Je fais le lien entre métier et technologie en concevant des workflows intelligents, 
-                des agents IA et des MVPs rapides. Basée à <strong className="text-foreground">Bruxelles</strong>.
+                Diplômée de <strong className="text-foreground">Solvay</strong>, 4+ ans en IA, automatisation et product management. 
+                Je conçois des workflows intelligents, agents IA et MVPs rapides. Basée à <strong className="text-foreground">Bruxelles</strong>.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {["FR native", "EN C1", "NL B1", "ES A1"].map((lang) => (
