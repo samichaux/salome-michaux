@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -21,7 +22,7 @@ interface Project {
   featured?: boolean;
 }
 
-const projects: Project[] = [
+const page1Projects: Project[] = [
   {
     title: "Baebles",
     tags: ["App", "Community"],
@@ -63,6 +64,9 @@ const projects: Project[] = [
     mockup: mockupRelentless,
     link: "https://relentless-performance.com",
   },
+];
+
+const page2Projects: Project[] = [
   {
     title: "Ria Carbonez",
     tags: ["Website", "Art"],
@@ -130,7 +134,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const ProjectsSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const [showMore, setShowMore] = useState(false);
 
   return (
     <section id="projets" className="py-20">
@@ -141,12 +146,39 @@ const ProjectsSection = () => {
           <p className="text-ink-soft max-w-lg mx-auto">{t("projects.subtitle")}</p>
         </div>
 
+        {/* Page 1 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {projects.map((project, i) => (
+          {page1Projects.map((project, i) => (
             <ScrollReveal key={project.title} delay={i * 80} className={project.featured ? "md:col-span-2" : ""}>
               <ProjectCard project={project} />
             </ScrollReveal>
           ))}
+        </div>
+
+        {/* Page 2 */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 transition-all duration-500 ease-out overflow-hidden ${
+            showMore ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          {page2Projects.map((project, i) => (
+            <ScrollReveal key={project.title} delay={i * 80}>
+              <ProjectCard project={project} />
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Toggle button */}
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-border/50 bg-card text-sm font-medium text-ink-soft hover:text-primary hover:border-primary/30 hover:shadow-soft transition-all duration-300"
+          >
+            {showMore
+              ? (lang === "fr" ? "Voir moins" : "Show less")
+              : (lang === "fr" ? "Voir plus de projets" : "Show more projects")}
+            {showMore ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </button>
         </div>
       </div>
     </section>
