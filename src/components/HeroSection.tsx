@@ -51,17 +51,18 @@ const HeroSection = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: "0.6s" }}>
           <a
             href="https://calendly.com/salomemichaux/15min"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+            className="w-full sm:w-auto text-center bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
           >
-           </a>
+            {t("hero.cta.start")}
+          </a>
           <a
             href="#projets"
-            className="bg-card text-primary font-semibold px-7 py-3 rounded-[14px] border border-border hover:shadow-soft transition-all duration-300 hover:-translate-y-1"
+            className="w-full sm:w-auto text-center bg-card text-primary font-semibold px-7 py-3 rounded-[14px] border border-border hover:shadow-soft transition-all duration-300 hover:-translate-y-1"
           >
             {t("hero.cta.projects")}
           </a>
