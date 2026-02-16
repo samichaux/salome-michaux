@@ -1,4 +1,8 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-24 pb-16">
       {/* Blobs */}
@@ -20,32 +24,30 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        {/* Eyebrow */}
-
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card border border-border/50 shadow-soft mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
           </span>
-          <span className="text-xs font-medium text-ink-soft">Disponible pour nouveaux projets</span>
+          <span className="text-xs font-medium text-ink-soft">{t("hero.badge")}</span>
         </div>
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          Je crée des{" "}
-          <span className="text-gradient-blue">produits digitaux</span>
-          {" "}qui font la différence
+          {t("hero.title.1")}
+          <span className="text-gradient-blue">{t("hero.title.highlight")}</span>
+          {t("hero.title.2")}
         </h1>
 
         {/* Tagline */}
         <p className="font-handwriting text-xl text-ink-soft mb-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          — du concept au lancement, sans une ligne de code
+          {t("hero.tagline")}
         </p>
 
         {/* Description */}
         <p className="text-base text-ink-muted max-w-xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-          Développeuse no-code spécialisée dans la création de SaaS, web apps et systèmes d'automatisation.
+          {t("hero.description")}
         </p>
 
         {/* Buttons */}
@@ -54,18 +56,18 @@ const HeroSection = () => {
             href="#contact"
             className="bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
           >
-            Démarrer un projet
+            {t("hero.cta.start")}
           </a>
           <a
             href="#projets"
             className="bg-card text-primary font-semibold px-7 py-3 rounded-[14px] border border-border hover:shadow-soft transition-all duration-300 hover:-translate-y-1"
           >
-            Voir mes projets
+            {t("hero.cta.projects")}
           </a>
 
           {/* Annotation */}
           <span className="hidden sm:block font-handwriting text-lg text-mint rotate-[-6deg] ml-2">
-            let's go! →
+            {t("hero.annotation")}
           </span>
         </div>
       </div>

@@ -1,16 +1,17 @@
 import { useState } from "react";
 import logoSMIcon from "@/assets/logo-sm-icon.png";
-import logoFull from "@/assets/logo-sm.png";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
 
   const links = [
-    { label: "Projets", href: "/#projets" },
-    { label: "Automatisation", href: "/#automatisation" },
-    { label: "Méthode", href: "/#methode" },
-    { label: "À propos", href: "/a-propos" },
+    { label: t("nav.projects"), href: "/#projets" },
+    { label: t("nav.automation"), href: "/#automatisation" },
+    { label: t("nav.method"), href: "/#methode" },
+    { label: t("nav.about"), href: "/a-propos" },
   ];
 
   return (
@@ -37,13 +38,21 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA + Mobile toggle */}
+        {/* CTA + Lang switch + Mobile toggle */}
         <div className="flex items-center gap-2">
+          {/* Language switch */}
+          <button
+            onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+            className="text-xs font-semibold px-2.5 py-1.5 rounded-full border border-border/50 text-ink-soft hover:text-primary hover:border-primary/30 transition-all duration-200 uppercase tracking-wide"
+          >
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
+
           <a
             href="#contact"
             className="bg-gradient-primary text-primary-foreground text-sm font-semibold px-5 py-2 rounded-full hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5"
           >
-            Discutons
+            {t("nav.cta")}
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -92,7 +101,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(false)}
             className="block text-center bg-gradient-primary text-primary-foreground font-semibold px-6 py-3 rounded-xl hover:shadow-glow transition-all duration-300"
           >
-            Discutons
+            {t("nav.cta")}
           </a>
         </div>
       </div>

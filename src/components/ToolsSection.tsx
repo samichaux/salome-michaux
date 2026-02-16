@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const tools = [
   { name: "Lovable", logo: "https://lovable.dev/favicon.ico", bg: "rgba(255,56,92,0.06)", color: "#e8607a" },
@@ -13,11 +14,13 @@ const tools = [
 ];
 
 const ToolsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 bg-card">
       <div className="max-w-5xl mx-auto px-6">
         <p className="font-handwriting text-xl text-primary text-center mb-8">
-          mes outils favoris ✦
+          {t("tools.label")}
         </p>
         <div className="flex flex-wrap justify-center gap-2 md:flex-nowrap md:gap-3">
           {tools.map((tool, i) => (
