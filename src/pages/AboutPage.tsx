@@ -2,6 +2,7 @@ import { Sparkles, Rocket, Heart, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import photoSalome from "@/assets/photo-salome.jpeg";
 
 const milestones = [
   {
@@ -52,8 +53,8 @@ const AboutPage = () => {
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-10">
             {/* Photo placeholder */}
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-secondary border-2 border-border/50 flex items-center justify-center flex-shrink-0 overflow-hidden shadow-card">
-              <span className="text-ink-muted text-sm text-center px-4">Photo à venir</span>
+            <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl border-2 border-border/50 flex-shrink-0 overflow-hidden shadow-card">
+              <img src={photoSalome} alt="Salomé Michaux" className="w-full h-full object-cover" />
             </div>
 
             <div>
