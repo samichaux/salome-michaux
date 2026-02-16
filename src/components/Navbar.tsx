@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SMLogo from "./SMlogo";
+import logoSM from "@/assets/logo-sm.png";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-4 py-2.5 shadow-soft border border-border/50">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <SMLogo className="w-8 h-8" />
+          <img src={logoSM} alt="Salomé Michaux" className="h-8 w-auto" />
           <span className="font-handwriting text-xl text-primary font-semibold hidden sm:inline">
             Salomé Michaux
           </span>
