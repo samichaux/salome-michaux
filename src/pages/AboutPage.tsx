@@ -1,4 +1,4 @@
-import { Sparkles, Rocket, Heart, Zap } from "lucide-react";
+import { GraduationCap, Rocket, Zap, Briefcase, Globe, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -6,36 +6,42 @@ import photoSalome from "@/assets/photo-salome.jpeg";
 
 const milestones = [
   {
-    year: "2020",
-    icon: Sparkles,
-    title: "La découverte du no-code",
-    text: "Fascinée par la possibilité de créer sans coder, je plonge dans l'univers Bubble, Wix et Figma. Premiers projets, premières nuits blanches.",
+    year: "2018",
+    icon: GraduationCap,
+    title: "Solvay Brussels School",
+    text: "Bachelor en Ingénierie de Gestion à Solvay. Premiers pas dans l'entrepreneuriat avec IWA Afrika, un projet mode.",
   },
   {
-    year: "2022",
+    year: "2019",
+    icon: Globe,
+    title: "Erasmus en Espagne",
+    text: "Semestre en Business Management à l'Universidad de Deusto (Bilbao). Ouverture internationale et nouvelles perspectives.",
+  },
+  {
+    year: "2020",
     icon: Rocket,
-    title: "Le lancement de HireRing",
-    text: "Je crée ma première marketplace B2B de recrutement. Un projet ambitieux qui me pousse à maîtriser Supabase, les APIs et l'automatisation.",
+    title: "Co-fondatrice de HireRing",
+    text: "Lancement du MVP en 30 jours avec du no-code. Levée de 362 000$ et développement du matching IA pour connecter entreprises et agences de recrutement.",
   },
   {
     year: "2023",
-    icon: Zap,
-    title: "L'automatisation & l'IA",
-    text: "Make.com, agents WhatsApp, voicebots… Je me spécialise dans les workflows intelligents qui libèrent du temps et boostent la productivité.",
+    icon: Briefcase,
+    title: "Consultante Product Owner",
+    text: "Coordination d'équipes cross-fonctionnelles (CISO, CTO, devs) chez dualoop. Gestion de crise cybersécurité, automatisation de processus et déploiement de features à fort impact.",
   },
   {
-    year: "2024",
-    icon: Heart,
-    title: "Freelance à plein temps",
-    text: "Je me lance à 100%. SaaS, web apps, automatisations sur mesure — chaque projet est une nouvelle aventure.",
+    year: "2025",
+    icon: Zap,
+    title: "Consultante IA & Automatisation",
+    text: "Lancement de Boldys.ai en freelance. Conception d'agents IA, voicebots, workflows intelligents et MVPs rapides pour startups et PMEs.",
   },
 ];
 
-const values = [
-  { title: "Orientée résultat", text: "Chaque ligne de workflow, chaque écran a un but précis." },
-  { title: "Transparente", text: "Communication claire, pas de jargon inutile, des livrables concrets." },
-  { title: "Rapide", text: "Du concept au MVP en quelques semaines, pas en mois." },
-  { title: "Créative", text: "J'adore trouver des solutions élégantes à des problèmes complexes." },
+const expertise = [
+  { icon: Lightbulb, title: "IA appliquée", text: "Agents IA (WhatsApp, email, web), scoring intelligent, matching IA, extraction et génération de contenu avec GPT." },
+  { icon: Zap, title: "Automatisation", text: "Workflows métiers avancés avec Make, n8n, Zapier. Intégration multi-canaux : WhatsApp, CRM, webhooks." },
+  { icon: Rocket, title: "Prototypage rapide", text: "Création de MVPs avec Bubble, Lovable, Airtable. Du concept au produit en cycles courts." },
+  { icon: Briefcase, title: "Stratégie & conseil", text: "Diagnostic IA, cartographie de processus, roadmaps de transformation digitale et accompagnement au changement." },
 ];
 
 const AboutPage = () => {
@@ -63,11 +69,16 @@ const AboutPage = () => {
                 Salomé Michaux
               </h1>
               <p className="text-ink-soft leading-relaxed">
-                Développeuse no-code & spécialiste en automatisation basée à <strong className="text-foreground">Bruxelles</strong>. 
-                Je transforme des idées en produits digitaux concrets — web apps, SaaS et systèmes intelligents — 
-                sans écrire une seule ligne de code. Mon objectif ? Vous faire gagner du temps et de l'argent 
-                en automatisant ce qui peut l'être.
+                Ingénieure de gestion diplômée de <strong className="text-foreground">Solvay</strong>, 
+                avec 4+ ans d'expérience en automatisation IA, product management et développement no-code. 
+                Je fais le lien entre métier et technologie en concevant des workflows intelligents, 
+                des agents IA et des MVPs rapides. Basée à <strong className="text-foreground">Bruxelles</strong>.
               </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {["FR native", "EN C1", "NL B1", "ES A1"].map((lang) => (
+                  <span key={lang} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-ink-muted font-medium">{lang}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -111,22 +122,25 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Expertise */}
       <section className="py-20 bg-card">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="font-handwriting text-xl text-primary mb-2">ce qui me drive</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Mes valeurs</h2>
+              <p className="font-handwriting text-xl text-primary mb-2">ce que je fais le mieux</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Domaines d'expertise</h2>
             </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {values.map((v, i) => (
-              <ScrollReveal key={v.title} delay={i * 100}>
+            {expertise.map((e, i) => (
+              <ScrollReveal key={e.title} delay={i * 100}>
                 <div className="bg-background rounded-xl p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                  <h3 className="font-bold text-foreground mb-1">{v.title}</h3>
-                  <p className="text-sm text-ink-soft">{v.text}</p>
+                  <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mb-3">
+                    <e.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-1">{e.title}</h3>
+                  <p className="text-sm text-ink-soft">{e.text}</p>
                 </div>
               </ScrollReveal>
             ))}
