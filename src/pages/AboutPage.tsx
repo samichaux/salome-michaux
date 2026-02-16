@@ -67,8 +67,8 @@ const AboutPage = () => {
                 Je conçois des workflows intelligents, agents IA et MVPs rapides. Basée à <strong className="text-foreground">Bruxelles</strong>.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {["FR native", "EN C1", "NL B1", "ES A1"].map((lang) => (
-                  <span key={lang} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-ink-muted font-medium">{lang}</span>
+                {["Agents IA", "Automatisation", "No-code", "Product Management"].map((skill) => (
+                  <span key={skill} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-ink-muted font-medium">{skill}</span>
                 ))}
               </div>
             </div>
