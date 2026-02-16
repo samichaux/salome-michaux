@@ -37,7 +37,7 @@ const HeroSection = () => {
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           Je crée des{" "}
-          <span className="text-gradient-blue wavy-underline">produits digitaux</span>
+          <span className="text-primary wavy-underline">produits digitaux</span>
           {" "}qui font la différence
         </h1>
 
