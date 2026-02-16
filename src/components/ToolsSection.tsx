@@ -1,15 +1,15 @@
 import ScrollReveal from "@/components/ScrollReveal";
 
 const tools = [
-  { name: "Lovable", logo: "https://lovable.dev/favicon.ico", bg: "rgba(255,56,92,0.10)", color: "#FF385C" },
-  { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3ECF8E", bg: "rgba(62,207,142,0.10)", color: "#3ECF8E" },
-  { name: "Make.com", logo: "https://cdn.simpleicons.org/make/6D00CC", bg: "rgba(109,0,204,0.10)", color: "#6D00CC" },
-  { name: "Bubble", logo: "https://cdn.simpleicons.org/bubble/0040FF", bg: "rgba(0,64,255,0.10)", color: "#0040FF" },
-  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E", bg: "rgba(242,78,30,0.10)", color: "#F24E1E" },
-  { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF", bg: "rgba(24,191,255,0.10)", color: "#18BFFF" },
-  { name: "Notion", logo: "https://cdn.simpleicons.org/notion/000000", bg: "rgba(0,0,0,0.08)", color: "#333333" },
-  { name: "Wix", logo: "https://cdn.simpleicons.org/wix/0C6EFC", bg: "rgba(12,110,252,0.10)", color: "#0C6EFC" },
-  { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier/FF4A00", bg: "rgba(255,74,0,0.10)", color: "#FF4A00" },
+  { name: "Lovable", logo: "https://lovable.dev/favicon.ico", bg: "rgba(255,56,92,0.06)", color: "#e8607a" },
+  { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3ECF8E", bg: "rgba(62,207,142,0.06)", color: "#4db88a" },
+  { name: "Make.com", logo: "https://cdn.simpleicons.org/make/6D00CC", bg: "rgba(109,0,204,0.06)", color: "#9b5de5" },
+  { name: "Bubble", logo: "https://cdn.simpleicons.org/bubble/0040FF", bg: "rgba(0,64,255,0.06)", color: "#5b8def" },
+  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E", bg: "rgba(242,78,30,0.06)", color: "#e07a5f" },
+  { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF", bg: "rgba(24,191,255,0.06)", color: "#4dabcf" },
+  { name: "Notion", logo: "https://cdn.simpleicons.org/notion/000000", bg: "rgba(0,0,0,0.04)", color: "#6b7280" },
+  { name: "Wix", logo: "https://cdn.simpleicons.org/wix/0C6EFC", bg: "rgba(12,110,252,0.06)", color: "#6b9bf5" },
+  { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier/FF4A00", bg: "rgba(255,74,0,0.06)", color: "#e08a5e" },
 ];
 
 const ToolsSection = () => {
