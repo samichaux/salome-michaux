@@ -19,18 +19,18 @@ const ToolsSection = () => {
         <p className="font-handwriting text-xl text-primary text-center mb-8">
           mes outils favoris ✦
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {tools.map((tool, i) => (
             <ScrollReveal key={tool.name} delay={i * 60}>
               <span
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-normal border hover:-translate-y-0.5 transition-all duration-200 cursor-default"
+                className="flex items-center gap-3 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl text-sm sm:text-base font-medium border hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-default"
                 style={{
                   backgroundColor: tool.bg,
                   color: tool.color,
                   borderColor: `${tool.color}20`,
                 }}
               >
-                <img src={tool.logo} alt={tool.name} className="w-4 h-4" />
+                <img src={tool.logo} alt={tool.name} className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
                 {tool.name}
               </span>
             </ScrollReveal>
