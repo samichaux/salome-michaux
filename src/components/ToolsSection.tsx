@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 const tools = [
   "Lovable", "Supabase", "Make.com", "Bubble", "Figma",
   "Airtable", "Notion", "Wix", "Zapier",
@@ -11,13 +13,12 @@ const ToolsSection = () => {
           mes outils favoris ✦
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
-          {tools.map((tool) => (
-            <span
-              key={tool}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium border border-border/50 hover:bg-blue-pale/50 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-200 cursor-default"
-            >
-              {tool}
-            </span>
+          {tools.map((tool, i) => (
+            <ScrollReveal key={tool} delay={i * 60}>
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium border border-border/50 hover:bg-blue-pale/50 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                {tool}
+              </span>
+            </ScrollReveal>
           ))}
         </div>
       </div>
