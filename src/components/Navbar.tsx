@@ -49,7 +49,9 @@ const Navbar = () => {
           </button>
 
           <a
-            href="#contact"
+            href="https://calendly.com/salomemichaux/15min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-primary text-primary-foreground text-sm font-semibold px-5 py-2 rounded-full hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             {t("nav.cta")}
