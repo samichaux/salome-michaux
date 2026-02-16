@@ -8,14 +8,8 @@ const milestones = [
   {
     year: "2018",
     icon: GraduationCap,
-    title: "Solvay Brussels School",
-    text: "Bachelor en Ingénierie de Gestion à Solvay. Premiers pas dans l'entrepreneuriat avec IWA Afrika, un projet mode.",
-  },
-  {
-    year: "2019",
-    icon: Globe,
-    title: "Erasmus en Espagne",
-    text: "Semestre en Business Management à l'Universidad de Deusto (Bilbao). Ouverture internationale et nouvelles perspectives.",
+    title: "Solvay & Entrepreneuriat",
+    text: "Ingénieure de gestion à Solvay Brussels School. Premiers projets entrepreneuriaux en parallèle des études, dont un semestre Erasmus à Bilbao.",
   },
   {
     year: "2020",
@@ -26,14 +20,14 @@ const milestones = [
   {
     year: "2023",
     icon: Briefcase,
-    title: "Consultante Product Owner",
-    text: "Coordination d'équipes cross-fonctionnelles (CISO, CTO, devs) chez dualoop. Gestion de crise cybersécurité, automatisation de processus et déploiement de features à fort impact.",
+    title: "Consultante chez dualoop",
+    text: "Product Owner coordonnant équipes cross-fonctionnelles (CISO, CTO, devs). Gestion de crise cybersécurité, automatisation de processus et déploiement de features à fort impact.",
   },
   {
     year: "2025",
     icon: Zap,
-    title: "Consultante IA & Automatisation",
-    text: "Lancement de Boldys.ai en freelance. Conception d'agents IA, voicebots, workflows intelligents et MVPs rapides pour startups et PMEs.",
+    title: "Freelance IA & Automatisation",
+    text: "Consultante indépendante pour de nombreux clients dont Boldys.ai. Conception d'agents IA, voicebots, workflows intelligents et MVPs rapides pour startups et PMEs.",
   },
 ];
 
