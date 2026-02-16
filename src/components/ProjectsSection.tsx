@@ -62,7 +62,7 @@ const page1Projects: Project[] = [
     descKey: "projects.relentless.desc",
     gradient: "from-[hsl(40,30%,32%)] to-[hsl(40,20%,50%)]",
     mockup: mockupRelentless,
-    link: "https://relentless-performance.com",
+    link: "https://relentless-performance.be/",
   },
 ];
 
