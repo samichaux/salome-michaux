@@ -1,13 +1,16 @@
 import ScrollReveal from "@/components/ScrollReveal";
-
-const stats = [
-  { value: "15+", label: "Projets livrés" },
-  { value: "10+", label: "Secteurs" },
-  { value: "3 ans", label: "Expérience" },
-  { value: "100%", label: "Satisfaction" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: "15+", label: t("stats.projects") },
+    { value: "10+", label: t("stats.sectors") },
+    { value: "3 ans", label: t("stats.experience") },
+    { value: "100%", label: t("stats.satisfaction") },
+  ];
+
   return (
     <section className="py-20">
       <div className="max-w-5xl mx-auto px-6">

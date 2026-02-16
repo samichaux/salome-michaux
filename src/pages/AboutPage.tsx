@@ -1,44 +1,29 @@
-import { GraduationCap, Rocket, Zap, Briefcase, Globe, Lightbulb } from "lucide-react";
+import { GraduationCap, Rocket, Zap, Briefcase, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import photoSalome from "@/assets/photo-salome.jpeg";
-
-const milestones = [
-  {
-    year: "2018",
-    icon: GraduationCap,
-    title: "Solvay & premiers ventures",
-    text: "Master en Ingénierie de Gestion à Solvay Brussels School. Déjà le goût d'entreprendre avec des projets lancés en parallèle.",
-  },
-  {
-    year: "2020",
-    icon: Rocket,
-    title: "HireRing — de 0 à 362K$ levés",
-    text: "Co-fondation d'une plateforme de recrutement IA. MVP livré en 30 jours en no-code, product-market fit validé et première levée de fonds.",
-  },
-  {
-    year: "2023",
-    icon: Briefcase,
-    title: "dualoop — Product Owner",
-    text: "Pilotage de squads tech (CISO, CTO, devs). Résolution de crises cyber, mise en place d'automatisations et livraison de features à fort ROI.",
-  },
-  {
-    year: "2025",
-    icon: Zap,
-    title: "Freelance — IA & Scale",
-    text: "J'aide startups et PMEs à accélérer avec des agents IA, des workflows automatisés et des MVPs livrés en semaines. Boldys.ai parmi mes clients.",
-  },
-];
-
-const expertise = [
-  { icon: Lightbulb, title: "IA sur-mesure", text: "Agents conversationnels, scoring prédictif et génération de contenu — déployés en production, pas en démo." },
-  { icon: Zap, title: "Automatisation end-to-end", text: "Des workflows qui tournent tout seuls. Make, n8n, Zapier connectés à vos outils métier." },
-  { icon: Rocket, title: "MVP en semaines", text: "Du brief au produit live avec Bubble, Lovable et Airtable. Itérations rapides, résultats concrets." },
-  { icon: Briefcase, title: "Conseil stratégique", text: "Audit IA, cartographie des opportunités d'automatisation et feuille de route actionnable." },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutPage = () => {
+  const { t } = useLanguage();
+
+  const milestones = [
+    { year: t("about.m1.year"), icon: GraduationCap, title: t("about.m1.title"), text: t("about.m1.text") },
+    { year: t("about.m2.year"), icon: Rocket, title: t("about.m2.title"), text: t("about.m2.text") },
+    { year: t("about.m3.year"), icon: Briefcase, title: t("about.m3.title"), text: t("about.m3.text") },
+    { year: t("about.m4.year"), icon: Zap, title: t("about.m4.title"), text: t("about.m4.text") },
+  ];
+
+  const expertise = [
+    { icon: Lightbulb, title: t("about.e1.title"), text: t("about.e1.text") },
+    { icon: Zap, title: t("about.e2.title"), text: t("about.e2.text") },
+    { icon: Rocket, title: t("about.e3.title"), text: t("about.e3.text") },
+    { icon: Briefcase, title: t("about.e4.title"), text: t("about.e4.text") },
+  ];
+
+  const skills = t("about.skills").split(",");
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -52,22 +37,18 @@ const AboutPage = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-10">
-            {/* Photo placeholder */}
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl border-2 border-border/50 flex-shrink-0 overflow-hidden shadow-card">
               <img src={photoSalome} alt="Salomé Michaux" className="w-full h-full object-cover" />
             </div>
 
             <div>
-              <p className="font-handwriting text-xl text-primary mb-2">hello!</p>
+              <p className="font-handwriting text-xl text-primary mb-2">{t("about.hello")}</p>
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 Salomé <span className="text-gradient-blue">Michaux</span>
               </h1>
-              <p className="text-ink-soft leading-relaxed">
-                Ingénieure de gestion <strong className="text-foreground">Solvay</strong>, j'accompagne startups et PMEs dans leur transformation digitale. 
-                Mon créneau : des solutions IA et automatisation qui génèrent un impact mesurable, livrées rapidement. Basée à <strong className="text-foreground">Bruxelles</strong>.
-              </p>
+              <p className="text-ink-soft leading-relaxed">{t("about.intro")}</p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {["Agents IA", "Automatisation", "No-code", "Product Management"].map((skill) => (
+                {skills.map((skill) => (
                   <span key={skill} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-ink-muted font-medium">{skill}</span>
                 ))}
               </div>
@@ -81,30 +62,25 @@ const AboutPage = () => {
         <div className="max-w-3xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-14">
-              <p className="font-handwriting text-xl text-primary mb-2">le chemin parcouru</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">De Solvay au <span className="text-gradient-blue">freelance</span></h2>
+              <p className="font-handwriting text-xl text-primary mb-2">{t("about.timeline.eyebrow")}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                {t("about.timeline.title.1")}<span className="text-gradient-blue">{t("about.timeline.title.highlight")}</span>
+              </h2>
             </div>
           </ScrollReveal>
 
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
             <div className="space-y-12">
               {milestones.map((m, i) => (
                 <ScrollReveal key={m.year} delay={i * 120}>
                   <div className={`relative flex items-start gap-6 md:gap-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                    {/* Dot */}
                     <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-2 z-10" />
-
-                    {/* Content */}
                     <div className={`ml-14 md:ml-0 md:w-[calc(50%-2.5rem)] ${i % 2 === 0 ? "md:text-right md:pr-0" : "md:text-left md:pl-0"}`}>
                       <span className="font-handwriting text-lg text-mint">{m.year}</span>
                       <h3 className="font-bold text-lg text-foreground mt-1 mb-2">{m.title}</h3>
                       <p className="text-sm text-ink-soft leading-relaxed">{m.text}</p>
                     </div>
-
-                    {/* Spacer for alternating layout */}
                     <div className="hidden md:block md:w-[calc(50%-2.5rem)]" />
                   </div>
                 </ScrollReveal>
@@ -119,8 +95,10 @@ const AboutPage = () => {
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="font-handwriting text-xl text-primary mb-2">pourquoi me choisir ?</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Ce que j'apporte à <span className="text-gradient-blue">votre projet</span></h2>
+              <p className="font-handwriting text-xl text-primary mb-2">{t("about.expertise.eyebrow")}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                {t("about.expertise.title.1")}<span className="text-gradient-blue">{t("about.expertise.title.highlight")}</span>
+              </h2>
             </div>
           </ScrollReveal>
 
@@ -144,18 +122,16 @@ const AboutPage = () => {
       <section className="py-20">
         <ScrollReveal>
           <div className="max-w-2xl mx-auto px-6 text-center">
-            <p className="font-handwriting text-xl text-primary mb-3">prêt à passer à l'action ?</p>
+            <p className="font-handwriting text-xl text-primary mb-3">{t("about.cta.eyebrow")}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Transformons vos idées en <span className="text-gradient-blue">résultats</span>
+              {t("about.cta.title.1")}<span className="text-gradient-blue">{t("about.cta.title.highlight")}</span>
             </h2>
-            <p className="text-ink-soft mb-8 max-w-md mx-auto">
-              Un premier échange gratuit pour identifier vos opportunités d'automatisation et d'IA.
-            </p>
+            <p className="text-ink-soft mb-8 max-w-md mx-auto">{t("about.cta.subtitle")}</p>
             <a
               href="mailto:info@salomemichaux.eu"
               className="inline-block bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
             >
-              Prendre rendez-vous
+              {t("about.cta.button")}
             </a>
           </div>
         </ScrollReveal>
