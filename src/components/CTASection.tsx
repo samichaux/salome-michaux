@@ -15,7 +15,9 @@ const CTASection = () => {
         </h2>
         <p className="text-ink-soft mb-8 max-w-md mx-auto">{t("cta.subtitle")}</p>
         <a
-          href="mailto:info@salomemichaux.eu"
+          href="https://calendly.com/salomemichaux/15min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
         >
           {t("cta.button")}
