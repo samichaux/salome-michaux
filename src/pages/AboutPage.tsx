@@ -32,10 +32,10 @@ const milestones = [
 ];
 
 const values = [
-  { emoji: "🎯", title: "Orientée résultat", text: "Chaque ligne de workflow, chaque écran a un but précis." },
-  { emoji: "🤝", title: "Transparente", text: "Communication claire, pas de jargon inutile, des livrables concrets." },
-  { emoji: "⚡", title: "Rapide", text: "Du concept au MVP en quelques semaines, pas en mois." },
-  { emoji: "💡", title: "Créative", text: "J'adore trouver des solutions élégantes à des problèmes complexes." },
+  { title: "Orientée résultat", text: "Chaque ligne de workflow, chaque écran a un but précis." },
+  { title: "Transparente", text: "Communication claire, pas de jargon inutile, des livrables concrets." },
+  { title: "Rapide", text: "Du concept au MVP en quelques semaines, pas en mois." },
+  { title: "Créative", text: "J'adore trouver des solutions élégantes à des problèmes complexes." },
 ];
 
 const AboutPage = () => {
@@ -58,7 +58,7 @@ const AboutPage = () => {
             </div>
 
             <div>
-              <p className="font-handwriting text-xl text-primary mb-2">hey, c'est moi! 👋</p>
+              <p className="font-handwriting text-xl text-primary mb-2">hey, c'est moi!</p>
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 Salomé Michaux
               </h1>
@@ -125,7 +125,6 @@ const AboutPage = () => {
             {values.map((v, i) => (
               <ScrollReveal key={v.title} delay={i * 100}>
                 <div className="bg-background rounded-xl p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                  <span className="text-2xl mb-3 block">{v.emoji}</span>
                   <h3 className="font-bold text-foreground mb-1">{v.title}</h3>
                   <p className="text-sm text-ink-soft">{v.text}</p>
                 </div>
