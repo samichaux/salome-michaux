@@ -23,7 +23,7 @@ const ToolsSection = () => {
           {tools.map((tool, i) => (
             <ScrollReveal key={tool.name} delay={i * 60}>
               <span
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold border hover:-translate-y-0.5 transition-all duration-200 cursor-default"
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-normal border hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                 style={{
                   backgroundColor: tool.bg,
                   color: tool.color,
