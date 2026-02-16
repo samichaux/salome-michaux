@@ -1,12 +1,23 @@
 import { ExternalLink } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
+import mockupHirering from "@/assets/mockup-hirering.jpg";
+import mockupBanti from "@/assets/mockup-banti.jpg";
+import mockupBookoo from "@/assets/mockup-bookoo.jpg";
+import mockupBaebles from "@/assets/mockup-baebles.jpg";
+import mockupCharline from "@/assets/mockup-charline.jpg";
+import mockupRia from "@/assets/mockup-ria.jpg";
+import mockupRelentless from "@/assets/mockup-relentless.jpg";
+import mockupLiftclub from "@/assets/mockup-liftclub.jpg";
+import mockupTousautravail from "@/assets/mockup-tousautravail.jpg";
+
 interface Project {
   title: string;
   tags: string[];
   description: string;
   annotation: string;
   gradient: string;
+  mockup: string;
   link?: string;
   featured?: boolean;
 }
@@ -15,10 +26,10 @@ const projects: Project[] = [
   {
     title: "HireRing",
     tags: ["SaaS", "HR Tech", "B2B"],
-    description:
-      "Marketplace B2B connectant entreprises et agences de recrutement via un algorithme de matching intelligent.",
+    description: "Marketplace B2B connectant entreprises et agences de recrutement via un algorithme de matching intelligent.",
     annotation: "my baby! 👶",
     gradient: "from-[hsl(213,35%,37%)] to-[hsl(213,31%,51%)]",
+    mockup: mockupHirering,
     link: "https://hirering.eu",
     featured: true,
   },
@@ -28,6 +39,7 @@ const projects: Project[] = [
     description: "Plateforme de networking pour entrepreneurs et investisseurs.",
     annotation: "networking ✨",
     gradient: "from-[hsl(260,25%,39%)] to-[hsl(260,20%,57%)]",
+    mockup: mockupBanti,
     link: "https://banti.lovable.app",
   },
   {
@@ -36,6 +48,7 @@ const projects: Project[] = [
     description: "Plateforme de réservation pour prothésistes ongulaires.",
     annotation: "so cute! 💅",
     gradient: "from-[hsl(170,48%,32%)] to-[hsl(176,56%,55%)]",
+    mockup: mockupBookoo,
     link: "https://book-oo.lovable.app",
   },
   {
@@ -44,6 +57,7 @@ const projects: Project[] = [
     description: "Communauté fantasy pour lecteurs passionnés.",
     annotation: "fantasy world 📚",
     gradient: "from-[hsl(228,30%,41%)] to-[hsl(228,25%,60%)]",
+    mockup: mockupBaebles,
     link: "https://baebles.lovable.app",
   },
   {
@@ -52,6 +66,7 @@ const projects: Project[] = [
     description: "Site pour médiatrice familiale à Bruxelles.",
     annotation: "zen vibes 🧘",
     gradient: "from-[hsl(193,40%,38%)] to-[hsl(193,35%,56%)]",
+    mockup: mockupCharline,
     link: "https://charlinecharlier.be",
   },
   {
@@ -60,6 +75,7 @@ const projects: Project[] = [
     description: "Portfolio pour conteuse professionnelle.",
     annotation: "storytelling ✨",
     gradient: "from-[hsl(320,25%,37%)] to-[hsl(320,20%,57%)]",
+    mockup: mockupRia,
     link: "https://www.riacarbonez.com",
   },
   {
@@ -68,6 +84,7 @@ const projects: Project[] = [
     description: "Site de coaching fitness avec réservation.",
     annotation: "let's go! 💪",
     gradient: "from-[hsl(40,30%,32%)] to-[hsl(40,20%,50%)]",
+    mockup: mockupRelentless,
     link: "https://relentless-performance.com",
   },
   {
@@ -76,6 +93,7 @@ const projects: Project[] = [
     description: "Landing page pour nightclub bruxellois.",
     annotation: "party time! 🎉",
     gradient: "from-[hsl(240,22%,29%)] to-[hsl(240,15%,42%)]",
+    mockup: mockupLiftclub,
   },
   {
     title: "Tous au Travail",
@@ -83,26 +101,22 @@ const projects: Project[] = [
     description: "Plateforme d'insertion professionnelle.",
     annotation: "social impact 💙",
     gradient: "from-[hsl(203,40%,38%)] to-[hsl(203,35%,54%)]",
+    mockup: mockupTousautravail,
     link: "https://tousautravail.be",
   },
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => (
   <div
-    className={`group relative rounded-xl overflow-hidden bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full`}
+    className="group relative rounded-xl overflow-hidden bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full"
   >
-    <div className={`relative h-48 ${project.featured ? "h-56" : "h-48"} bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-      <div className="w-[80%] rounded-lg bg-card/90 backdrop-blur shadow-medium overflow-hidden">
-        <div className="flex items-center gap-1.5 px-3 py-2 bg-secondary/50 border-b border-border/30">
-          <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-          <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <span className="ml-2 text-[10px] text-ink-muted truncate">{project.link || project.title.toLowerCase() + ".app"}</span>
-        </div>
-        <div className="p-4 text-center">
-          <div className="font-bold text-sm text-foreground">{project.title}</div>
-        </div>
-      </div>
+    <div className={`relative ${project.featured ? "h-56" : "h-48"} overflow-hidden`}>
+      <img
+        src={project.mockup}
+        alt={`Mockup ${project.title}`}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
       <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <span className="inline-block font-handwriting text-sm bg-mint text-accent-foreground px-3 py-1 rounded-lg rotate-[-4deg] shadow-soft">
           {project.annotation}
