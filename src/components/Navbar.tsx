@@ -75,7 +75,7 @@ const Navbar = () => {
 
       {/* Fullscreen mobile menu */}
       <div
-        className={`md:hidden fixed inset-0 z-[60] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`md:hidden fixed inset-0 z-[80] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -93,10 +93,10 @@ const Navbar = () => {
         {/* Close button */}
         <button
           onClick={() => setMobileOpen(false)}
-          className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-[hsl(0,0%,100%,0.1)] flex items-center justify-center text-[hsl(0,0%,100%,0.8)] hover:bg-[hsl(0,0%,100%,0.2)] transition-colors"
+          className="absolute top-5 right-5 z-[90] w-12 h-12 rounded-full bg-[hsl(0,0%,100%,0.15)] flex items-center justify-center text-[hsl(0,0%,100%,0.9)] hover:bg-[hsl(0,0%,100%,0.25)] active:scale-95 transition-all"
           aria-label="Fermer"
         >
-          <X size={20} />
+          <X size={24} />
         </button>
 
         {/* Content */}
