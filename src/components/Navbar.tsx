@@ -20,10 +20,10 @@ const Navbar = () => {
         <a href="/" className="flex items-center gap-3 group">
           <img src={logoSMIcon} alt="SM" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
           <div className="hidden sm:flex flex-col leading-none">
-            <span className="font-josefin font-light text-foreground tracking-[0.25em] text-[11px] uppercase">
+            <span className="font-josefin font-normal text-foreground tracking-[0.2em] text-sm uppercase">
               Salomé Michaux
             </span>
-            <span className="font-handwriting text-[10px] text-primary/70 mt-0.5">
+            <span className="font-handwriting text-xs text-primary mt-0.5">
               IA & Automatisation
             </span>
           </div>
