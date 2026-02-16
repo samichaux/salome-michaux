@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
         handwriting: ["Caveat", "cursive"],
+        josefin: ["Josefin Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -16,9 +16,11 @@ const Navbar = () => {
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
       <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-4 py-2.5 shadow-soft border border-border/50">
         {/* Logo */}
-        <a href="#" className="flex items-center">
-          <img src={logoFull} alt="Salomé Michaux" className="h-10 w-auto hidden sm:block" />
-          <img src={logoSMIcon} alt="SM" className="h-9 w-auto sm:hidden" />
+        <a href="#" className="flex items-center gap-2">
+          <img src={logoSMIcon} alt="SM" className="h-9 w-auto" />
+          <span className="hidden sm:inline font-josefin font-light text-primary tracking-widest text-sm uppercase">
+            Salomé Michaux
+          </span>
         </a>
 
         {/* Desktop links */}

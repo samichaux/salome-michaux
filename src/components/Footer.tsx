@@ -1,4 +1,4 @@
-import logoFull from "@/assets/logo-sm.png";
+import logoSMIcon from "@/assets/logo-sm-icon.png";
 
 const Footer = () => {
   return (
@@ -6,8 +6,11 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center">
-            <img src={logoFull} alt="Salomé Michaux" className="h-10 w-auto" />
+          <div className="flex items-center gap-2">
+            <img src={logoSMIcon} alt="SM" className="h-8 w-auto" />
+            <span className="font-josefin font-light text-primary tracking-widest text-sm uppercase">
+              Salomé Michaux
+            </span>
           </div>
 
           {/* Links */}
