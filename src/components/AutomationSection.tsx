@@ -62,9 +62,6 @@ const AutomationSection = () => {
           {automations.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 100}>
               <div className="group relative bg-background rounded-xl p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full">
-                <span className="absolute top-4 right-4 font-handwriting text-sm text-mint opacity-0 group-hover:opacity-100 transition-opacity rotate-[-4deg]">
-                  {item.annotation}
-                </span>
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
