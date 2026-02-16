@@ -1,4 +1,4 @@
-import logoSM from "@/assets/logo-sm.png";
+import logoSMIcon from "@/assets/logo-sm-icon.png";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src={logoSM} alt="Salomé Michaux" className="h-7 w-auto" />
+            <img src={logoSMIcon} alt="Salomé Michaux" className="h-8 w-auto" />
             <span className="font-handwriting text-lg text-primary">Salomé Michaux</span>
           </div>
 
