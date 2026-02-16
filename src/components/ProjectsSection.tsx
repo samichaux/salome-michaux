@@ -108,11 +108,6 @@ const ProjectCard = ({ project }: { project: Project }) => (
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
-      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="inline-block font-handwriting text-sm bg-mint text-accent-foreground px-3 py-1 rounded-lg rotate-[-4deg] shadow-soft">
-          {project.annotation}
-        </span>
-      </div>
     </div>
     <div className="p-5">
       <div className="flex flex-wrap gap-1.5 mb-3">
