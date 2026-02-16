@@ -7,18 +7,31 @@ import AutomationSection from "@/components/AutomationSection";
 import MethodSection from "@/components/MethodSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <ToolsSection />
-      <StatsSection />
-      <ProjectsSection />
-      <AutomationSection />
-      <MethodSection />
-      <CTASection />
+      <ScrollReveal>
+        <ToolsSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <StatsSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ProjectsSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <AutomationSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <MethodSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <CTASection />
+      </ScrollReveal>
       <Footer />
     </div>
   );
