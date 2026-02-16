@@ -15,13 +15,18 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
-      <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-4 py-2.5 shadow-soft border border-border/50">
+      <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-5 py-2 shadow-soft border border-border/50">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5">
-          <img src={logoSMIcon} alt="SM" className="h-10 w-auto" />
-          <span className="hidden sm:inline font-josefin font-light text-primary tracking-[0.2em] text-sm uppercase">
-            Salomé Michaux
-          </span>
+        <a href="/" className="flex items-center gap-3 group">
+          <img src={logoSMIcon} alt="SM" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
+          <div className="hidden sm:flex flex-col leading-none">
+            <span className="font-josefin font-light text-foreground tracking-[0.25em] text-[11px] uppercase">
+              Salomé Michaux
+            </span>
+            <span className="font-handwriting text-[10px] text-primary/70 mt-0.5">
+              IA & Automatisation
+            </span>
+          </div>
         </a>
 
         {/* Desktop links */}
