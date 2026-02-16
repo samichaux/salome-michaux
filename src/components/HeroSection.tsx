@@ -53,7 +53,9 @@ const HeroSection = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
           <a
-            href="#contact"
+            href="https://calendly.com/salomemichaux/15min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
           >
             {t("hero.cta.start")}
