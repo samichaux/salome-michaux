@@ -7,9 +7,10 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const links = [
-    { label: "Projets", href: "#projets" },
-    { label: "Automatisation", href: "#automatisation" },
-    { label: "Méthode", href: "#methode" },
+    { label: "Projets", href: "/#projets" },
+    { label: "Automatisation", href: "/#automatisation" },
+    { label: "Méthode", href: "/#methode" },
+    { label: "À propos", href: "/a-propos" },
   ];
 
   return (
