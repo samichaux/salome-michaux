@@ -91,8 +91,16 @@ const projects: Project[] = [
 const ProjectCard = ({ project }: { project: Project }) => {
   const { t } = useLanguage();
 
+  const Wrapper = project.link ? "a" : "div";
+  const wrapperProps = project.link
+    ? { href: project.link, target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
+
   return (
-    <div className="group relative rounded-xl overflow-hidden bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full">
+    <Wrapper
+      {...wrapperProps}
+      className="group relative rounded-xl overflow-hidden bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full block cursor-pointer"
+    >
       <div className={`relative ${project.featured ? "h-56" : "h-48"} overflow-hidden`}>
         <img
           src={project.mockup}
@@ -100,6 +108,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
+        {project.link && (
+          <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ExternalLink size={14} className="text-primary" />
+          </div>
+        )}
       </div>
       <div className="p-5">
         <div className="flex flex-wrap gap-1.5 mb-3">
@@ -110,19 +123,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ))}
         </div>
         <h3 className="font-bold text-lg text-foreground mb-1">{project.title}</h3>
-        <p className="text-sm text-ink-soft mb-3">{t(project.descKey)}</p>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
-          >
-            {t("projects.discover")} <ExternalLink size={14} />
-          </a>
-        )}
+        <p className="text-sm text-ink-soft">{t(project.descKey)}</p>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
