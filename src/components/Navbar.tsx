@@ -19,14 +19,9 @@ const Navbar = () => {
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 group">
           <img src={logoSMIcon} alt="SM" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <div className="hidden sm:flex flex-col leading-none">
-            <span className="font-josefin font-normal text-foreground tracking-[0.2em] text-sm uppercase">
-              Salomé Michaux
-            </span>
-            <span className="font-handwriting text-xs text-primary mt-0.5">
-              IA & Automatisation
-            </span>
-          </div>
+          <span className="hidden sm:inline font-josefin font-normal text-foreground tracking-[0.1em] text-base uppercase whitespace-nowrap">
+            Salomé Michaux
+          </span>
         </a>
 
         {/* Desktop links */}
