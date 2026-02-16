@@ -60,7 +60,7 @@ const AboutPage = () => {
             <div>
               <p className="font-handwriting text-xl text-primary mb-2">hey, c'est moi!</p>
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                Salomé Michaux
+                Salomé <span className="text-gradient-blue">Michaux</span>
               </h1>
               <p className="text-ink-soft leading-relaxed">
                 Diplômée de <strong className="text-foreground">Solvay</strong>, 4+ ans en IA, automatisation et product management. 
