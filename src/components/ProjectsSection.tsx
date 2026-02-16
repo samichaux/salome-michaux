@@ -101,11 +101,11 @@ const ProjectCard = ({ project }: { project: Project }) => (
   <div
     className="group relative rounded-xl overflow-hidden bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full"
   >
-    <div className={`relative ${project.featured ? "h-56" : "h-48"} overflow-hidden bg-gradient-to-br ${project.gradient}`}>
+    <div className={`relative ${project.featured ? "h-64" : "h-56"} overflow-hidden bg-gradient-to-br ${project.gradient} p-5 flex items-center justify-center`}>
       <img
         src={project.mockup}
         alt={`Mockup ${project.title}`}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        className="max-w-full max-h-full object-contain rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
     </div>
