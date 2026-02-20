@@ -25,7 +25,7 @@ interface Project {
 const page1Projects: Project[] = [
   {
     title: "Baebles",
-    tags: ["App", "Community"],
+    tags: ["App", "Community", "⚡ powered by boldys.ai"],
     descKey: "projects.baebles.desc",
     gradient: "from-[hsl(228,30%,41%)] to-[hsl(228,25%,60%)]",
     mockup: mockupBaebles,
@@ -42,7 +42,7 @@ const page1Projects: Project[] = [
   },
   {
     title: "BANTI",
-    tags: ["App", "Networking"],
+    tags: ["App", "Networking", "⚡ powered by boldys.ai"],
     descKey: "projects.banti.desc",
     gradient: "from-[hsl(260,25%,39%)] to-[hsl(260,20%,57%)]",
     mockup: mockupBanti,
@@ -121,9 +121,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="p-5">
         <div className="flex flex-wrap gap-1.5 mb-3">
           {project.tags.map((tag) => (
-            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">
-              {tag}
-            </span>
+            tag === "⚡ powered by boldys.ai"
+              ? <span key={tag} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">{tag}</span>
+              : <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">{tag}</span>
           ))}
         </div>
         <h3 className="font-bold text-lg text-foreground mb-1">{project.title}</h3>
