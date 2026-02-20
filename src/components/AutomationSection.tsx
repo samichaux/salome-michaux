@@ -3,11 +3,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const automationKeys = [
-  { icon: Bot, titleKey: "automation.whatsapp.title", descKey: "automation.whatsapp.desc", tools: ["Make.com", "OpenAI", "WhatsApp API"] },
-  { icon: Phone, titleKey: "automation.voicebot.title", descKey: "automation.voicebot.desc", tools: ["Make.com", "OpenAI", "Twilio"] },
   { icon: Settings, titleKey: "automation.process.title", descKey: "automation.process.desc", tools: ["Make.com", "Zapier", "Airtable"] },
   { icon: Users, titleKey: "automation.crm.title", descKey: "automation.crm.desc", tools: ["Airtable", "Make.com", "WhatsApp"] },
-  { icon: UserCheck, titleKey: "automation.matching.title", descKey: "automation.matching.desc", tools: ["OpenAI", "Make.com", "Airtable"] },
+  { icon: Bot, titleKey: "automation.whatsapp.title", descKey: "automation.whatsapp.desc", tools: ["Make.com", "OpenAI", "WhatsApp API"], powered: true },
+  { icon: Phone, titleKey: "automation.voicebot.title", descKey: "automation.voicebot.desc", tools: ["Make.com", "OpenAI", "Twilio"], powered: true },
+  { icon: UserCheck, titleKey: "automation.matching.title", descKey: "automation.matching.desc", tools: ["OpenAI", "Make.com", "Airtable"], powered: true },
   { icon: MessageCircle, titleKey: "automation.setting.title", descKey: "automation.setting.desc", tools: ["Make.com", "Calendly", "WhatsApp"] },
 ];
 
@@ -30,7 +30,14 @@ const AutomationSection = () => {
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground mb-2">{t(item.titleKey)}</h3>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-bold text-lg text-foreground">{t(item.titleKey)}</h3>
+                  {item.powered && (
+                    <span className="shrink-0 text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
+                      ⚡ boldys.ai
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-ink-soft mb-4">{t(item.descKey)}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {item.tools.map((tool) => (
