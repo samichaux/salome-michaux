@@ -8,7 +8,7 @@ const automationKeys = [
   { icon: Bot, titleKey: "automation.whatsapp.title", descKey: "automation.whatsapp.desc", tools: ["Make.com", "OpenAI", "WhatsApp API"], powered: true },
   { icon: Phone, titleKey: "automation.voicebot.title", descKey: "automation.voicebot.desc", tools: ["Make.com", "OpenAI", "Twilio"], powered: true },
   { icon: UserCheck, titleKey: "automation.matching.title", descKey: "automation.matching.desc", tools: ["OpenAI", "Make.com", "Airtable"], powered: true },
-  { icon: MessageCircle, titleKey: "automation.setting.title", descKey: "automation.setting.desc", tools: ["Make.com", "Calendly", "WhatsApp"] },
+  { icon: MessageCircle, titleKey: "automation.setting.title", descKey: "automation.setting.desc", tools: ["Make.com", "Calendly", "WhatsApp"], powered: true },
 ];
 
 const AutomationSection = () => {
