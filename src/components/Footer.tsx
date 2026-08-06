@@ -50,7 +50,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex items-center gap-3 pt-2">
-              <a href="https://www.linkedin.com/in/salomemichaux/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
+              <a href="https://www.linkedin.com/in/salomemichaux/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
                 <Linkedin size={16} />
               </a>
             </div>
