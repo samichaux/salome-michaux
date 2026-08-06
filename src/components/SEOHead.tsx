@@ -7,7 +7,7 @@ interface SEOHeadProps {
   type?: string;
 }
 
-const BASE_URL = "https://salome-michaux.lovable.app";
+const BASE_URL = "https://salomemichaux.eu";
 const OG_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c04d6e6-5a5e-4320-90b9-965d4682377b/id-preview-096407d5--79c80cf6-5085-4421-a452-6d9712a54261.lovable.app-1771279405104.png";
 
 const SEOHead = ({ title, description, path = "/", type = "website" }: SEOHeadProps) => {
