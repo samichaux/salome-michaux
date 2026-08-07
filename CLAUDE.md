@@ -95,7 +95,7 @@ Aucun badge « powered by boldys.ai » nulle part.
 
 ## Conventions de code
 
-- Chaque page rend `<Seo />` en premier élément, avec `title`, `description`, `path` et son `jsonLd`.
+- Chaque route déclare ses métadonnées via le `head()` natif de TanStack Router, alimenté par le helper partagé `buildSeoHead({ title, description, path, jsonLd, locale, noindex })` défini dans `src/components/Seo.tsx`. Ne pas installer `react-helmet-async` : le head natif est SSR-safe, helmet ne l'est pas sans câblage serveur manuel.
 - Valeurs Tailwind personnalisées : préférer `style={{}}` inline. Les classes arbitraires (`bg-[#...]`, `gap-[18px]`) donnent des résultats incohérents dans ce projet.
 - Ne jamais créer un second client Supabase. Utiliser celui de `src/integrations/supabase/client.ts`.
 - Aucune écriture directe du navigateur vers Supabase sur les tables de leads ou de tracking : tout passe par une Edge Function.

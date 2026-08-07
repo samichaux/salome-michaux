@@ -2,12 +2,11 @@ import { GraduationCap, Rocket, Zap, Briefcase, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import SEOHead from "@/components/SEOHead";
 import photoSalome from "@/assets/photo-salome.jpeg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutPage = () => {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const milestones = [
     { year: t("about.m1.year"), icon: GraduationCap, title: t("about.m1.title"), text: t("about.m1.text") },
@@ -27,16 +26,6 @@ const AboutPage = () => {
 
   return (
     <>
-      <SEOHead
-        title={lang === "fr"
-          ? "À propos — Salomé Michaux | Développeuse No-Code"
-          : "About — Salomé Michaux | No-Code Developer"}
-        description={lang === "fr"
-          ? "Découvrez le parcours de Salomé Michaux : de Solvay au freelance, spécialisée en no-code, automatisation et product management à Bruxelles."
-          : "Discover Salomé Michaux's journey: from Solvay to freelance, specializing in no-code, automation and product management in Brussels."}
-        path="/a-propos"
-        type="profile"
-      />
       <div className="min-h-screen">
         <Navbar />
         <main>
