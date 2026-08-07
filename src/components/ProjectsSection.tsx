@@ -24,8 +24,8 @@ interface Project {
 
 const page1Projects: Project[] = [
   {
-    title: "Baebles",
-    tags: ["App", "Community", "⚡ powered by boldys.ai"],
+    title: "Communauté de lecteurs",
+    tags: ["App", "Community"],
     descKey: "projects.baebles.desc",
     gradient: "from-[hsl(228,30%,41%)] to-[hsl(228,25%,60%)]",
     mockup: mockupBaebles,
@@ -41,8 +41,8 @@ const page1Projects: Project[] = [
     link: "https://book-oo.lovable.app",
   },
   {
-    title: "BANTI",
-    tags: ["App", "Networking", "⚡ powered by boldys.ai"],
+    title: "Plateforme de networking",
+    tags: ["App", "Networking"],
     descKey: "projects.banti.desc",
     gradient: "from-[hsl(260,25%,39%)] to-[hsl(260,20%,57%)]",
     mockup: mockupBanti,
@@ -121,9 +121,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="p-5">
         <div className="flex flex-wrap gap-1.5 mb-3">
           {project.tags.map((tag) => (
-            tag === "⚡ powered by boldys.ai"
-              ? <span key={tag} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">{tag}</span>
-              : <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">{tag}</span>
+            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">{tag}</span>
           ))}
         </div>
         <h3 className="font-bold text-lg text-foreground mb-1">{project.title}</h3>
@@ -141,7 +139,7 @@ const ProjectsSection = () => {
     <section id="projets" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="font-handwriting text-xl text-primary mb-2">{t("projects.eyebrow")}</p>
+          <p className="font-jost text-xl text-primary mb-2">{t("projects.eyebrow")}</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">{t("projects.title")}</h2>
           <p className="text-ink-soft max-w-lg mx-auto">{t("projects.subtitle")}</p>
         </div>

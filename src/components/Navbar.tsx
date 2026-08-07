@@ -87,7 +87,7 @@ const Navbar = () => {
         {/* Decorative blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="blob-1 absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-[hsl(var(--blue-light)/0.15)] blur-3xl" />
-          <div className="blob-2 absolute bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-[hsl(var(--mint)/0.1)] blur-3xl" />
+          <div className="blob-2 absolute bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-[hsl(var(--primary)/0.15)] blur-3xl" />
         </div>
 
         {/* Close button */}

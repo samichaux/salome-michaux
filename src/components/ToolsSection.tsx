@@ -19,7 +19,7 @@ const ToolsSection = () => {
   return (
     <section className="py-16 bg-card">
       <div className="max-w-5xl mx-auto px-6">
-        <p className="font-handwriting text-xl text-primary text-center mb-8">
+        <p className="font-jost text-xl text-primary text-center mb-8">
           {t("tools.label")}
         </p>
         <div className="flex flex-wrap justify-center gap-2 md:flex-nowrap md:gap-3">
