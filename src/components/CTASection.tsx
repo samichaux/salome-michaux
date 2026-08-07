@@ -9,7 +9,7 @@ const CTASection = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-blue-wash/60 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <p className="font-handwriting text-xl text-primary mb-3">{t("cta.eyebrow")}</p>
+        <p className="font-jost text-xl text-primary mb-3">{t("cta.eyebrow")}</p>
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           {t("cta.title.1")}<span className="text-gradient-blue">{t("cta.title.highlight")}</span>{t("cta.title.2")}
         </h2>

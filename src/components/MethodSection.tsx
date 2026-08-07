@@ -15,7 +15,7 @@ const MethodSection = () => {
     <section id="methode" className="py-20 bg-gradient-method">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="font-handwriting text-xl text-mint-light mb-2">{t("method.eyebrow")}</p>
+          <p className="font-jost text-xl text-mint-light mb-2">{t("method.eyebrow")}</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t("method.title")}</h2>
           <p className="text-blue-pale max-w-lg mx-auto">{t("method.subtitle")}</p>
         </div>
@@ -24,7 +24,7 @@ const MethodSection = () => {
           {steps.map((step, i) => (
             <ScrollReveal key={step.num} delay={i * 120}>
               <div className="rounded-xl p-6 bg-white/10 backdrop-blur-xs border border-white/10 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 h-full">
-                <div className="font-handwriting text-4xl text-mint mb-3">{step.num}</div>
+                <div className="font-fraunces font-semibold text-4xl text-blue-pale mb-3">{step.num}</div>
                 <h3 className="font-bold text-lg text-white mb-2">{t(step.titleKey)}</h3>
                 <p className="text-sm text-blue-pale">{t(step.descKey)}</p>
               </div>

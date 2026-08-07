@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="blob-1 absolute top-20 -left-32 w-[500px] h-[500px] rounded-full bg-blue-pale/40 blur-3xl" />
-        <div className="blob-2 absolute top-40 right-0 w-[400px] h-[400px] rounded-full bg-mint-light/30 blur-3xl" />
+        <div className="blob-2 absolute top-40 right-0 w-[400px] h-[400px] rounded-full bg-primary/15 blur-3xl" />
         <div className="blob-3 absolute -bottom-20 left-1/3 w-[450px] h-[450px] rounded-full bg-blue-wash/50 blur-3xl" />
 
         {/* Sketchy arrows - hidden on mobile */}
@@ -41,7 +41,7 @@ const HeroSection = () => {
         </h1>
 
         {/* Tagline */}
-        <p className="font-handwriting text-xl text-ink-soft mb-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        <p className="font-jost text-xl text-ink-soft mb-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
           {t("hero.tagline")}
         </p>
 
@@ -66,11 +66,6 @@ const HeroSection = () => {
           >
             {t("hero.cta.projects")}
           </a>
-
-          {/* Annotation */}
-          <span className="hidden sm:block font-handwriting text-lg text-mint rotate-[-6deg] ml-2">
-            {t("hero.annotation")}
-          </span>
         </div>
       </div>
     </section>

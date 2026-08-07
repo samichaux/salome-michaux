@@ -33,7 +33,7 @@ const AboutPage = () => {
           <section className="pt-32 pb-16 bg-gradient-hero relative overflow-hidden">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-20 -left-32 w-[400px] h-[400px] rounded-full bg-blue-pale/40 blur-3xl" />
-              <div className="absolute top-40 right-0 w-[350px] h-[350px] rounded-full bg-mint-light/30 blur-3xl" />
+              <div className="absolute top-40 right-0 w-[350px] h-[350px] rounded-full bg-primary/15 blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-6">
@@ -43,7 +43,7 @@ const AboutPage = () => {
                 </div>
 
                 <div>
-                  <p className="font-handwriting text-xl text-primary mb-2">{t("about.hello")}</p>
+                  <p className="font-jost text-xl text-primary mb-2">{t("about.hello")}</p>
                   <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                     Salomé <span className="text-gradient-blue">Michaux</span>
                   </h1>
@@ -63,7 +63,7 @@ const AboutPage = () => {
             <div className="max-w-3xl mx-auto px-6">
               <ScrollReveal>
                 <div className="text-center mb-14">
-                  <p className="font-handwriting text-xl text-primary mb-2">{t("about.timeline.eyebrow")}</p>
+                  <p className="font-jost text-xl text-primary mb-2">{t("about.timeline.eyebrow")}</p>
                   <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                     {t("about.timeline.title.1")}<span className="text-gradient-blue">{t("about.timeline.title.highlight")}</span>
                   </h2>
@@ -78,7 +78,7 @@ const AboutPage = () => {
                       <div className={`relative flex items-start gap-6 md:gap-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                         <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-2 z-10" />
                         <div className={`ml-14 md:ml-0 md:w-[calc(50%-2.5rem)] ${i % 2 === 0 ? "md:text-right md:pr-0" : "md:text-left md:pl-0"}`}>
-                          <span className="font-handwriting text-lg text-mint">{m.year}</span>
+                          <span className="font-jost text-lg text-mint">{m.year}</span>
                           <h3 className="font-bold text-lg text-foreground mt-1 mb-2">{m.title}</h3>
                           <p className="text-sm text-ink-soft leading-relaxed">{m.text}</p>
                         </div>
@@ -96,7 +96,6 @@ const AboutPage = () => {
             <div className="max-w-4xl mx-auto px-6">
               <ScrollReveal>
                 <div className="text-center mb-12">
-                  <p className="font-handwriting text-xl text-primary mb-2">{t("about.expertise.eyebrow")}</p>
                   <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                     {t("about.expertise.title.1")}<span className="text-gradient-blue">{t("about.expertise.title.highlight")}</span>
                   </h2>
@@ -123,7 +122,7 @@ const AboutPage = () => {
           <section className="py-20">
             <ScrollReveal>
               <div className="max-w-2xl mx-auto px-6 text-center">
-                <p className="font-handwriting text-xl text-primary mb-3">{t("about.cta.eyebrow")}</p>
+                <p className="font-jost text-xl text-primary mb-3">{t("about.cta.eyebrow")}</p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   {t("about.cta.title.1")}<span className="text-gradient-blue">{t("about.cta.title.highlight")}</span>
                 </h2>

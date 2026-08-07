@@ -5,10 +5,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const automationKeys = [
   { icon: Settings, titleKey: "automation.process.title", descKey: "automation.process.desc", tools: ["Make.com", "Zapier", "Airtable"] },
   { icon: Users, titleKey: "automation.crm.title", descKey: "automation.crm.desc", tools: ["Airtable", "Make.com", "WhatsApp"] },
-  { icon: Bot, titleKey: "automation.whatsapp.title", descKey: "automation.whatsapp.desc", tools: ["Make.com", "OpenAI", "WhatsApp API"], powered: true },
-  { icon: Phone, titleKey: "automation.voicebot.title", descKey: "automation.voicebot.desc", tools: ["Make.com", "OpenAI", "Twilio"], powered: true },
-  { icon: UserCheck, titleKey: "automation.matching.title", descKey: "automation.matching.desc", tools: ["OpenAI", "Make.com", "Airtable"], powered: true },
-  { icon: MessageCircle, titleKey: "automation.setting.title", descKey: "automation.setting.desc", tools: ["Make.com", "Calendly", "WhatsApp"], powered: true },
+  { icon: Bot, titleKey: "automation.whatsapp.title", descKey: "automation.whatsapp.desc", tools: ["Make.com", "OpenAI", "WhatsApp API"] },
+  { icon: Phone, titleKey: "automation.voicebot.title", descKey: "automation.voicebot.desc", tools: ["Make.com", "OpenAI", "Twilio"] },
+  { icon: UserCheck, titleKey: "automation.matching.title", descKey: "automation.matching.desc", tools: ["OpenAI", "Make.com", "Airtable"] },
+  { icon: MessageCircle, titleKey: "automation.setting.title", descKey: "automation.setting.desc", tools: ["Make.com", "Calendly", "WhatsApp"] },
 ];
 
 const AutomationSection = () => {
@@ -18,7 +18,7 @@ const AutomationSection = () => {
     <section id="automatisation" className="py-20 bg-card">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="font-handwriting text-xl text-primary mb-2">{t("automation.eyebrow")}</p>
+          <p className="font-jost text-xl text-primary mb-2">{t("automation.eyebrow")}</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">{t("automation.title")}</h2>
           <p className="text-ink-soft max-w-lg mx-auto">{t("automation.subtitle")}</p>
         </div>
@@ -32,11 +32,6 @@ const AutomationSection = () => {
                 </div>
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <h3 className="font-bold text-lg text-foreground">{t(item.titleKey)}</h3>
-                  {item.powered && (
-                    <span className="shrink-0 text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
-                      ⚡ boldys.ai
-                    </span>
-                  )}
                 </div>
                 <p className="text-sm text-ink-soft mb-4">{t(item.descKey)}</p>
                 <div className="flex flex-wrap gap-1.5">
