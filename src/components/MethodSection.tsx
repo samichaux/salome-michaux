@@ -23,7 +23,7 @@ const MethodSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {steps.map((step, i) => (
             <ScrollReveal key={step.num} delay={i * 120}>
-              <div className="rounded-xl p-6 bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 h-full">
+              <div className="rounded-xl p-6 bg-white/10 backdrop-blur-xs border border-white/10 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 h-full">
                 <div className="font-handwriting text-4xl text-mint mb-3">{step.num}</div>
                 <h3 className="font-bold text-lg text-white mb-2">{t(step.titleKey)}</h3>
                 <p className="text-sm text-blue-pale">{t(step.descKey)}</p>

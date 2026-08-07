@@ -113,7 +113,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           loading="lazy"
         />
         {project.link && (
-          <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-card/80 backdrop-blur-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ExternalLink size={14} className="text-primary" />
           </div>
         )}
