@@ -16,7 +16,7 @@ const Navbar = () => {
   const links = [
     { label: t("home.services.1.title"), href: "/application-metier-sur-mesure", num: "01" },
     { label: t("home.services.2.title"), href: "/digitalisation-des-processus", num: "02" },
-    { label: t("home.proof.all"), href: "/cas-clients/", num: "03" },
+    { label: t("home.proof.all"), href: "/cas-clients", num: "03" },
     { label: t("nav.about"), href: "/a-propos", num: "04" },
   ];
 

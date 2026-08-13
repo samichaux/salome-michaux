@@ -26,7 +26,7 @@ const Footer = () => {
             <h4 className="font-semibold text-sm text-background/90 uppercase tracking-wider">{t("footer.navigation")}</h4>
             <nav className="flex flex-col gap-2.5">
               {[
-                { label: t("home.proof.all"), href: "/cas-clients/" },
+                { label: t("home.proof.all"), href: "/cas-clients" },
                 { label: t("home.services.2.title"), href: "/digitalisation-des-processus" },
                 { label: t("home.services.3.title"), href: "/accompagnement-continu" },
                 { label: t("cta.button"), href: "/audit-de-process" },

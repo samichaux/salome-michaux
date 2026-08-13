@@ -7,7 +7,7 @@ export const Route = createFileRoute("/cas-clients/")({
     buildSeoHead({
       title: "Cas clients — Salomé Michaux",
       description: "Cas clients — page en cours de rédaction.",
-      path: "/cas-clients/",
+      path: "/cas-clients",
       noindex: true,
     }),
   component: () => <PlaceholderPage title="Cas clients" />,
