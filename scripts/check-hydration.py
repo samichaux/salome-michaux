@@ -59,6 +59,10 @@ async def main():
                 failures.append(f"{path}: expected {expected_lang} copy containing {phrase!r}")
 
             for line in noise:
+                # Sub-resource fetch noise (dev HMR pings, favicon races) is not a
+                # hydration regression — only app errors and hydration warnings are.
+                if "Failed to load resource" in line:
+                    continue
                 if line.startswith("pageerror") or line.startswith("error:") or BAD_CONSOLE.search(line):
                     failures.append(f"{path}: console -> {line[:200]}")
 
