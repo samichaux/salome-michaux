@@ -100,7 +100,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // About
     "about.hello": "À propos",
     "about.intro": "Ingénieure de gestion Solvay, j'accompagne startups et PMEs dans leur transformation digitale. Mon créneau : des solutions IA et automatisation qui génèrent un impact mesurable, livrées rapidement. Basée à Bruxelles.",
-    "about.skills": "Agents IA,Automatisation,No-code,Product Management",
+    "about.skills": "Agents IA,Automatisation,Applications métier,Product Management",
     "about.timeline.eyebrow": "Parcours",
     "about.timeline.title.1": "De Solvay au ",
     "about.timeline.title.highlight": "freelance",
@@ -229,7 +229,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "automation.crm.title": "Automated CRM",
     "automation.crm.desc": "Smart sales pipeline with automatic tracking, scheduled follow-ups and real-time notifications.",
     "automation.matching.title": "AI Recruitment Matching",
-    "automation.matching.desc": "Matching algorithm that analyzes candidate profiles and connects them to the most relevant opportunities.",
+    "automation.matching.desc": "Matching algorithm that analyses candidate profiles and connects them to the most relevant opportunities.",
     "automation.setting.title": "Automated Setting",
     "automation.setting.desc": "Fully automated appointment booking and client setup systems, from first contact to follow-up.",
 
@@ -247,7 +247,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "method.4.desc": "I evolve the tool at the pace of your organisation.",
 
     // CTA
-    "cta.eyebrow": "A process to digitalize?",
+    "cta.eyebrow": "A process to digitalise?",
     "cta.title": "Let's start with an audit of your processes",
     "cta.subtitle": "A clear picture of what is stuck, what can be digitalised, and in which order.",
     "cta.button": "Request a process audit",
@@ -271,7 +271,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // About
     "about.hello": "About",
     "about.intro": "Solvay-trained management engineer, I help startups and SMEs with their digital transformation. My niche: AI and automation solutions that deliver measurable impact, shipped fast. Based in Brussels.",
-    "about.skills": "AI Agents,Automation,No-code,Product Management",
+    "about.skills": "AI Agents,Automation,Bespoke software,Product Management",
     "about.timeline.eyebrow": "Journey",
     "about.timeline.title.1": "From Solvay to ",
     "about.timeline.title.highlight": "freelance",
@@ -298,7 +298,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.e3.text": "From brief to live product with Bubble, Lovable and Airtable. Fast iterations, tangible results.",
     "about.e4.title": "Strategic Consulting",
     "about.e4.text": "AI audit, automation opportunity mapping and actionable roadmap.",
-    "about.cta.eyebrow": "A process to digitalize?",
+    "about.cta.eyebrow": "A process to digitalise?",
     "about.cta.title.1": "Let's turn your ideas into ",
     "about.cta.title.highlight": "results",
     "about.cta.subtitle": "A free initial call to identify your automation and AI opportunities.",
@@ -306,10 +306,10 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Home — hero
     "home.hero.badge": "Independent product consultant — Brussels",
-    "home.hero.h1": "Process digitalisation for teams without in-house tech",
-    "home.hero.subtitle": "Your internal processes become a tool your team uses every day, instead of shared files and double data entry.",
+    "home.hero.h1": "Bespoke software development for teams without IT",
+    "home.hero.subtitle": "Your internal processes become bespoke software your team uses every day, instead of shared spreadsheets and double data entry.",
     "home.hero.cta.primary": "Start with a process audit",
-    "home.hero.cta.secondary": "See custom business applications",
+    "home.hero.cta.secondary": "See bespoke software development",
 
     // Home — trust
     "home.trust.label": "Organisations I have worked with",
@@ -317,14 +317,14 @@ const translations: Record<Lang, Record<string, string>> = {
     // Home — services
     "home.services.eyebrow": "What I do",
     "home.services.title": "Three ways to work together",
-    "home.services.1.title": "Custom business application",
-    "home.services.1.desc": "An internal tool built around your trade, your rules and your users.",
-    "home.services.1.link": "Explore custom business applications",
-    "home.services.2.title": "Process digitalisation",
-    "home.services.2.desc": "Your manual processes mapped, simplified, then tooled end to end.",
-    "home.services.2.link": "Explore process digitalisation",
+    "home.services.1.title": "Bespoke software development",
+    "home.services.1.desc": "Software built around your trade, your rules and the people who use it daily.",
+    "home.services.1.link": "Explore bespoke software development",
+    "home.services.2.title": "Custom internal tools",
+    "home.services.2.desc": "Your manual processes mapped, simplified, then automated end to end.",
+    "home.services.2.link": "Explore custom internal tools",
     "home.services.3.title": "Ongoing support",
-    "home.services.3.desc": "Your tools maintained, fixed and extended month after month.",
+    "home.services.3.desc": "Your software maintained, fixed and extended month after month.",
     "home.services.3.link": "Explore ongoing support",
 
     // Home — pain points
@@ -337,12 +337,12 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.pains.3.quote": "Nobody understands our internal tool any more",
     "home.pains.3.link": "Take over an internal tool",
     "home.pains.4.quote": "We know it is stuck, not where to start",
-    "home.pains.4.link": "Digital transformation for SMEs",
+    "home.pains.4.link": "Talk to a digital transformation consultant",
 
     // Home — proof
     "home.proof.eyebrow": "Client case",
     "home.proof.client": "Purpose Recruiting",
-    "home.proof.title": "A custom CRM and ATS",
+    "home.proof.title": "A bespoke CRM and ATS",
     "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
     "home.proof.link": "Read the Purpose Recruiting case",
     "home.proof.all": "See all client cases",

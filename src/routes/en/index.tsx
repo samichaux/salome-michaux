@@ -25,9 +25,9 @@ const WEBSITE_JSON_LD = {
 export const Route = createFileRoute("/en/")({
   head: () =>
     buildSeoHead({
-      title: "Process digitalisation for teams without in-house tech",
+      title: "Bespoke software development for teams without IT",
       description:
-        "I turn the internal processes of SMEs, scale-ups and non-profits into custom tools: from audit to production. Based in Brussels, working remotely.",
+        "I build bespoke internal software for SMEs, scale-ups and non-profits with no IT team, from audit to production. Based in Brussels, working remotely.",
       path: "/en",
       locale: "en",
       jsonLd: [PERSON_JSON_LD, WEBSITE_JSON_LD],
