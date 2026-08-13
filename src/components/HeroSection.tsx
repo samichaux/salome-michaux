@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { localePath } from "@/lib/i18n-routes";
+import BeforeAfter from "@/components/BeforeAfter";
 
 const HeroSection = () => {
   const { t, lang } = useLanguage();
@@ -68,6 +69,8 @@ const HeroSection = () => {
             {t("home.hero.cta.secondary")}
           </Link>
         </div>
+
+        <BeforeAfter />
       </div>
     </section>
   );
