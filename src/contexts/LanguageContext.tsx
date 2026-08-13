@@ -306,10 +306,10 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Home — hero
     "home.hero.badge": "Independent product consultant — Brussels",
-    "home.hero.h1": "Process digitalisation for teams without in-house tech",
-    "home.hero.subtitle": "Your internal processes become a tool your team uses every day, instead of shared files and double data entry.",
+    "home.hero.h1": "Bespoke software development for teams without IT",
+    "home.hero.subtitle": "Your internal processes become bespoke software your team uses every day, instead of shared spreadsheets and double data entry.",
     "home.hero.cta.primary": "Start with a process audit",
-    "home.hero.cta.secondary": "See custom business applications",
+    "home.hero.cta.secondary": "See bespoke software development",
 
     // Home — trust
     "home.trust.label": "Organisations I have worked with",
@@ -317,14 +317,14 @@ const translations: Record<Lang, Record<string, string>> = {
     // Home — services
     "home.services.eyebrow": "What I do",
     "home.services.title": "Three ways to work together",
-    "home.services.1.title": "Custom business application",
-    "home.services.1.desc": "An internal tool built around your trade, your rules and your users.",
-    "home.services.1.link": "Explore custom business applications",
-    "home.services.2.title": "Process digitalisation",
-    "home.services.2.desc": "Your manual processes mapped, simplified, then tooled end to end.",
-    "home.services.2.link": "Explore process digitalisation",
+    "home.services.1.title": "Bespoke software development",
+    "home.services.1.desc": "Software built around your trade, your rules and the people who use it daily.",
+    "home.services.1.link": "Explore bespoke software development",
+    "home.services.2.title": "Custom internal tools",
+    "home.services.2.desc": "Your manual processes mapped, simplified, then automated end to end.",
+    "home.services.2.link": "Explore custom internal tools",
     "home.services.3.title": "Ongoing support",
-    "home.services.3.desc": "Your tools maintained, fixed and extended month after month.",
+    "home.services.3.desc": "Your software maintained, fixed and extended month after month.",
     "home.services.3.link": "Explore ongoing support",
 
     // Home — pain points
@@ -337,12 +337,12 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.pains.3.quote": "Nobody understands our internal tool any more",
     "home.pains.3.link": "Take over an internal tool",
     "home.pains.4.quote": "We know it is stuck, not where to start",
-    "home.pains.4.link": "Digital transformation for SMEs",
+    "home.pains.4.link": "Talk to a digital transformation consultant",
 
     // Home — proof
     "home.proof.eyebrow": "Client case",
     "home.proof.client": "Purpose Recruiting",
-    "home.proof.title": "A custom CRM and ATS",
+    "home.proof.title": "A bespoke CRM and ATS",
     "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
     "home.proof.link": "Read the Purpose Recruiting case",
     "home.proof.all": "See all client cases",
