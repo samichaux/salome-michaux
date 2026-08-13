@@ -76,11 +76,9 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // CTA
     "cta.eyebrow": "Un process à digitaliser ?",
-    "cta.title.1": "Un projet ",
-    "cta.title.highlight": "en tête",
-    "cta.title.2": " ?",
-    "cta.subtitle": "Discutons de comment je peux vous aider à concrétiser votre vision.",
-    "cta.button": "Prendre rendez-vous",
+    "cta.title": "Commençons par un audit de vos processus",
+    "cta.subtitle": "Un cadrage clair de ce qui coince, de ce qui se digitalise et dans quel ordre.",
+    "cta.button": "Demander un audit de process",
 
     // Footer
     "footer.description": "Développeuse no-code & spécialiste en automatisation. Du concept au lancement, sans une ligne de code.",
@@ -242,11 +240,9 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // CTA
     "cta.eyebrow": "A process to digitalize?",
-    "cta.title.1": "Have a project ",
-    "cta.title.highlight": "in mind",
-    "cta.title.2": "?",
-    "cta.subtitle": "Let's discuss how I can help turn your vision into reality.",
-    "cta.button": "Book a call",
+    "cta.title": "Let's start with an audit of your processes",
+    "cta.subtitle": "A clear picture of what is stuck, what can be digitalised, and in which order.",
+    "cta.button": "Request a process audit",
 
     // Footer
     "footer.description": "No-code developer & automation specialist. From concept to launch, without a single line of code.",
