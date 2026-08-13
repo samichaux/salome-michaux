@@ -17,14 +17,23 @@ const PERSON_JSON_LD = {
   sameAs: ["https://www.linkedin.com/in/salomemichaux/"],
 };
 
+const WEBSITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Salomé Michaux",
+  url: "https://salomemichaux.eu",
+  inLanguage: "fr-BE",
+  publisher: { "@type": "Person", name: "Salomé Michaux" },
+};
+
 export const Route = createFileRoute("/")({
   head: () =>
     buildSeoHead({
-      title: "Salomé Michaux — Product Consultant & Builder | Digitalisation de process",
+      title: "Digitalisation des processus pour équipes sans tech interne",
       description:
-        "Je transforme les process internes de PME, scale-ups et ASBL sans équipe tech en outils sur-mesure. De l'audit à la mise en production, basée à Bruxelles.",
+        "Je transforme les processus internes de PME, scale-ups et associations en outils sur-mesure : de l'audit à la mise en production. Basée à Bruxelles.",
       path: "/",
-      jsonLd: PERSON_JSON_LD,
+      jsonLd: [PERSON_JSON_LD, WEBSITE_JSON_LD],
     }),
   component: Index,
 });
