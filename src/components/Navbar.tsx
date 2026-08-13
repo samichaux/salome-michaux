@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import logoSMIcon from "@/assets/logo-sm-icon.png";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath, switchLangPath } from "@/lib/i18n-routes";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { lang, setLang, t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const otherLang = lang === "fr" ? "en" : "fr";
+  const switchTo = switchLangPath(pathname, otherLang);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -14,10 +19,10 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   const links = [
-    { label: t("home.services.1.title"), href: "/application-metier-sur-mesure", num: "01" },
-    { label: t("home.services.2.title"), href: "/digitalisation-des-processus", num: "02" },
-    { label: t("home.proof.all"), href: "/cas-clients", num: "03" },
-    { label: t("nav.about"), href: "/a-propos", num: "04" },
+    { label: t("home.services.1.title"), href: localePath("/application-metier-sur-mesure", lang), num: "01" },
+    { label: t("home.services.2.title"), href: localePath("/digitalisation-des-processus", lang), num: "02" },
+    { label: t("home.proof.all"), href: localePath("/cas-clients", lang), num: "03" },
+    { label: t("nav.about"), href: localePath("/a-propos", lang), num: "04" },
   ];
 
   return (
@@ -25,7 +30,7 @@ const Navbar = () => {
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-6 py-2.5 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <a href={localePath("/", lang)} className="flex items-center gap-2 group">
             <img src={logoSMIcon} alt="SM" className="h-7 w-auto opacity-90 transition-transform duration-300 group-hover:scale-105" />
             <span className="hidden sm:inline font-josefin font-light text-foreground/80 tracking-[0.15em] text-[13px] uppercase whitespace-nowrap">
               Salomé Michaux
@@ -47,12 +52,14 @@ const Navbar = () => {
 
           {/* CTA + Lang switch + Mobile toggle */}
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+            <Link
+              to={switchTo}
+              hrefLang={otherLang}
+              aria-label={otherLang === "en" ? "Switch to English" : "Passer en français"}
               className="text-xs font-semibold px-2.5 py-1.5 rounded-full border border-border/50 text-ink-soft hover:text-primary hover:border-primary/30 transition-all duration-200 uppercase tracking-wide"
             >
-              {lang === "fr" ? "EN" : "FR"}
-            </button>
+              {otherLang.toUpperCase()}
+            </Link>
 
             <a
               href="https://calendly.com/salomemichaux/15min"
