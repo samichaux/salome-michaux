@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 interface PageCtaProps {
   to: string;
 }
 
 const PageCta = ({ to }: PageCtaProps) => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section id="contact" className="relative py-24 overflow-hidden">
@@ -16,7 +17,7 @@ const PageCta = ({ to }: PageCtaProps) => {
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
         <p className="text-ink-soft mb-8 max-w-md mx-auto">{t("cta.subtitle")}</p>
         <Link
-          to={to}
+          to={localePath(to, lang)}
           className="inline-block bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
         >
           {t("cta.button")}

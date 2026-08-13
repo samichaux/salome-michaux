@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 const pains = [
   { key: "1", to: "/automatiser-un-reporting" },
@@ -11,7 +12,7 @@ const pains = [
 ];
 
 const PainPointsSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section id="symptomes" className="py-20 bg-card">
@@ -26,7 +27,7 @@ const PainPointsSection = () => {
             <li key={pain.key}>
               <ScrollReveal delay={i * 80}>
                 <Link
-                  to={pain.to}
+                  to={localePath(pain.to, lang)}
                   className="group flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-5"
                 >
                   <span className="font-fraunces text-lg sm:text-xl text-foreground flex-1">

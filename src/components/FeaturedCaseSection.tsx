@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 const FeaturedCaseSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section id="cas-client" className="py-20 bg-background">
@@ -15,13 +16,16 @@ const FeaturedCaseSection = () => {
           <p className="text-ink-soft mb-8 max-w-2xl">{t("home.proof.desc")}</p>
           <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
             <Link
-              to="/cas-clients/purpose-recruiting"
+              to={localePath("/cas-clients/purpose-recruiting", lang)}
               className="group inline-flex items-center justify-center gap-1.5 bg-gradient-primary text-primary-foreground font-semibold px-6 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300"
             >
               {t("home.proof.link")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/cas-clients" className="inline-flex items-center justify-center text-sm font-semibold text-primary px-2 py-3">
+            <Link
+              to={localePath("/cas-clients", lang)}
+              className="inline-flex items-center justify-center text-sm font-semibold text-primary px-2 py-3"
+            >
               {t("home.proof.all")}
             </Link>
           </div>

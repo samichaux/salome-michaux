@@ -7,11 +7,13 @@ import {
   Scripts,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { langFromPath } from "@/lib/i18n-routes";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import NotFound from "@/pages/NotFound";
 import appCss from "../styles.css?url";
@@ -40,8 +42,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  // Derived from the router pathname (never from `window`) so the server and
+  // client render the same `lang` attribute and hydration stays clean.
+  const lang = useRouterState({ select: (s) => langFromPath(s.location.pathname) });
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
@@ -55,9 +60,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const lang = useRouterState({ select: (s) => langFromPath(s.location.pathname) });
   return (
     <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
+      <LanguageProvider initialLang={lang}>
         <TooltipProvider>
           <Toaster />
           <Sonner />

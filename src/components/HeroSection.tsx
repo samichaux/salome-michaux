@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-gradient-hero pt-36 pb-20">
@@ -30,14 +31,14 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
           <Link
-            to="/audit-de-process"
+            to={localePath("/audit-de-process", lang)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
           >
             {t("home.hero.cta.primary")}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
-            to="/application-metier-sur-mesure"
+            to={localePath("/application-metier-sur-mesure", lang)}
             className="w-full sm:w-auto text-center text-sm font-semibold text-primary px-4 py-3"
           >
             {t("home.hero.cta.secondary")}

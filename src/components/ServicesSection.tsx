@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Layers, Workflow, LifeBuoy } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 const services = [
   { icon: Layers, to: "/application-metier-sur-mesure", key: "1" },
@@ -10,7 +11,7 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section id="services" className="py-20 bg-background">
@@ -24,7 +25,7 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <ScrollReveal key={service.key} delay={i * 100}>
               <Link
-                to={service.to}
+                to={localePath(service.to, lang)}
                 className="group flex flex-col h-full bg-card rounded-[18px] p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
