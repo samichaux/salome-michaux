@@ -180,9 +180,15 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* Mint stays a stop pushed past the end of the box: the lightest pixels are
-     never reached, so even the tail of a gradient word keeps enough contrast. */
-  background-image: linear-gradient(135deg, hsl(var(--blue-signature)) 0%, hsl(var(--blue-medium)) 55%, hsl(var(--mint)) 135%);
+  /* Blue signature -> mint -> ink: the mint band stays visible mid-word while
+     the tail lands back on ink, keeping contrast at the end of the phrase. */
+  background-image: linear-gradient(
+    100deg,
+    hsl(var(--blue-signature)) 0%,
+    hsl(var(--blue-medium)) 35%,
+    hsl(var(--mint)) 60%,
+    hsl(var(--ink)) 100%
+  );
 }
 
 @utility bg-gradient-hero {
