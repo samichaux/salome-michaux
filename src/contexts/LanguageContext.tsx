@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type Lang = "fr" | "en";
 
@@ -341,8 +341,20 @@ const translations: Record<Lang, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Lang>("fr");
+export const LanguageProvider = ({
+  children,
+  initialLang = "fr",
+}: {
+  children: ReactNode;
+  initialLang?: Lang;
+}) => {
+  const [lang, setLang] = useState<Lang>(initialLang);
+
+  // Client-side FR <-> EN navigation changes the URL without a reload, so the
+  // language deduced from the pathname has to flow back into the provider.
+  useEffect(() => {
+    setLang(initialLang);
+  }, [initialLang]);
 
   const t = (key: string): string => {
     return translations[lang][key] || key;
