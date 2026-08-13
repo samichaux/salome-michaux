@@ -16,6 +16,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "nav.method": "Méthode",
     "nav.about": "À propos",
     "nav.cta": "Discutons",
+    "nav.link.app": "Application métier",
+    "nav.link.process": "Digitalisation",
+    "nav.link.cases": "Cas clients",
 
     // Hero
     "hero.badge": "Disponible pour nouveaux projets",
@@ -186,6 +189,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "nav.method": "Method",
     "nav.about": "About",
     "nav.cta": "Let's talk",
+    "nav.link.app": "Business apps",
+    "nav.link.process": "Digitalisation",
+    "nav.link.cases": "Client cases",
 
     // Hero
     "hero.badge": "Available for new projects",
