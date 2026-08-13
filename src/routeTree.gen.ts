@@ -22,6 +22,7 @@ import { Route as SynchroniserSesOutilsRouteImport } from './routes/synchroniser
 import { Route as TransformationDigitalePmeRouteImport } from './routes/transformation-digitale-pme'
 import { Route as CasClientsIndexRouteImport } from './routes/cas-clients.index'
 import { Route as CasClientsPurposeRecruitingRouteImport } from './routes/cas-clients.purpose-recruiting'
+import { Route as EnIndexRouteImport } from './routes/en/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -92,10 +93,15 @@ const CasClientsPurposeRecruitingRoute =
     path: '/cas-clients/purpose-recruiting',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/en': typeof EnRouteRoute
+  '/en': typeof EnRouteRouteWithChildren
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -107,10 +113,10 @@ export interface FileRoutesByFullPath {
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients/': typeof CasClientsIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/en': typeof EnRouteRoute
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -122,11 +128,12 @@ export interface FileRoutesByTo {
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients': typeof CasClientsIndexRoute
+  '/en': typeof EnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/en': typeof EnRouteRoute
+  '/en': typeof EnRouteRouteWithChildren
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -138,6 +145,7 @@ export interface FileRoutesById {
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients/': typeof CasClientsIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -155,10 +163,10 @@ export interface FileRouteTypes {
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients/'
+    | '/en/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/en'
     | '/a-propos'
     | '/accompagnement-continu'
     | '/application-metier-sur-mesure'
@@ -170,6 +178,7 @@ export interface FileRouteTypes {
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients'
+    | '/en'
   id:
     | '__root__'
     | '/'
@@ -185,11 +194,12 @@ export interface FileRouteTypes {
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients/'
+    | '/en/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  EnRouteRoute: typeof EnRouteRoute
+  EnRouteRoute: typeof EnRouteRouteWithChildren
   AProposRoute: typeof AProposRoute
   AccompagnementContinuRoute: typeof AccompagnementContinuRoute
   ApplicationMetierSurMesureRoute: typeof ApplicationMetierSurMesureRoute
@@ -296,12 +306,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasClientsPurposeRecruitingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/': {
+      id: '/en/'
+      path: '/'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
   }
 }
 
+interface EnRouteRouteChildren {
+  EnIndexRoute: typeof EnIndexRoute
+}
+
+const EnRouteRouteChildren: EnRouteRouteChildren = {
+  EnIndexRoute: EnIndexRoute,
+}
+
+const EnRouteRouteWithChildren =
+  EnRouteRoute._addFileChildren(EnRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  EnRouteRoute: EnRouteRoute,
+  EnRouteRoute: EnRouteRouteWithChildren,
   AProposRoute: AProposRoute,
   AccompagnementContinuRoute: AccompagnementContinuRoute,
   ApplicationMetierSurMesureRoute: ApplicationMetierSurMesureRoute,
