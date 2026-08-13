@@ -4,17 +4,32 @@ import type { Lang } from "@/contexts/LanguageContext";
  * FR <-> EN route correspondence.
  *
  * French URLs live at the root and never move. English pages live under /en
- * with English slugs, and are created one at a time as their content is
- * written — so most French pages have no mirror yet.
+ * with English slugs frozen from English keyword research. Slugs are declared
+ * here up front; the route files are created one at a time as their content is
+ * written. A pair stays "mirror absent" until its English path is listed in
+ * `LIVE_EN_PATHS`.
  */
 const FR_TO_EN: Record<string, string> = {
   "/": "/en",
   "/a-propos": "/en/about",
+  "/application-metier-sur-mesure": "/en/bespoke-software-development",
+  "/no-code-ou-developpement-sur-mesure": "/en/custom-software-vs-off-the-shelf",
+  "/digitalisation-des-processus": "/en/business-process-automation",
+  "/transformation-digitale-pme": "/en/digital-transformation-consultant",
+  "/reprendre-un-outil-interne": "/en/legacy-application-support",
 };
+
+/** English routes that actually exist. Everything else is "mirror absent". */
+const LIVE_EN_PATHS: ReadonlySet<string> = new Set(["/en", "/en/about"]);
 
 const EN_TO_FR: Record<string, string> = Object.fromEntries(
   Object.entries(FR_TO_EN).map(([fr, en]) => [en, fr]),
 );
+
+/** Frozen English slug for a French path, whether or not the page exists yet. */
+export function plannedEnPathOf(frPath: string): string | undefined {
+  return FR_TO_EN[normalize(frPath)];
+}
 
 /**
  * Every route that exists in both languages, as `[frPath, enPath]`.
@@ -22,7 +37,9 @@ const EN_TO_FR: Record<string, string> = Object.fromEntries(
  * (`bun run check:hreflang`) and its unit test.
  */
 export const BILINGUAL_ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> =
-  Object.entries(FR_TO_EN).map(([fr, en]) => [fr, en] as const);
+  Object.entries(FR_TO_EN)
+    .filter(([, en]) => LIVE_EN_PATHS.has(en))
+    .map(([fr, en]) => [fr, en] as const);
 
 /** Strips a trailing slash so no internal link ever triggers a 307. */
 function normalize(path: string): string {
@@ -44,14 +61,15 @@ export function frPathOf(path: string): string {
 
 /** True when `path` has a counterpart in `lang`. */
 export function enPathOf(path: string): string | undefined {
-  return FR_TO_EN[frPathOf(path)];
+  const en = FR_TO_EN[frPathOf(path)];
+  return en && LIVE_EN_PATHS.has(en) ? en : undefined;
 }
 
 /** True when `path` has a counterpart in `lang`. */
 export function hasMirror(path: string, lang: Lang): boolean {
   const fr = frPathOf(path);
-  if (lang === "fr") return fr in FR_TO_EN || fr === "/";
-  return fr in FR_TO_EN;
+  if (lang === "fr") return true;
+  return enPathOf(fr) !== undefined;
 }
 
 /**
@@ -66,7 +84,7 @@ export function hasMirror(path: string, lang: Lang): boolean {
 export function localePath(path: string, lang: Lang): any {
   const fr = normalize(path);
   if (lang === "fr") return fr;
-  return FR_TO_EN[fr] ?? fr;
+  return enPathOf(fr) ?? fr;
 }
 
 /**
@@ -78,7 +96,7 @@ export function switchLangPath(currentPath: string, target: Lang): any {
   const p = normalize(currentPath);
   if (target === "en") {
     const fr = langFromPath(p) === "fr" ? p : frPathOf(p);
-    return FR_TO_EN[fr] ?? "/en";
+    return enPathOf(fr) ?? "/en";
   }
   return langFromPath(p) === "en" ? (EN_TO_FR[p] ?? "/") : p;
 }
