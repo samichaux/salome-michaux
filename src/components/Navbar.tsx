@@ -134,7 +134,7 @@ const Navbar = () => {
               >
                 <span className="text-xs font-mono text-[hsl(var(--mint))] opacity-60">{link.num}</span>
                 <span className="text-2xl font-bold text-[hsl(0,0%,100%,0.9)] group-hover:text-[hsl(var(--mint))] transition-colors duration-200">
-                  {link.label}
+                  {link.full}
                 </span>
                 <ArrowUpRight
                   size={18}
