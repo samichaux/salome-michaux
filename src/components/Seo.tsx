@@ -1,3 +1,5 @@
+import { frPathOf, hasMirror } from "@/lib/i18n-routes";
+
 export type JsonLdEntry = Record<string, unknown>;
 
 export interface SeoHeadProps {
@@ -34,7 +36,7 @@ export default function buildSeoHead({
   noindex = false,
 }: SeoHeadProps) {
   const canonical = `${BASE_URL}${path}`;
-  const basePath = path.startsWith("/en") ? path.slice(3) || "/" : path;
+  const frPath = frPathOf(path);
   const ogLocale = locale === "fr" ? "fr_BE" : "en_GB";
 
   const meta: Array<Record<string, string>> = [
@@ -59,10 +61,15 @@ export default function buildSeoHead({
 
   const links = [
     { rel: "canonical", href: canonical },
-    { rel: "alternate", hrefLang: "fr", href: `${BASE_URL}${basePath}` },
-    { rel: "alternate", hrefLang: "en", href: `${BASE_URL}/en${basePath}` },
-    { rel: "alternate", hrefLang: "x-default", href: `${BASE_URL}${basePath}` },
+    { rel: "alternate", hrefLang: "fr", href: `${BASE_URL}${frPath}` },
+    { rel: "alternate", hrefLang: "x-default", href: `${BASE_URL}${frPath}` },
   ];
+
+  // Only advertise an English alternate for pages that actually have one.
+  if (hasMirror(path, "en")) {
+    const enPath = frPath === "/" ? "/en" : `/en${frPath === "/a-propos" ? "/about" : frPath}`;
+    links.push({ rel: "alternate", hrefLang: "en", href: `${BASE_URL}${enPath}` });
+  }
 
   const jsonLdEntries = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   const scripts = jsonLdEntries.map((entry) => ({

@@ -23,6 +23,7 @@ import { Route as TransformationDigitalePmeRouteImport } from './routes/transfor
 import { Route as CasClientsIndexRouteImport } from './routes/cas-clients.index'
 import { Route as CasClientsPurposeRecruitingRouteImport } from './routes/cas-clients.purpose-recruiting'
 import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as EnAboutRouteImport } from './routes/en/about'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -98,6 +99,11 @@ const EnIndexRoute = EnIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EnRouteRoute,
 } as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => EnRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/en/about': typeof EnAboutRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -127,6 +134,7 @@ export interface FileRoutesByTo {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/en/about': typeof EnAboutRoute
   '/cas-clients': typeof CasClientsIndexRoute
   '/en': typeof EnIndexRoute
 }
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/en/about': typeof EnAboutRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -162,6 +171,7 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/en/about'
     | '/cas-clients/'
     | '/en/'
   fileRoutesByTo: FileRoutesByTo
@@ -177,6 +187,7 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/en/about'
     | '/cas-clients'
     | '/en'
   id:
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/en/about'
     | '/cas-clients/'
     | '/en/'
   fileRoutesById: FileRoutesById
@@ -313,14 +325,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnIndexRouteImport
       parentRoute: typeof EnRouteRoute
     }
+    '/en/about': {
+      id: '/en/about'
+      path: '/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
   }
 }
 
 interface EnRouteRouteChildren {
+  EnAboutRoute: typeof EnAboutRoute
   EnIndexRoute: typeof EnIndexRoute
 }
 
 const EnRouteRouteChildren: EnRouteRouteChildren = {
+  EnAboutRoute: EnAboutRoute,
   EnIndexRoute: EnIndexRoute,
 }
 
