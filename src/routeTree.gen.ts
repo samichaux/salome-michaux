@@ -16,6 +16,7 @@ import { Route as ApplicationMetierSurMesureRouteImport } from './routes/applica
 import { Route as AuditDeProcessRouteImport } from './routes/audit-de-process'
 import { Route as AutomatiserUnReportingRouteImport } from './routes/automatiser-un-reporting'
 import { Route as DigitalisationDesProcessusRouteImport } from './routes/digitalisation-des-processus'
+import { Route as EnRouteRouteImport } from './routes/en/route'
 import { Route as ReprendreUnOutilInterneRouteImport } from './routes/reprendre-un-outil-interne'
 import { Route as SynchroniserSesOutilsRouteImport } from './routes/synchroniser-ses-outils'
 import { Route as TransformationDigitalePmeRouteImport } from './routes/transformation-digitale-pme'
@@ -59,6 +60,11 @@ const DigitalisationDesProcessusRoute =
     path: '/digitalisation-des-processus',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EnRouteRoute = EnRouteRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReprendreUnOutilInterneRoute = ReprendreUnOutilInterneRouteImport.update({
   id: '/reprendre-un-outil-interne',
   path: '/reprendre-un-outil-interne',
@@ -89,6 +95,7 @@ const CasClientsPurposeRecruitingRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/en': typeof EnRouteRoute
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/en': typeof EnRouteRoute
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -118,6 +126,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/en': typeof EnRouteRoute
   '/a-propos': typeof AProposRoute
   '/accompagnement-continu': typeof AccompagnementContinuRoute
   '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/en'
     | '/a-propos'
     | '/accompagnement-continu'
     | '/application-metier-sur-mesure'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/en'
     | '/a-propos'
     | '/accompagnement-continu'
     | '/application-metier-sur-mesure'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/en'
     | '/a-propos'
     | '/accompagnement-continu'
     | '/application-metier-sur-mesure'
@@ -177,6 +189,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EnRouteRoute: typeof EnRouteRoute
   AProposRoute: typeof AProposRoute
   AccompagnementContinuRoute: typeof AccompagnementContinuRoute
   ApplicationMetierSurMesureRoute: typeof ApplicationMetierSurMesureRoute
@@ -241,6 +254,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DigitalisationDesProcessusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reprendre-un-outil-interne': {
       id: '/reprendre-un-outil-interne'
       path: '/reprendre-un-outil-interne'
@@ -281,6 +301,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EnRouteRoute: EnRouteRoute,
   AProposRoute: AProposRoute,
   AccompagnementContinuRoute: AccompagnementContinuRoute,
   ApplicationMetierSurMesureRoute: ApplicationMetierSurMesureRoute,
