@@ -25,8 +25,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "hero.title.1": "Je crée des ",
     "hero.title.highlight": "produits digitaux",
     "hero.title.2": " qui font la différence",
-    "hero.tagline": "— du concept au lancement, sans une ligne de code",
-    "hero.description": "Développeuse no-code spécialisée dans la création de SaaS, web apps et systèmes d'automatisation.",
     "hero.cta.start": "Démarrer un projet",
     "hero.cta.projects": "Voir mes projets",
 
@@ -93,7 +91,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "footer.offer.2": "Digitalisation des processus",
     "footer.offer.3": "Accompagnement continu",
     "footer.offer.4": "Audit de process",
-    "footer.offer.5": "Tarifs",
     "footer.references.all": "Tous les cas clients",
     "footer.about": "À propos",
     "footer.legal.notice": "Mentions légales",
@@ -112,7 +109,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.m1.text": "Master en Ingénierie de Gestion à Solvay Brussels School. Déjà le goût d'entreprendre avec des projets lancés en parallèle.",
     "about.m2.year": "2020",
     "about.m2.title": "HireRing — de 0 à 362K€ levés",
-    "about.m2.text": "Co-fondation d'une plateforme de recrutement IA. Product-market fit validé en no-code et première levée de fonds.",
+    "about.m2.text":
+      "Co-fondation d'une marketplace B2B de recrutement reliant entreprises et agences via un algorithme de matching. Product-market fit validé et première levée de fonds.",
     "about.m3.year": "2024",
     "about.m3.title": "dualoop — Product Owner",
     "about.m3.text": "Pilotage de squads tech (CISO, CTO, devs). Gestion des exigences, des parties prenantes et du backlog, mise en place d'automatisations et livraison de features à fort ROI.",
@@ -198,8 +196,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "hero.title.1": "I create ",
     "hero.title.highlight": "digital products",
     "hero.title.2": " that make a difference",
-    "hero.tagline": "— from concept to launch, without a single line of code",
-    "hero.description": "No-code developer specializing in building SaaS, web apps and automation systems.",
     "hero.cta.start": "Start a project",
     "hero.cta.projects": "View my projects",
 
@@ -285,7 +281,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.m1.text": "Master's in Management Engineering at Solvay Brussels School. Already driven to build, with side projects launched in parallel.",
     "about.m2.year": "2020",
     "about.m2.title": "HireRing — from 0 to €362K raised",
-    "about.m2.text": "Co-founded an AI recruitment platform. Product-market fit validated using no-code, first fundraise closed.",
+    "about.m2.text":
+      "Co-founded a B2B recruitment marketplace connecting companies and agencies through a matching algorithm. Product-market fit validated, first fundraise closed.",
     "about.m3.year": "2024",
     "about.m3.title": "dualoop — Product Owner",
     "about.m3.text": "Led tech squads (CISO, CTO, devs). Managed requirements, stakeholders and the backlog, set up automations and shipped high-ROI features.",
