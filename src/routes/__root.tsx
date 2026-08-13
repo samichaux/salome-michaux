@@ -45,13 +45,22 @@ function RootShell({ children }: { children: React.ReactNode }) {
   // Derived from the router pathname (never from `window`) so the server and
   // client render the same `lang` attribute and hydration stays clean.
   const lang = useRouterState({ select: (s) => langFromPath(s.location.pathname) });
+  const { queryClient } = useRouter().options.context;
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          <LanguageProvider initialLang={lang}>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              {children}
+            </TooltipProvider>
+          </LanguageProvider>
+        </QueryClientProvider>
         <Scripts />
       </body>
     </html>
@@ -59,19 +68,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-  const lang = useRouterState({ select: (s) => langFromPath(s.location.pathname) });
-  return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider initialLang={lang}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <Outlet />
-        </TooltipProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
-  );
+  return <Outlet />;
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
