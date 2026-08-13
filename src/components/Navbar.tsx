@@ -14,9 +14,9 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   const links = [
-    { label: t("nav.projects"), href: "/#projets", num: "01" },
-    { label: t("nav.automation"), href: "/#automatisation", num: "02" },
-    { label: t("nav.method"), href: "/#methode", num: "03" },
+    { label: t("home.services.1.title"), href: "/application-metier-sur-mesure", num: "01" },
+    { label: t("home.services.2.title"), href: "/digitalisation-des-processus", num: "02" },
+    { label: t("home.proof.all"), href: "/cas-clients", num: "03" },
     { label: t("nav.about"), href: "/a-propos", num: "04" },
   ];
 

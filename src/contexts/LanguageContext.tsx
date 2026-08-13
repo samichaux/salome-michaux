@@ -63,24 +63,22 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Method
     "method.eyebrow": "Méthode",
-    "method.title": "Ma méthode",
-    "method.subtitle": "Une approche structurée pour transformer votre vision en produit.",
-    "method.1.title": "Discovery",
-    "method.1.desc": "Comprendre vos besoins, votre marché et vos utilisateurs.",
-    "method.2.title": "Design",
-    "method.2.desc": "Maquettes et prototypes alignés sur vos objectifs.",
-    "method.3.title": "Build",
-    "method.3.desc": "Développement rapide avec les meilleurs outils no-code.",
-    "method.4.title": "Launch",
-    "method.4.desc": "Déploiement, tests et itérations pour un lancement réussi.",
+    "method.title": "Comment se déroule un projet",
+    "method.subtitle": "Quatre étapes, du diagnostic à la vie courante de l'outil.",
+    "method.1.title": "Audit",
+    "method.1.desc": "Je cartographie le processus et j'identifie ce qui coûte le plus de temps.",
+    "method.2.title": "Conception",
+    "method.2.desc": "Je définis l'outil cible, ses écrans et ses règles métier.",
+    "method.3.title": "Construction et mise en production",
+    "method.3.desc": "Je construis l'outil, je le teste avec vos équipes et je le mets en service.",
+    "method.4.title": "Accompagnement",
+    "method.4.desc": "Je fais évoluer l'outil au rythme de votre organisation.",
 
     // CTA
     "cta.eyebrow": "Un process à digitaliser ?",
-    "cta.title.1": "Un projet ",
-    "cta.title.highlight": "en tête",
-    "cta.title.2": " ?",
-    "cta.subtitle": "Discutons de comment je peux vous aider à concrétiser votre vision.",
-    "cta.button": "Prendre rendez-vous",
+    "cta.title": "Commençons par un audit de vos processus",
+    "cta.subtitle": "Un cadrage clair de ce qui coince, de ce qui se digitalise et dans quel ordre.",
+    "cta.button": "Demander un audit de process",
 
     // Footer
     "footer.description": "Développeuse no-code & spécialiste en automatisation. Du concept au lancement, sans une ligne de code.",
@@ -127,6 +125,53 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.cta.title.highlight": "résultats",
     "about.cta.subtitle": "Un premier échange gratuit pour identifier vos opportunités d'automatisation et d'IA.",
     "about.cta.button": "Prendre rendez-vous",
+
+    // Home — hero
+    "home.hero.badge": "Consultante produit indépendante — Bruxelles",
+    "home.hero.h1": "Digitalisation des processus pour équipes sans tech interne",
+    "home.hero.subtitle": "Vos processus internes deviennent un outil que votre équipe utilise tous les jours, à la place des fichiers partagés et des ressaisies.",
+    "home.hero.cta.primary": "Démarrer par un audit de process",
+    "home.hero.cta.secondary": "Voir l'application métier sur mesure",
+
+    // Home — trust
+    "home.trust.label": "Organisations accompagnées",
+
+    // Home — services
+    "home.services.eyebrow": "Ce que je fais",
+    "home.services.title": "Trois façons de travailler ensemble",
+    "home.services.1.title": "Application métier sur mesure",
+    "home.services.1.desc": "Un outil interne conçu pour votre métier, vos règles et vos utilisateurs.",
+    "home.services.1.link": "Découvrir l'application métier sur mesure",
+    "home.services.2.title": "Digitalisation des processus",
+    "home.services.2.desc": "Vos processus manuels cartographiés, simplifiés puis outillés de bout en bout.",
+    "home.services.2.link": "Découvrir la digitalisation des processus",
+    "home.services.3.title": "Accompagnement continu",
+    "home.services.3.desc": "Vos outils maintenus, corrigés et enrichis mois après mois.",
+    "home.services.3.link": "Découvrir l'accompagnement continu",
+
+    // Home — pain points
+    "home.pains.eyebrow": "Ce qui coince souvent",
+    "home.pains.title": "Vous reconnaissez une de ces phrases ?",
+    "home.pains.1.quote": "On refait le même tableau tous les lundis",
+    "home.pains.1.link": "Automatiser un reporting",
+    "home.pains.2.quote": "Nos données sont dans quatre outils",
+    "home.pains.2.link": "Synchroniser ses outils",
+    "home.pains.3.quote": "Notre outil interne, plus personne ne le maîtrise",
+    "home.pains.3.link": "Reprendre un outil interne",
+    "home.pains.4.quote": "On sait que ça coince, pas par où commencer",
+    "home.pains.4.link": "Transformation digitale d'une PME",
+
+    // Home — proof
+    "home.proof.eyebrow": "Cas client",
+    "home.proof.client": "Purpose Recruiting",
+    "home.proof.title": "Un CRM et un ATS sur mesure",
+    "home.proof.desc": "Le suivi des candidats et des clients réuni dans un seul outil, aligné sur la façon de travailler de l'équipe. L'onboarding d'un nouveau client est passé de plusieurs heures à quatre clics.",
+    "home.proof.link": "Lire le cas Purpose Recruiting",
+    "home.proof.all": "Voir tous les cas clients",
+
+    // Home — closing
+    "home.tools.label": "Environnement technique",
+    "home.tools.desc": "Je choisis les technologies selon le processus à outiller, jamais l'inverse.",
   },
   en: {
     // Navbar
@@ -182,24 +227,22 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Method
     "method.eyebrow": "Method",
-    "method.title": "My Method",
-    "method.subtitle": "A structured approach to turn your vision into a product.",
-    "method.1.title": "Discovery",
-    "method.1.desc": "Understanding your needs, market and users.",
+    "method.title": "How a project runs",
+    "method.subtitle": "Four steps, from diagnosis to the daily life of the tool.",
+    "method.1.title": "Audit",
+    "method.1.desc": "I map the process and pinpoint what costs the most time.",
     "method.2.title": "Design",
-    "method.2.desc": "Mockups and prototypes aligned with your goals.",
-    "method.3.title": "Build",
-    "method.3.desc": "Rapid development with the best no-code tools.",
-    "method.4.title": "Launch",
-    "method.4.desc": "Deployment, testing and iterations for a successful launch.",
+    "method.2.desc": "I define the target tool, its screens and its business rules.",
+    "method.3.title": "Build and go live",
+    "method.3.desc": "I build the tool, test it with your teams and put it into service.",
+    "method.4.title": "Ongoing support",
+    "method.4.desc": "I evolve the tool at the pace of your organisation.",
 
     // CTA
     "cta.eyebrow": "A process to digitalize?",
-    "cta.title.1": "Have a project ",
-    "cta.title.highlight": "in mind",
-    "cta.title.2": "?",
-    "cta.subtitle": "Let's discuss how I can help turn your vision into reality.",
-    "cta.button": "Book a call",
+    "cta.title": "Let's start with an audit of your processes",
+    "cta.subtitle": "A clear picture of what is stuck, what can be digitalised, and in which order.",
+    "cta.button": "Request a process audit",
 
     // Footer
     "footer.description": "No-code developer & automation specialist. From concept to launch, without a single line of code.",
@@ -246,6 +289,53 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.cta.title.highlight": "results",
     "about.cta.subtitle": "A free initial call to identify your automation and AI opportunities.",
     "about.cta.button": "Book a call",
+
+    // Home — hero
+    "home.hero.badge": "Independent product consultant — Brussels",
+    "home.hero.h1": "Process digitalisation for teams without in-house tech",
+    "home.hero.subtitle": "Your internal processes become a tool your team uses every day, instead of shared files and double data entry.",
+    "home.hero.cta.primary": "Start with a process audit",
+    "home.hero.cta.secondary": "See custom business applications",
+
+    // Home — trust
+    "home.trust.label": "Organisations I have worked with",
+
+    // Home — services
+    "home.services.eyebrow": "What I do",
+    "home.services.title": "Three ways to work together",
+    "home.services.1.title": "Custom business application",
+    "home.services.1.desc": "An internal tool built around your trade, your rules and your users.",
+    "home.services.1.link": "Explore custom business applications",
+    "home.services.2.title": "Process digitalisation",
+    "home.services.2.desc": "Your manual processes mapped, simplified, then tooled end to end.",
+    "home.services.2.link": "Explore process digitalisation",
+    "home.services.3.title": "Ongoing support",
+    "home.services.3.desc": "Your tools maintained, fixed and extended month after month.",
+    "home.services.3.link": "Explore ongoing support",
+
+    // Home — pain points
+    "home.pains.eyebrow": "What usually gets stuck",
+    "home.pains.title": "Does one of these sound familiar?",
+    "home.pains.1.quote": "We rebuild the same spreadsheet every Monday",
+    "home.pains.1.link": "Automate a report",
+    "home.pains.2.quote": "Our data lives in four different tools",
+    "home.pains.2.link": "Connect your tools",
+    "home.pains.3.quote": "Nobody understands our internal tool any more",
+    "home.pains.3.link": "Take over an internal tool",
+    "home.pains.4.quote": "We know it is stuck, not where to start",
+    "home.pains.4.link": "Digital transformation for SMEs",
+
+    // Home — proof
+    "home.proof.eyebrow": "Client case",
+    "home.proof.client": "Purpose Recruiting",
+    "home.proof.title": "A custom CRM and ATS",
+    "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
+    "home.proof.link": "Read the Purpose Recruiting case",
+    "home.proof.all": "See all client cases",
+
+    // Home — closing
+    "home.tools.label": "Technical environment",
+    "home.tools.desc": "I pick the technology to fit the process, never the other way around.",
   },
 };
 

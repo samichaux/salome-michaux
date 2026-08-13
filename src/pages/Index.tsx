@@ -1,39 +1,41 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ToolsSection from "@/components/ToolsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import AutomationSection from "@/components/AutomationSection";
+import TrustBar from "@/components/TrustBar";
+import ServicesSection from "@/components/ServicesSection";
+import PainPointsSection from "@/components/PainPointsSection";
+import FeaturedCaseSection from "@/components/FeaturedCaseSection";
 import MethodSection from "@/components/MethodSection";
-import CTASection from "@/components/CTASection";
+import PageCta from "@/components/PageCta";
+import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
-    <>
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <HeroSection />
-          <ScrollReveal>
-            <ToolsSection />
-          </ScrollReveal>
-          <ScrollReveal>
-            <ProjectsSection />
-          </ScrollReveal>
-          <ScrollReveal>
-            <AutomationSection />
-          </ScrollReveal>
-          <ScrollReveal>
-            <MethodSection />
-          </ScrollReveal>
-          <ScrollReveal>
-            <CTASection />
-          </ScrollReveal>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <TrustBar />
+        <ScrollReveal>
+          <ServicesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <PainPointsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <FeaturedCaseSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <MethodSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <PageCta to="/audit-de-process" />
+        </ScrollReveal>
+        <ToolsSection />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

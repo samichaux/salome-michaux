@@ -11,6 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as AccompagnementContinuRouteImport } from './routes/accompagnement-continu'
+import { Route as ApplicationMetierSurMesureRouteImport } from './routes/application-metier-sur-mesure'
+import { Route as AuditDeProcessRouteImport } from './routes/audit-de-process'
+import { Route as AutomatiserUnReportingRouteImport } from './routes/automatiser-un-reporting'
+import { Route as DigitalisationDesProcessusRouteImport } from './routes/digitalisation-des-processus'
+import { Route as ReprendreUnOutilInterneRouteImport } from './routes/reprendre-un-outil-interne'
+import { Route as SynchroniserSesOutilsRouteImport } from './routes/synchroniser-ses-outils'
+import { Route as TransformationDigitalePmeRouteImport } from './routes/transformation-digitale-pme'
+import { Route as CasClientsIndexRouteImport } from './routes/cas-clients.index'
+import { Route as CasClientsPurposeRecruitingRouteImport } from './routes/cas-clients.purpose-recruiting'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +32,162 @@ const AProposRoute = AProposRouteImport.update({
   path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccompagnementContinuRoute = AccompagnementContinuRouteImport.update({
+  id: '/accompagnement-continu',
+  path: '/accompagnement-continu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationMetierSurMesureRoute =
+  ApplicationMetierSurMesureRouteImport.update({
+    id: '/application-metier-sur-mesure',
+    path: '/application-metier-sur-mesure',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AuditDeProcessRoute = AuditDeProcessRouteImport.update({
+  id: '/audit-de-process',
+  path: '/audit-de-process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutomatiserUnReportingRoute = AutomatiserUnReportingRouteImport.update({
+  id: '/automatiser-un-reporting',
+  path: '/automatiser-un-reporting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalisationDesProcessusRoute =
+  DigitalisationDesProcessusRouteImport.update({
+    id: '/digitalisation-des-processus',
+    path: '/digitalisation-des-processus',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ReprendreUnOutilInterneRoute = ReprendreUnOutilInterneRouteImport.update({
+  id: '/reprendre-un-outil-interne',
+  path: '/reprendre-un-outil-interne',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SynchroniserSesOutilsRoute = SynchroniserSesOutilsRouteImport.update({
+  id: '/synchroniser-ses-outils',
+  path: '/synchroniser-ses-outils',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransformationDigitalePmeRoute =
+  TransformationDigitalePmeRouteImport.update({
+    id: '/transformation-digitale-pme',
+    path: '/transformation-digitale-pme',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CasClientsIndexRoute = CasClientsIndexRouteImport.update({
+  id: '/cas-clients/',
+  path: '/cas-clients/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasClientsPurposeRecruitingRoute =
+  CasClientsPurposeRecruitingRouteImport.update({
+    id: '/cas-clients/purpose-recruiting',
+    path: '/cas-clients/purpose-recruiting',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/accompagnement-continu': typeof AccompagnementContinuRoute
+  '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
+  '/audit-de-process': typeof AuditDeProcessRoute
+  '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
+  '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
+  '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients/': typeof CasClientsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/accompagnement-continu': typeof AccompagnementContinuRoute
+  '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
+  '/audit-de-process': typeof AuditDeProcessRoute
+  '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
+  '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
+  '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients': typeof CasClientsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/accompagnement-continu': typeof AccompagnementContinuRoute
+  '/application-metier-sur-mesure': typeof ApplicationMetierSurMesureRoute
+  '/audit-de-process': typeof AuditDeProcessRoute
+  '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
+  '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
+  '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients/': typeof CasClientsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/a-propos'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/accompagnement-continu'
+    | '/application-metier-sur-mesure'
+    | '/audit-de-process'
+    | '/automatiser-un-reporting'
+    | '/digitalisation-des-processus'
+    | '/reprendre-un-outil-interne'
+    | '/synchroniser-ses-outils'
+    | '/transformation-digitale-pme'
+    | '/cas-clients/purpose-recruiting'
+    | '/cas-clients/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/a-propos'
-  id: '__root__' | '/' | '/a-propos'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/accompagnement-continu'
+    | '/application-metier-sur-mesure'
+    | '/audit-de-process'
+    | '/automatiser-un-reporting'
+    | '/digitalisation-des-processus'
+    | '/reprendre-un-outil-interne'
+    | '/synchroniser-ses-outils'
+    | '/transformation-digitale-pme'
+    | '/cas-clients/purpose-recruiting'
+    | '/cas-clients'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/accompagnement-continu'
+    | '/application-metier-sur-mesure'
+    | '/audit-de-process'
+    | '/automatiser-un-reporting'
+    | '/digitalisation-des-processus'
+    | '/reprendre-un-outil-interne'
+    | '/synchroniser-ses-outils'
+    | '/transformation-digitale-pme'
+    | '/cas-clients/purpose-recruiting'
+    | '/cas-clients/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
+  AccompagnementContinuRoute: typeof AccompagnementContinuRoute
+  ApplicationMetierSurMesureRoute: typeof ApplicationMetierSurMesureRoute
+  AuditDeProcessRoute: typeof AuditDeProcessRoute
+  AutomatiserUnReportingRoute: typeof AutomatiserUnReportingRoute
+  DigitalisationDesProcessusRoute: typeof DigitalisationDesProcessusRoute
+  ReprendreUnOutilInterneRoute: typeof ReprendreUnOutilInterneRoute
+  SynchroniserSesOutilsRoute: typeof SynchroniserSesOutilsRoute
+  TransformationDigitalePmeRoute: typeof TransformationDigitalePmeRoute
+  CasClientsPurposeRecruitingRoute: typeof CasClientsPurposeRecruitingRoute
+  CasClientsIndexRoute: typeof CasClientsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +206,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accompagnement-continu': {
+      id: '/accompagnement-continu'
+      path: '/accompagnement-continu'
+      fullPath: '/accompagnement-continu'
+      preLoaderRoute: typeof AccompagnementContinuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/application-metier-sur-mesure': {
+      id: '/application-metier-sur-mesure'
+      path: '/application-metier-sur-mesure'
+      fullPath: '/application-metier-sur-mesure'
+      preLoaderRoute: typeof ApplicationMetierSurMesureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit-de-process': {
+      id: '/audit-de-process'
+      path: '/audit-de-process'
+      fullPath: '/audit-de-process'
+      preLoaderRoute: typeof AuditDeProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/automatiser-un-reporting': {
+      id: '/automatiser-un-reporting'
+      path: '/automatiser-un-reporting'
+      fullPath: '/automatiser-un-reporting'
+      preLoaderRoute: typeof AutomatiserUnReportingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digitalisation-des-processus': {
+      id: '/digitalisation-des-processus'
+      path: '/digitalisation-des-processus'
+      fullPath: '/digitalisation-des-processus'
+      preLoaderRoute: typeof DigitalisationDesProcessusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reprendre-un-outil-interne': {
+      id: '/reprendre-un-outil-interne'
+      path: '/reprendre-un-outil-interne'
+      fullPath: '/reprendre-un-outil-interne'
+      preLoaderRoute: typeof ReprendreUnOutilInterneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/synchroniser-ses-outils': {
+      id: '/synchroniser-ses-outils'
+      path: '/synchroniser-ses-outils'
+      fullPath: '/synchroniser-ses-outils'
+      preLoaderRoute: typeof SynchroniserSesOutilsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transformation-digitale-pme': {
+      id: '/transformation-digitale-pme'
+      path: '/transformation-digitale-pme'
+      fullPath: '/transformation-digitale-pme'
+      preLoaderRoute: typeof TransformationDigitalePmeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cas-clients/': {
+      id: '/cas-clients/'
+      path: '/cas-clients'
+      fullPath: '/cas-clients/'
+      preLoaderRoute: typeof CasClientsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cas-clients/purpose-recruiting': {
+      id: '/cas-clients/purpose-recruiting'
+      path: '/cas-clients/purpose-recruiting'
+      fullPath: '/cas-clients/purpose-recruiting'
+      preLoaderRoute: typeof CasClientsPurposeRecruitingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
+  AccompagnementContinuRoute: AccompagnementContinuRoute,
+  ApplicationMetierSurMesureRoute: ApplicationMetierSurMesureRoute,
+  AuditDeProcessRoute: AuditDeProcessRoute,
+  AutomatiserUnReportingRoute: AutomatiserUnReportingRoute,
+  DigitalisationDesProcessusRoute: DigitalisationDesProcessusRoute,
+  ReprendreUnOutilInterneRoute: ReprendreUnOutilInterneRoute,
+  SynchroniserSesOutilsRoute: SynchroniserSesOutilsRoute,
+  TransformationDigitalePmeRoute: TransformationDigitalePmeRoute,
+  CasClientsPurposeRecruitingRoute: CasClientsPurposeRecruitingRoute,
+  CasClientsIndexRoute: CasClientsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
