@@ -7,7 +7,7 @@ export const Route = createFileRoute("/a-propos")({
     buildSeoHead({
       title: "À propos — Salomé Michaux, Product Consultant & Builder",
       description:
-        "Ingénieure de gestion Solvay, ex-co-fondatrice de HireRing. J'aide les organisations sans équipe tech à digitaliser leurs process internes.",
+        "Ingénieure de gestion Solvay et ex-co-fondatrice de HireRing. J'aide les organisations sans équipe tech à digitaliser leurs process internes, de l'audit à la mise en production.",
       path: "/a-propos",
     }),
   component: AboutPage,
