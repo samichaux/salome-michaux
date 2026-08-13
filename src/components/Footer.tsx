@@ -116,14 +116,18 @@ const Footer = () => {
         <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-background/45">
             <span>© {new Date().getFullYear()} Salomé Michaux</span>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true" className="hidden sm:inline">
+              ·
+            </span>
             <Link
               to={localePath("/mentions-legales", lang)}
               className="inline-flex min-h-11 items-center hover:text-background/80 transition-colors"
             >
               {t("footer.legal.notice")}
             </Link>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true" className="hidden sm:inline">
+              ·
+            </span>
             <Link
               to={localePath("/politique-de-confidentialite", lang)}
               className="inline-flex min-h-11 items-center hover:text-background/80 transition-colors"
