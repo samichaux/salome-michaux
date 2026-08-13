@@ -100,7 +100,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // About
     "about.hello": "À propos",
     "about.intro": "Ingénieure de gestion Solvay, j'accompagne startups et PMEs dans leur transformation digitale. Mon créneau : des solutions IA et automatisation qui génèrent un impact mesurable, livrées rapidement. Basée à Bruxelles.",
-    "about.skills": "Agents IA,Automatisation,No-code,Product Management",
+    "about.skills": "Agents IA,Automatisation,Applications métier,Product Management",
     "about.timeline.eyebrow": "Parcours",
     "about.timeline.title.1": "De Solvay au ",
     "about.timeline.title.highlight": "freelance",
@@ -229,7 +229,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "automation.crm.title": "Automated CRM",
     "automation.crm.desc": "Smart sales pipeline with automatic tracking, scheduled follow-ups and real-time notifications.",
     "automation.matching.title": "AI Recruitment Matching",
-    "automation.matching.desc": "Matching algorithm that analyzes candidate profiles and connects them to the most relevant opportunities.",
+    "automation.matching.desc": "Matching algorithm that analyses candidate profiles and connects them to the most relevant opportunities.",
     "automation.setting.title": "Automated Setting",
     "automation.setting.desc": "Fully automated appointment booking and client setup systems, from first contact to follow-up.",
 
@@ -247,7 +247,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "method.4.desc": "I evolve the tool at the pace of your organisation.",
 
     // CTA
-    "cta.eyebrow": "A process to digitalize?",
+    "cta.eyebrow": "A process to digitalise?",
     "cta.title": "Let's start with an audit of your processes",
     "cta.subtitle": "A clear picture of what is stuck, what can be digitalised, and in which order.",
     "cta.button": "Request a process audit",
@@ -271,7 +271,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // About
     "about.hello": "About",
     "about.intro": "Solvay-trained management engineer, I help startups and SMEs with their digital transformation. My niche: AI and automation solutions that deliver measurable impact, shipped fast. Based in Brussels.",
-    "about.skills": "AI Agents,Automation,No-code,Product Management",
+    "about.skills": "AI Agents,Automation,Bespoke software,Product Management",
     "about.timeline.eyebrow": "Journey",
     "about.timeline.title.1": "From Solvay to ",
     "about.timeline.title.highlight": "freelance",
@@ -298,7 +298,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "about.e3.text": "From brief to live product with Bubble, Lovable and Airtable. Fast iterations, tangible results.",
     "about.e4.title": "Strategic Consulting",
     "about.e4.text": "AI audit, automation opportunity mapping and actionable roadmap.",
-    "about.cta.eyebrow": "A process to digitalize?",
+    "about.cta.eyebrow": "A process to digitalise?",
     "about.cta.title.1": "Let's turn your ideas into ",
     "about.cta.title.highlight": "results",
     "about.cta.subtitle": "A free initial call to identify your automation and AI opportunities.",
