@@ -135,7 +135,9 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Home — hero
     "home.hero.badge": "Consultante produit indépendante — Bruxelles",
-    "home.hero.h1": "Digitalisation des processus pour équipes sans tech interne",
+    "home.hero.h1.before": "",
+    "home.hero.h1.highlight": "Digitalisation des processus",
+    "home.hero.h1.after": " pour équipes sans tech interne",
     "home.hero.subtitle": "Vos processus internes deviennent un outil que votre équipe utilise tous les jours, à la place des fichiers partagés et des ressaisies.",
     "home.hero.cta.primary": "Démarrer par un audit de process",
     "home.hero.cta.secondary": "Voir l'application métier sur mesure",
@@ -306,7 +308,9 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Home — hero
     "home.hero.badge": "Independent product consultant — Brussels",
-    "home.hero.h1": "Bespoke software development for teams without IT",
+    "home.hero.h1.before": "",
+    "home.hero.h1.highlight": "Bespoke software development",
+    "home.hero.h1.after": " for teams without IT",
     "home.hero.subtitle": "Your internal processes become bespoke software your team uses every day, instead of shared spreadsheets and double data entry.",
     "home.hero.cta.primary": "Start with a process audit",
     "home.hero.cta.secondary": "See bespoke software development",
@@ -371,7 +375,7 @@ export const LanguageProvider = ({
   }, [initialLang]);
 
   const t = (key: string): string => {
-    return translations[lang][key] || key;
+    return translations[lang][key] ?? key;
   };
 
   return (
