@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import type { Context } from "react";
 
 export type Lang = "fr" | "en";
 
@@ -361,7 +362,7 @@ const translations: Record<Lang, Record<string, string>> = {
 // file cannot create a second instance (the provider would then live in a
 // different context than the consumers, which crashed the page in dev).
 const globalStore = globalThis as unknown as {
-  __smLanguageContext?: React.Context<LanguageContextType>;
+  __smLanguageContext?: Context<LanguageContextType>;
 };
 
 const fallbackContext: LanguageContextType = {
