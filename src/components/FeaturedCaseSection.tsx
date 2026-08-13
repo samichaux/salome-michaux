@@ -7,9 +7,9 @@ const FeaturedCaseSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="cas-client" className="py-20 bg-background">
+    <section id="cas-client" className="py-20 bg-gradient-wash-tint">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="bg-card rounded-[20px] border border-border/50 shadow-card p-8 sm:p-10">
+        <div className="bg-gradient-panel rounded-[20px] border border-border/50 shadow-medium p-6 sm:p-10">
           <p className="font-jost text-xl text-primary mb-2">{t("home.proof.eyebrow")}</p>
           <p className="text-xs uppercase tracking-[0.18em] text-ink-muted mb-4">{t("home.proof.client")}</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">{t("home.proof.title")}</h2>

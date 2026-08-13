@@ -17,11 +17,16 @@ import { Route as AuditDeProcessRouteImport } from './routes/audit-de-process'
 import { Route as AutomatiserUnReportingRouteImport } from './routes/automatiser-un-reporting'
 import { Route as DigitalisationDesProcessusRouteImport } from './routes/digitalisation-des-processus'
 import { Route as EnRouteRouteImport } from './routes/en/route'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PolitiqueDeConfidentialiteRouteImport } from './routes/politique-de-confidentialite'
 import { Route as ReprendreUnOutilInterneRouteImport } from './routes/reprendre-un-outil-interne'
 import { Route as SynchroniserSesOutilsRouteImport } from './routes/synchroniser-ses-outils'
+import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as TransformationDigitalePmeRouteImport } from './routes/transformation-digitale-pme'
 import { Route as CasClientsIndexRouteImport } from './routes/cas-clients.index'
 import { Route as CasClientsPurposeRecruitingRouteImport } from './routes/cas-clients.purpose-recruiting'
+import { Route as CasClientsTeachForBelgiumRouteImport } from './routes/cas-clients.teach-for-belgium'
+import { Route as CasClientsWwfRouteImport } from './routes/cas-clients.wwf'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnAboutRouteImport } from './routes/en/about'
 
@@ -67,6 +72,17 @@ const EnRouteRoute = EnRouteRouteImport.update({
   path: '/en',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitiqueDeConfidentialiteRoute =
+  PolitiqueDeConfidentialiteRouteImport.update({
+    id: '/politique-de-confidentialite',
+    path: '/politique-de-confidentialite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReprendreUnOutilInterneRoute = ReprendreUnOutilInterneRouteImport.update({
   id: '/reprendre-un-outil-interne',
   path: '/reprendre-un-outil-interne',
@@ -75,6 +91,11 @@ const ReprendreUnOutilInterneRoute = ReprendreUnOutilInterneRouteImport.update({
 const SynchroniserSesOutilsRoute = SynchroniserSesOutilsRouteImport.update({
   id: '/synchroniser-ses-outils',
   path: '/synchroniser-ses-outils',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TarifsRoute = TarifsRouteImport.update({
+  id: '/tarifs',
+  path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TransformationDigitalePmeRoute =
@@ -94,6 +115,17 @@ const CasClientsPurposeRecruitingRoute =
     path: '/cas-clients/purpose-recruiting',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CasClientsTeachForBelgiumRoute =
+  CasClientsTeachForBelgiumRouteImport.update({
+    id: '/cas-clients/teach-for-belgium',
+    path: '/cas-clients/teach-for-belgium',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CasClientsWwfRoute = CasClientsWwfRouteImport.update({
+  id: '/cas-clients/wwf',
+  path: '/cas-clients/wwf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnIndexRoute = EnIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -114,10 +146,15 @@ export interface FileRoutesByFullPath {
   '/audit-de-process': typeof AuditDeProcessRoute
   '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
   '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
+  '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
@@ -130,10 +167,15 @@ export interface FileRoutesByTo {
   '/audit-de-process': typeof AuditDeProcessRoute
   '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
   '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
+  '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/cas-clients': typeof CasClientsIndexRoute
   '/en': typeof EnIndexRoute
@@ -148,10 +190,15 @@ export interface FileRoutesById {
   '/audit-de-process': typeof AuditDeProcessRoute
   '/automatiser-un-reporting': typeof AutomatiserUnReportingRoute
   '/digitalisation-des-processus': typeof DigitalisationDesProcessusRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/reprendre-un-outil-interne': typeof ReprendreUnOutilInterneRoute
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
+  '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
+  '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
+  '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
@@ -167,10 +214,15 @@ export interface FileRouteTypes {
     | '/audit-de-process'
     | '/automatiser-un-reporting'
     | '/digitalisation-des-processus'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
     | '/reprendre-un-outil-interne'
     | '/synchroniser-ses-outils'
+    | '/tarifs'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/cas-clients/teach-for-belgium'
+    | '/cas-clients/wwf'
     | '/en/about'
     | '/cas-clients/'
     | '/en/'
@@ -183,10 +235,15 @@ export interface FileRouteTypes {
     | '/audit-de-process'
     | '/automatiser-un-reporting'
     | '/digitalisation-des-processus'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
     | '/reprendre-un-outil-interne'
     | '/synchroniser-ses-outils'
+    | '/tarifs'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/cas-clients/teach-for-belgium'
+    | '/cas-clients/wwf'
     | '/en/about'
     | '/cas-clients'
     | '/en'
@@ -200,10 +257,15 @@ export interface FileRouteTypes {
     | '/audit-de-process'
     | '/automatiser-un-reporting'
     | '/digitalisation-des-processus'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
     | '/reprendre-un-outil-interne'
     | '/synchroniser-ses-outils'
+    | '/tarifs'
     | '/transformation-digitale-pme'
     | '/cas-clients/purpose-recruiting'
+    | '/cas-clients/teach-for-belgium'
+    | '/cas-clients/wwf'
     | '/en/about'
     | '/cas-clients/'
     | '/en/'
@@ -218,10 +280,15 @@ export interface RootRouteChildren {
   AuditDeProcessRoute: typeof AuditDeProcessRoute
   AutomatiserUnReportingRoute: typeof AutomatiserUnReportingRoute
   DigitalisationDesProcessusRoute: typeof DigitalisationDesProcessusRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PolitiqueDeConfidentialiteRoute: typeof PolitiqueDeConfidentialiteRoute
   ReprendreUnOutilInterneRoute: typeof ReprendreUnOutilInterneRoute
   SynchroniserSesOutilsRoute: typeof SynchroniserSesOutilsRoute
+  TarifsRoute: typeof TarifsRoute
   TransformationDigitalePmeRoute: typeof TransformationDigitalePmeRoute
   CasClientsPurposeRecruitingRoute: typeof CasClientsPurposeRecruitingRoute
+  CasClientsTeachForBelgiumRoute: typeof CasClientsTeachForBelgiumRoute
+  CasClientsWwfRoute: typeof CasClientsWwfRoute
   CasClientsIndexRoute: typeof CasClientsIndexRoute
 }
 
@@ -283,6 +350,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-de-confidentialite': {
+      id: '/politique-de-confidentialite'
+      path: '/politique-de-confidentialite'
+      fullPath: '/politique-de-confidentialite'
+      preLoaderRoute: typeof PolitiqueDeConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reprendre-un-outil-interne': {
       id: '/reprendre-un-outil-interne'
       path: '/reprendre-un-outil-interne'
@@ -295,6 +376,13 @@ declare module '@tanstack/react-router' {
       path: '/synchroniser-ses-outils'
       fullPath: '/synchroniser-ses-outils'
       preLoaderRoute: typeof SynchroniserSesOutilsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tarifs': {
+      id: '/tarifs'
+      path: '/tarifs'
+      fullPath: '/tarifs'
+      preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/transformation-digitale-pme': {
@@ -316,6 +404,20 @@ declare module '@tanstack/react-router' {
       path: '/cas-clients/purpose-recruiting'
       fullPath: '/cas-clients/purpose-recruiting'
       preLoaderRoute: typeof CasClientsPurposeRecruitingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cas-clients/teach-for-belgium': {
+      id: '/cas-clients/teach-for-belgium'
+      path: '/cas-clients/teach-for-belgium'
+      fullPath: '/cas-clients/teach-for-belgium'
+      preLoaderRoute: typeof CasClientsTeachForBelgiumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cas-clients/wwf': {
+      id: '/cas-clients/wwf'
+      path: '/cas-clients/wwf'
+      fullPath: '/cas-clients/wwf'
+      preLoaderRoute: typeof CasClientsWwfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en/': {
@@ -357,10 +459,15 @@ const rootRouteChildren: RootRouteChildren = {
   AuditDeProcessRoute: AuditDeProcessRoute,
   AutomatiserUnReportingRoute: AutomatiserUnReportingRoute,
   DigitalisationDesProcessusRoute: DigitalisationDesProcessusRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PolitiqueDeConfidentialiteRoute: PolitiqueDeConfidentialiteRoute,
   ReprendreUnOutilInterneRoute: ReprendreUnOutilInterneRoute,
   SynchroniserSesOutilsRoute: SynchroniserSesOutilsRoute,
+  TarifsRoute: TarifsRoute,
   TransformationDigitalePmeRoute: TransformationDigitalePmeRoute,
   CasClientsPurposeRecruitingRoute: CasClientsPurposeRecruitingRoute,
+  CasClientsTeachForBelgiumRoute: CasClientsTeachForBelgiumRoute,
+  CasClientsWwfRoute: CasClientsWwfRoute,
   CasClientsIndexRoute: CasClientsIndexRoute,
 }
 export const routeTree = rootRouteImport

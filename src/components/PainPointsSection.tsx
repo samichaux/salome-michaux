@@ -15,7 +15,7 @@ const PainPointsSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="symptomes" className="py-20 bg-card">
+    <section id="symptomes" className="py-20 bg-gradient-wash-up">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="font-jost text-xl text-primary mb-2">{t("home.pains.eyebrow")}</p>
@@ -28,12 +28,12 @@ const PainPointsSection = () => {
               <ScrollReveal delay={i * 80}>
                 <Link
                   to={localePath(pain.to, lang)}
-                  className="group flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-5"
+                  className="group flex min-h-11 flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-5"
                 >
-                  <span className="font-fraunces text-lg sm:text-xl text-foreground flex-1">
+                  <span className="font-fraunces text-lg sm:text-xl text-foreground flex-1 min-w-0">
                     « {t(`home.pains.${pain.key}.quote`)} »
                   </span>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary whitespace-nowrap">
+                  <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary">
                     {t(`home.pains.${pain.key}.link`)}
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>
