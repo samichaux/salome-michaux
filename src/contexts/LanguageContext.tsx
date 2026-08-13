@@ -357,7 +357,22 @@ const translations: Record<Lang, Record<string, string>> = {
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+// The context instance is cached on globalThis so a hot-module reload of this
+// file cannot create a second instance (the provider would then live in a
+// different context than the consumers, which crashed the page in dev).
+const globalStore = globalThis as unknown as {
+  __smLanguageContext?: React.Context<LanguageContextType>;
+};
+
+const fallbackContext: LanguageContextType = {
+  lang: "fr",
+  setLang: () => {},
+  t: (key: string) => translations.fr[key] ?? key,
+};
+
+const LanguageContext =
+  globalStore.__smLanguageContext ??
+  (globalStore.__smLanguageContext = createContext<LanguageContextType>(fallbackContext));
 
 export const LanguageProvider = ({
   children,
@@ -385,8 +400,4 @@ export const LanguageProvider = ({
   );
 };
 
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) throw new Error("useLanguage must be used within LanguageProvider");
-  return context;
-};
+export const useLanguage = () => useContext(LanguageContext);
