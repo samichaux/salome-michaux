@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Jost:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,SOFT,WONK,wght@9..144,0..100,0..1,300..700&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @import "tailwindcss" source(none);
 @source "../src";
@@ -12,7 +12,8 @@
  */
 
 @theme inline {
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Jost', sans-serif;
+  --font-mono-ui: 'IBM Plex Mono', monospace;
   --font-fraunces: 'Fraunces', serif;
   --font-jost: 'Jost', sans-serif;
   --font-josefin: 'Josefin Sans', sans-serif;
