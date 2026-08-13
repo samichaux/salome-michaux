@@ -262,7 +262,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "footer.offer.2": "Process digitalisation",
     "footer.offer.3": "Ongoing support",
     "footer.offer.4": "Process audit",
-    "footer.offer.5": "Pricing",
     "footer.references.all": "All client cases",
     "footer.about": "About",
     "footer.legal.notice": "Legal notice",
