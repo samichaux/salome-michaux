@@ -15,11 +15,15 @@ const PainPointsSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="symptomes" className="py-20 bg-gradient-wash-up">
+    <section id="symptomes" className="py-20" style={{ backgroundColor: "#fafbfc" }}>
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="font-jost text-xl text-primary mb-2">{t("home.pains.eyebrow")}</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("home.pains.title")}</h2>
+        <div className="text-left mb-12">
+          <p className="type-label mb-2" style={{ color: "#8494a6" }}>
+            {t("home.pains.eyebrow")}
+          </p>
+          <h2 className="type-display-sm" style={{ color: "#2c4a6e" }}>
+            {t("home.pains.title")}
+          </h2>
         </div>
 
         <ul className="divide-y divide-border/60 border-y border-border/60">
@@ -28,12 +32,18 @@ const PainPointsSection = () => {
               <ScrollReveal delay={i * 80}>
                 <Link
                   to={localePath(pain.to, lang)}
-                  className="group flex min-h-11 flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-5"
+                  className="group flex min-h-11 flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-5 transition-all duration-200 hover:pl-[14px]"
                 >
-                  <span className="font-fraunces text-lg sm:text-xl text-foreground flex-1 min-w-0">
+                  <span
+                    className="type-display-sm flex-1 min-w-0"
+                    style={{ fontSize: "clamp(19px,2.3vw,25px)", color: "#1a2632" }}
+                  >
                     « {t(`home.pains.${pain.key}.quote`)} »
                   </span>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary">
+                  <span
+                    className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold"
+                    style={{ color: "#2c4a6e" }}
+                  >
                     {t(`home.pains.${pain.key}.link`)}
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>

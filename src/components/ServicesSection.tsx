@@ -1,42 +1,68 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Layers, Workflow, LifeBuoy } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { localePath } from "@/lib/i18n-routes";
 
 const services = [
-  { icon: Layers, to: "/application-metier-sur-mesure", key: "1" },
-  { icon: Workflow, to: "/digitalisation-des-processus", key: "2" },
-  { icon: LifeBuoy, to: "/accompagnement-continu", key: "3" },
+  { num: "01", to: "/application-metier-sur-mesure", key: "1" },
+  { num: "02", to: "/digitalisation-des-processus", key: "2" },
+  { num: "03", to: "/accompagnement-continu", key: "3" },
 ];
 
 const ServicesSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="services" className="py-20 bg-gradient-wash-down">
+    <section id="services" className="py-20" style={{ backgroundColor: "#fafbfc" }}>
       <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="font-jost text-xl text-primary mb-2">{t("home.services.eyebrow")}</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("home.services.title")}</h2>
+        <div className="text-left mb-12">
+          <p className="type-label mb-2" style={{ color: "#8494a6" }}>
+            {t("home.services.eyebrow")}
+          </p>
+          <h2 className="type-display-sm" style={{ color: "#2c4a6e" }}>
+            {t("home.services.title")}
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div>
           {services.map((service, i) => (
             <ScrollReveal key={service.key} delay={i * 100}>
               <Link
                 to={localePath(service.to, lang)}
-                className="group flex min-w-0 flex-col h-full bg-gradient-panel rounded-[18px] p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                className="group block"
+                style={{
+                  borderBottom: "1px solid #e8f1f8",
+                  padding: "30px 0",
+                }}
               >
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 shadow-soft">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                <div
+                  className="grid"
+                  style={{ gridTemplateColumns: "64px 1fr" }}
+                >
+                  <div className="type-label" style={{ color: "#4ecdc4" }}>
+                    {service.num}
+                  </div>
+                  <div>
+                    <h3
+                      className="type-display-sm mb-2"
+                      style={{ fontSize: "21px", color: "#2c4a6e" }}
+                    >
+                      {t(`home.services.${service.key}.title`)}
+                    </h3>
+                    <p className="text-sm mb-4" style={{ color: "#4a5c6f" }}>
+                      {t(`home.services.${service.key}.desc`)}
+                    </p>
+                    <span
+                      className="text-sm font-semibold"
+                      style={{
+                        color: "#2c4a6e",
+                        borderBottom: "1px solid #a8c5db",
+                      }}
+                    >
+                      {t(`home.services.${service.key}.link`)}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-bold text-lg text-foreground mb-2">{t(`home.services.${service.key}.title`)}</h3>
-                <p className="text-sm text-ink-soft mb-5">{t(`home.services.${service.key}.desc`)}</p>
-                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  {t(`home.services.${service.key}.link`)}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
               </Link>
             </ScrollReveal>
           ))}
