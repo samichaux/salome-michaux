@@ -312,3 +312,27 @@
   background-size: 100px 8px;
   padding-bottom: 6px;
 }
+
+@utility type-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 20, 'WONK' 1;
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.028em;
+}
+
+@utility type-display-sm {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 20, 'WONK' 1;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+}
+
+@utility type-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
