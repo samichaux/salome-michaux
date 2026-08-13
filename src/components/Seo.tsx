@@ -1,4 +1,5 @@
 import { enPathOf, frPathOf } from "@/lib/i18n-routes";
+import { organizationJsonLd, webPageJsonLd } from "@/lib/structured-data";
 
 export type JsonLdEntry = Record<string, unknown>;
 
@@ -10,6 +11,8 @@ export interface SeoHeadProps {
   locale?: "fr" | "en";
   jsonLd?: JsonLdEntry | JsonLdEntry[];
   noindex?: boolean;
+  /** Skip the automatic Organization + WebPage nodes (rare). */
+  skipBaseJsonLd?: boolean;
 }
 
 const BASE_URL = "https://salomemichaux.eu";
@@ -34,6 +37,7 @@ export default function buildSeoHead({
   locale = "fr",
   jsonLd,
   noindex = false,
+  skipBaseJsonLd = false,
 }: SeoHeadProps) {
   const canonical = `${BASE_URL}${path}`;
   const frPath = frPathOf(path);
@@ -71,8 +75,20 @@ export default function buildSeoHead({
     links.push({ rel: "alternate", hrefLang: "en", href: `${BASE_URL}${enPath}` });
   }
 
-  const jsonLdEntries = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-  const scripts = jsonLdEntries.map((entry) => ({
+  const pageEntries = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+  // Organization + WebPage are emitted on every indexable page, in the page's
+  // own language, from the shared nodes in src/lib/structured-data.ts so FR and
+  // EN always describe the same entity with the same @id.
+  const baseEntries: JsonLdEntry[] =
+    skipBaseJsonLd || noindex
+      ? []
+      : [
+          organizationJsonLd(locale),
+          webPageJsonLd({ title, description, path, locale, image }),
+        ];
+
+  const scripts = [...baseEntries, ...pageEntries].map((entry) => ({
     type: "application/ld+json",
     children: JSON.stringify(entry),
   }));
