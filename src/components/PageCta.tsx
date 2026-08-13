@@ -10,15 +10,25 @@ const PageCta = ({ to }: PageCtaProps) => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="contact" className="relative py-24 overflow-hidden bg-gradient-wash-up">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] rounded-full bg-blob-accent blur-3xl pointer-events-none" />
-      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <p className="font-jost text-xl text-primary mb-3">{t("cta.eyebrow")}</p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
-        <p className="text-ink-soft mb-8 max-w-md mx-auto">{t("cta.subtitle")}</p>
+    <section
+      id="contact"
+      style={{ backgroundColor: "#fff", borderTop: "1px solid #e8f1f8" }}
+      className="py-24"
+    >
+      <div className="max-w-6xl mx-auto px-6 text-left">
+        <p className="type-label" style={{ color: "#8494a6", marginBottom: "14px" }}>
+          {t("cta.eyebrow")}
+        </p>
+        <h2 className="type-display-sm" style={{ color: "#2c4a6e", marginBottom: "18px" }}>
+          {t("cta.title")}
+        </h2>
+        <p style={{ color: "#4a5c6f", maxWidth: "34em", marginBottom: "28px" }}>
+          {t("cta.subtitle")}
+        </p>
         <Link
           to={localePath(to, lang)}
-          className="inline-block bg-gradient-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+          className="inline-block font-semibold px-8 py-3.5 transition-colors duration-200 hover:bg-[#1a2632]"
+          style={{ backgroundColor: "#2c4a6e", color: "#fff", borderRadius: "3px" }}
         >
           {t("cta.button")}
         </Link>
