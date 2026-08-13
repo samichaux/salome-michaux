@@ -177,14 +177,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.proof.desc": "Le suivi des candidats et des clients réuni dans un seul outil, aligné sur la façon de travailler de l'équipe. L'onboarding d'un nouveau client est passé de plusieurs heures à quatre clics.",
     "home.proof.link": "Lire le cas Purpose Recruiting",
     "home.proof.all": "Voir tous les cas clients",
-    "home.proof.fact.sector": "Secteur",
-    "home.proof.fact.sector.value": "Recrutement",
-    "home.proof.fact.team": "Équipe",
-    "home.proof.fact.team.value": "Sans tech interne",
-    "home.proof.fact.scope": "Périmètre",
-    "home.proof.fact.scope.value": "Audit → build → suivi",
-    "home.proof.fact.status": "Statut",
-    "home.proof.fact.status.value": "En production",
 
     // Home — closing
     "home.tools.label": "Environnement technique",
@@ -358,14 +350,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
     "home.proof.link": "Read the Purpose Recruiting case",
     "home.proof.all": "See all client cases",
-    "home.proof.fact.sector": "Sector",
-    "home.proof.fact.sector.value": "Recruitment",
-    "home.proof.fact.team": "Team",
-    "home.proof.fact.team.value": "No internal tech",
-    "home.proof.fact.scope": "Scope",
-    "home.proof.fact.scope.value": "Audit → build → run",
-    "home.proof.fact.status": "Status",
-    "home.proof.fact.status.value": "Live",
 
     // Home — closing
     "home.tools.label": "Technical environment",

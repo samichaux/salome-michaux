@@ -37,15 +37,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className="sticky top-0 z-50 w-full"
-        style={{ backgroundColor: "#fafbfc", borderBottom: "1px solid #e8f1f8" }}
-      >
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between py-3">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+        <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-6 py-2.5 shadow-soft border border-border/50">
           {/* Logo */}
           <a href={localePath("/", lang)} className="flex shrink-0 items-center gap-2 group">
             <img src={logoSMIcon} alt="SM" className="h-7 w-auto opacity-90 transition-transform duration-300 group-hover:scale-105" />
-            <span className="hidden sm:inline lg:hidden xl:inline type-display-sm" style={{ fontSize: "17px", color: "#1a2632" }}>
+            <span className="hidden sm:inline lg:hidden xl:inline font-josefin font-light text-foreground/80 tracking-[0.15em] text-[13px] uppercase whitespace-nowrap">
               Salomé Michaux
             </span>
           </a>
@@ -56,8 +53,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="whitespace-nowrap text-sm font-medium transition-colors"
-                style={{ color: "#4a5c6f" }}
+                className="whitespace-nowrap text-sm font-medium text-ink-soft hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -79,15 +75,13 @@ const Navbar = () => {
               href="https://calendly.com/salomemichaux/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block text-sm font-semibold px-5 py-2 transition-colors duration-200"
-              style={{ backgroundColor: "#2c4a6e", color: "#fff", borderRadius: "3px" }}
+              className="hidden sm:inline-block bg-gradient-primary text-primary-foreground text-sm font-semibold px-5 py-2 rounded-full hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5"
             >
               {t("nav.cta")}
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-1.5"
-              style={{ color: "#4a5c6f" }}
+              className="md:hidden p-1.5 text-ink-soft"
               aria-label="Menu"
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}

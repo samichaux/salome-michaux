@@ -6,77 +6,31 @@ import { localePath } from "@/lib/i18n-routes";
 const FeaturedCaseSection = () => {
   const { t, lang } = useLanguage();
 
-  const facts = [
-    { label: t("home.proof.fact.sector"), value: t("home.proof.fact.sector.value") },
-    { label: t("home.proof.fact.team"), value: t("home.proof.fact.team.value") },
-    { label: t("home.proof.fact.scope"), value: t("home.proof.fact.scope.value") },
-    { label: t("home.proof.fact.status"), value: t("home.proof.fact.status.value") },
-  ];
-
   return (
-    <section id="cas-client" style={{ backgroundColor: "#1a2632" }}>
-      <div
-        className="max-w-6xl mx-auto px-6 py-20"
-        style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: "48px", alignItems: "end" }}
-      >
-        <div className="text-left">
-          <p className="type-label" style={{ color: "#a8c5db", marginBottom: "14px" }}>
-            {t("home.proof.eyebrow")}
-          </p>
-          <h2 className="type-display-sm" style={{ color: "#fff", marginBottom: "18px" }}>
-            {t("home.proof.title")}
-          </h2>
-          <p style={{ color: "#a8c5db", maxWidth: "34em", marginBottom: "28px" }}>
-            {t("home.proof.desc")}
-          </p>
+    <section id="cas-client" className="py-20 bg-gradient-wash-tint">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="bg-gradient-panel rounded-[20px] border border-border/50 shadow-medium p-6 sm:p-10">
+          <p className="font-jost text-xl text-primary mb-2">{t("home.proof.eyebrow")}</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-ink-muted mb-4">{t("home.proof.client")}</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">{t("home.proof.title")}</h2>
+          <p className="text-ink-soft mb-8 max-w-2xl">{t("home.proof.desc")}</p>
           <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
             <Link
               to={localePath("/cas-clients/purpose-recruiting", lang)}
-              className="group inline-flex items-center justify-center gap-1.5 font-semibold px-6 py-3 transition-colors duration-200"
-              style={{ backgroundColor: "#4ecdc4", color: "#1a2632", borderRadius: "3px" }}
+              className="group inline-flex items-center justify-center gap-1.5 bg-gradient-primary text-primary-foreground font-semibold px-6 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300"
             >
               {t("home.proof.link")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to={localePath("/cas-clients", lang)}
-              className="inline-flex items-center justify-center text-sm font-semibold px-2 py-3"
-              style={{ color: "#a8c5db" }}
+              className="inline-flex items-center justify-center text-sm font-semibold text-primary px-2 py-3"
             >
               {t("home.proof.all")}
             </Link>
           </div>
         </div>
-
-        <div style={{ color: "#fff" }}>
-          {facts.map((fact, index) => (
-            <div
-              key={fact.label}
-              style={{
-                borderBottom: index === facts.length - 1 ? 0 : "1px solid rgba(168,197,219,.22)",
-                padding: "14px 0",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                gap: "16px",
-              }}
-            >
-              <span className="type-label" style={{ color: "#a8c5db" }}>{fact.label}</span>
-              <span style={{ fontFamily: "var(--font-mono-ui)", fontSize: "12.5px", color: "#fff" }}>
-                {fact.value}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
-
-      <style>{`
-        @media (max-width: 860px) {
-          #cas-client > div {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };
