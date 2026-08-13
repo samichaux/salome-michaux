@@ -1,4 +1,4 @@
-import { frPathOf, hasMirror } from "@/lib/i18n-routes";
+import { enPathOf, frPathOf } from "@/lib/i18n-routes";
 
 export type JsonLdEntry = Record<string, unknown>;
 
@@ -66,8 +66,8 @@ export default function buildSeoHead({
   ];
 
   // Only advertise an English alternate for pages that actually have one.
-  if (hasMirror(path, "en")) {
-    const enPath = frPath === "/" ? "/en" : `/en${frPath === "/a-propos" ? "/about" : frPath}`;
+  const enPath = enPathOf(path);
+  if (enPath) {
     links.push({ rel: "alternate", hrefLang: "en", href: `${BASE_URL}${enPath}` });
   }
 
