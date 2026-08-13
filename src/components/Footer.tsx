@@ -17,14 +17,11 @@ const Footer = () => {
     { label: t("footer.offer.2"), to: "/digitalisation-des-processus" },
     { label: t("footer.offer.3"), to: "/accompagnement-continu" },
     { label: t("footer.offer.4"), to: "/audit-de-process" },
-    { label: t("footer.offer.5"), to: "/tarifs" },
   ];
 
   const references = [
     { label: t("footer.references.all"), to: "/cas-clients" },
-    { label: "WWF", to: "/cas-clients/wwf" },
     { label: "Purpose Recruiting", to: "/cas-clients/purpose-recruiting" },
-    { label: "Teach for Belgium", to: "/cas-clients/teach-for-belgium" },
   ];
 
   return (
