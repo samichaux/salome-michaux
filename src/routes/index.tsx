@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
     buildSeoHead({
       title: "Salomé Michaux — Product Consultant & Builder | Digitalisation de process",
       description:
-        "Je transforme les process internes de PME, scale-ups et ASBL en outils sur-mesure — de l'audit à la mise en production. Basée à Bruxelles.",
+        "Je transforme les process internes de PME, scale-ups et ASBL sans équipe tech en outils sur-mesure. De l'audit à la mise en production, basée à Bruxelles.",
       path: "/",
       jsonLd: PERSON_JSON_LD,
     }),
