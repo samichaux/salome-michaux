@@ -7,7 +7,7 @@ const HeroSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-hero pt-36 pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-36 pb-20">
       {/* Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="blob-1 absolute top-20 -left-32 w-[500px] h-[500px] rounded-full bg-blob-cool blur-3xl" />
@@ -17,19 +17,37 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card border border-border/50 shadow-soft mb-6">
+        <div
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card border border-border/50 shadow-soft mb-6 animate-fade-in-up"
+          style={{ animationDelay: "0.2s" }}
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+          </span>
           <span className="text-xs font-medium text-ink-soft">{t("home.hero.badge")}</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5">
-          {t("home.hero.h1")}
+        <h1
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5 animate-fade-in-up"
+          style={{ animationDelay: "0.3s" }}
+        >
+          {t("home.hero.h1.before")}
+          <span className="text-gradient-blue">{t("home.hero.h1.highlight")}</span>
+          {t("home.hero.h1.after")}
         </h1>
 
-        <p className="font-jost text-lg sm:text-xl text-ink-soft max-w-2xl mx-auto mb-9">
+        <p
+          className="font-jost text-lg sm:text-xl text-ink-soft max-w-2xl mx-auto mb-9 animate-fade-in-up"
+          style={{ animationDelay: "0.45s" }}
+        >
           {t("home.hero.subtitle")}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto animate-fade-in-up"
+          style={{ animationDelay: "0.6s" }}
+        >
           <Link
             to={localePath("/audit-de-process", lang)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-primary text-primary-foreground font-semibold px-7 py-3 rounded-[14px] hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
