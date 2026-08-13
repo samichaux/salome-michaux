@@ -10,9 +10,9 @@ const HeroSection = () => {
     <section className="relative flex items-center justify-center overflow-hidden bg-gradient-hero pt-36 pb-20">
       {/* Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="blob-1 absolute top-20 -left-32 w-[500px] h-[500px] rounded-full bg-blue-pale/40 blur-3xl" />
-        <div className="blob-2 absolute top-40 right-0 w-[400px] h-[400px] rounded-full bg-primary/15 blur-3xl" />
-        <div className="blob-3 absolute -bottom-20 left-1/3 w-[450px] h-[450px] rounded-full bg-blue-wash/50 blur-3xl" />
+        <div className="blob-1 absolute top-20 -left-32 w-[500px] h-[500px] rounded-full bg-blob-cool blur-3xl" />
+        <div className="blob-2 absolute top-40 -right-24 w-[400px] h-[400px] rounded-full bg-blob-deep blur-3xl" />
+        <div className="blob-3 absolute -bottom-20 left-1/3 w-[450px] h-[450px] rounded-full bg-blob-accent blur-3xl" />
       </div>
 
       {/* Content */}

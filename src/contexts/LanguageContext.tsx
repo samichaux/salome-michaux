@@ -16,6 +16,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "nav.method": "Méthode",
     "nav.about": "À propos",
     "nav.cta": "Discutons",
+    "nav.link.app": "Application métier",
+    "nav.link.process": "Digitalisation",
+    "nav.link.cases": "Cas clients",
 
     // Hero
     "hero.badge": "Disponible pour nouveaux projets",
@@ -81,15 +84,21 @@ const translations: Record<Lang, Record<string, string>> = {
     "cta.button": "Demander un audit de process",
 
     // Footer
-    "footer.description": "Développeuse no-code & spécialiste en automatisation. Du concept au lancement, sans une ligne de code.",
-    "footer.navigation": "Navigation",
-    "footer.nav.projects": "Projets",
-    "footer.nav.services": "Services",
-    "footer.nav.automation": "Automatisation & IA",
-    "footer.nav.contact": "Contact",
+    "footer.role": "Product Consultant & Builder",
+    "footer.description": "Je transforme les processus internes en outils sur-mesure, de l'audit à la mise en production.",
+    "footer.offer": "Offre",
+    "footer.references": "Références",
     "footer.contact": "Contact",
-    "footer.rights": "Tous droits réservés",
-    "footer.top": "Retour en haut",
+    "footer.offer.1": "Application métier sur mesure",
+    "footer.offer.2": "Digitalisation des processus",
+    "footer.offer.3": "Accompagnement continu",
+    "footer.offer.4": "Audit de process",
+    "footer.offer.5": "Tarifs",
+    "footer.references.all": "Tous les cas clients",
+    "footer.about": "À propos",
+    "footer.legal.notice": "Mentions légales",
+    "footer.legal.privacy": "Politique de confidentialité",
+    "footer.lang.switch": "Passer en anglais",
 
     // About
     "about.hello": "À propos",
@@ -180,6 +189,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "nav.method": "Method",
     "nav.about": "About",
     "nav.cta": "Let's talk",
+    "nav.link.app": "Business apps",
+    "nav.link.process": "Digitalisation",
+    "nav.link.cases": "Client cases",
 
     // Hero
     "hero.badge": "Available for new projects",
@@ -245,15 +257,21 @@ const translations: Record<Lang, Record<string, string>> = {
     "cta.button": "Request a process audit",
 
     // Footer
-    "footer.description": "No-code developer & automation specialist. From concept to launch, without a single line of code.",
-    "footer.navigation": "Navigation",
-    "footer.nav.projects": "Projects",
-    "footer.nav.services": "Services",
-    "footer.nav.automation": "Automation & AI",
-    "footer.nav.contact": "Contact",
+    "footer.role": "Product Consultant & Builder",
+    "footer.description": "I turn internal processes into custom-built tools, from the audit through to going live.",
+    "footer.offer": "Services",
+    "footer.references": "Client cases",
     "footer.contact": "Contact",
-    "footer.rights": "All rights reserved",
-    "footer.top": "Back to top",
+    "footer.offer.1": "Custom business application",
+    "footer.offer.2": "Process digitalisation",
+    "footer.offer.3": "Ongoing support",
+    "footer.offer.4": "Process audit",
+    "footer.offer.5": "Pricing",
+    "footer.references.all": "All client cases",
+    "footer.about": "About",
+    "footer.legal.notice": "Legal notice",
+    "footer.legal.privacy": "Privacy policy",
+    "footer.lang.switch": "Passer en français",
 
     // About
     "about.hello": "About",

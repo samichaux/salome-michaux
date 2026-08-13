@@ -19,10 +19,20 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   const links = [
-    { label: t("home.services.1.title"), href: localePath("/application-metier-sur-mesure", lang), num: "01" },
-    { label: t("home.services.2.title"), href: localePath("/digitalisation-des-processus", lang), num: "02" },
-    { label: t("home.proof.all"), href: localePath("/cas-clients", lang), num: "03" },
-    { label: t("nav.about"), href: localePath("/a-propos", lang), num: "04" },
+    {
+      label: t("nav.link.app"),
+      full: t("home.services.1.title"),
+      href: localePath("/application-metier-sur-mesure", lang),
+      num: "01",
+    },
+    {
+      label: t("nav.link.process"),
+      full: t("home.services.2.title"),
+      href: localePath("/digitalisation-des-processus", lang),
+      num: "02",
+    },
+    { label: t("nav.link.cases"), full: t("home.proof.all"), href: localePath("/cas-clients", lang), num: "03" },
+    { label: t("nav.about"), full: t("nav.about"), href: localePath("/a-propos", lang), num: "04" },
   ];
 
   return (
@@ -30,20 +40,20 @@ const Navbar = () => {
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-xl px-6 py-2.5 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href={localePath("/", lang)} className="flex items-center gap-2 group">
+          <a href={localePath("/", lang)} className="flex shrink-0 items-center gap-2 group">
             <img src={logoSMIcon} alt="SM" className="h-7 w-auto opacity-90 transition-transform duration-300 group-hover:scale-105" />
-            <span className="hidden sm:inline font-josefin font-light text-foreground/80 tracking-[0.15em] text-[13px] uppercase whitespace-nowrap">
+            <span className="hidden sm:inline lg:hidden xl:inline font-josefin font-light text-foreground/80 tracking-[0.15em] text-[13px] uppercase whitespace-nowrap">
               Salomé Michaux
             </span>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex min-w-0 items-center gap-5">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-ink-soft hover:text-primary transition-colors"
+                className="whitespace-nowrap text-sm font-medium text-ink-soft hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -51,7 +61,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA + Lang switch + Mobile toggle */}
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               to={switchTo}
               hrefLang={otherLang}
@@ -124,7 +134,7 @@ const Navbar = () => {
               >
                 <span className="text-xs font-mono text-[hsl(var(--mint))] opacity-60">{link.num}</span>
                 <span className="text-2xl font-bold text-[hsl(0,0%,100%,0.9)] group-hover:text-[hsl(var(--mint))] transition-colors duration-200">
-                  {link.label}
+                  {link.full}
                 </span>
                 <ArrowUpRight
                   size={18}

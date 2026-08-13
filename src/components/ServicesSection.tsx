@@ -14,7 +14,7 @@ const ServicesSection = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-gradient-wash-down">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="font-jost text-xl text-primary mb-2">{t("home.services.eyebrow")}</p>
@@ -26,10 +26,10 @@ const ServicesSection = () => {
             <ScrollReveal key={service.key} delay={i * 100}>
               <Link
                 to={localePath(service.to, lang)}
-                className="group flex flex-col h-full bg-card rounded-[18px] p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                className="group flex min-w-0 flex-col h-full bg-gradient-panel rounded-[18px] p-6 border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 shadow-soft">
+                  <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="font-bold text-lg text-foreground mb-2">{t(`home.services.${service.key}.title`)}</h3>
                 <p className="text-sm text-ink-soft mb-5">{t(`home.services.${service.key}.desc`)}</p>

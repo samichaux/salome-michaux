@@ -47,6 +47,7 @@
   --color-ring-offset-background: hsl(var(--background));
 
   --color-blue-signature: hsl(var(--blue-signature));
+  --color-blue-deep: hsl(var(--blue-deep));
   --color-blue-medium: hsl(var(--blue-medium));
   --color-blue-light: hsl(var(--blue-light));
   --color-blue-pale: hsl(var(--blue-pale));
@@ -86,6 +87,7 @@
 :root {
   /* Blue palette */
   --blue-signature: 213 35% 37%;
+  --blue-deep: 212 43% 30%;
   --blue-medium: 213 31% 51%;
   --blue-light: 213 35% 67%;
   --blue-pale: 213 50% 85%;
@@ -186,11 +188,55 @@
 }
 
 @utility bg-gradient-primary {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--blue-medium)));
+  background: linear-gradient(135deg, hsl(var(--blue-signature)) 0%, hsl(var(--blue-deep)) 100%);
 }
 
 @utility bg-gradient-method {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(210 37% 16%));
+  background:
+    radial-gradient(120% 90% at 85% 8%, hsl(var(--mint) / 0.16) 0%, transparent 55%),
+    linear-gradient(145deg, hsl(var(--blue-signature)) 0%, hsl(var(--blue-deep)) 45%, hsl(210 37% 16%) 100%);
+}
+
+/*
+ * Section washes. Each one starts on the colour the previous section ends on,
+ * so stacked sections never show a seam at the join.
+ */
+@utility bg-gradient-wash-down {
+  background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(var(--blue-tint)) 55%, hsl(var(--blue-wash)) 100%);
+}
+
+@utility bg-gradient-wash-up {
+  background: linear-gradient(180deg, hsl(var(--blue-wash)) 0%, hsl(var(--blue-tint)) 45%, hsl(0 0% 100%) 100%);
+}
+
+@utility bg-gradient-wash-tint {
+  background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(var(--blue-tint)) 100%);
+}
+
+/* Card / panel surface: white lifting into the palest blue. */
+@utility bg-gradient-panel {
+  background: linear-gradient(150deg, hsl(0 0% 100%) 0%, hsl(var(--blue-tint)) 70%, hsl(var(--blue-wash)) 100%);
+}
+
+/* Decorative blobs — soft amplitude, blue family, mint only as a minor stop. */
+@utility bg-blob-cool {
+  background: radial-gradient(circle at 35% 30%, hsl(var(--blue-light) / 0.6) 0%, hsl(var(--blue-signature) / 0.22) 55%, transparent 78%);
+}
+
+@utility bg-blob-deep {
+  background: radial-gradient(circle at 60% 40%, hsl(var(--blue-signature) / 0.3) 0%, hsl(var(--blue-deep) / 0.16) 60%, transparent 80%);
+}
+
+@utility bg-blob-accent {
+  background: radial-gradient(circle at 45% 55%, hsl(var(--blue-pale) / 0.55) 0%, hsl(var(--mint) / 0.16) 65%, transparent 82%);
+}
+
+/* Footer surface: deep ink lifted by the signature blue, mint as a faint hint. */
+@utility bg-gradient-footer {
+  background:
+    radial-gradient(90% 70% at 12% 0%, hsl(var(--blue-signature) / 0.5) 0%, transparent 60%),
+    radial-gradient(70% 60% at 95% 100%, hsl(var(--mint) / 0.1) 0%, transparent 60%),
+    linear-gradient(160deg, hsl(210 37% 16%) 0%, hsl(212 40% 13%) 100%);
 }
 
 @utility shadow-soft {
