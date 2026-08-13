@@ -24,6 +24,7 @@ async function declaredRoutePaths(dir = "src/routes"): Promise<Set<string>> {
     for (const m of src.matchAll(/createFileRoute\(\s*["'`]([^"'`]+)["'`]\s*\)/g)) {
       // "/en/" -> "/en", "/" stays "/"
       const raw = m[1];
+      if (!raw) continue;
       found.add(raw.length > 1 && raw.endsWith("/") ? raw.slice(0, -1) : raw);
     }
   }
