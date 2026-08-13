@@ -35,6 +35,11 @@ export function frPathOf(path: string): string {
 }
 
 /** True when `path` has a counterpart in `lang`. */
+export function enPathOf(path: string): string | undefined {
+  return FR_TO_EN[frPathOf(path)];
+}
+
+/** True when `path` has a counterpart in `lang`. */
 export function hasMirror(path: string, lang: Lang): boolean {
   const fr = frPathOf(path);
   if (lang === "fr") return fr in FR_TO_EN || fr === "/";
