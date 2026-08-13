@@ -1,9 +1,10 @@
 import { Mail, Phone, Linkedin, ArrowUp } from "lucide-react";
 import logoSMIcon from "@/assets/logo-sm-icon.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { localePath } from "@/lib/i18n-routes";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
@@ -26,10 +27,10 @@ const Footer = () => {
             <h4 className="font-semibold text-sm text-background/90 uppercase tracking-wider">{t("footer.navigation")}</h4>
             <nav className="flex flex-col gap-2.5">
               {[
-                { label: t("home.proof.all"), href: "/cas-clients" },
-                { label: t("home.services.2.title"), href: "/digitalisation-des-processus" },
-                { label: t("home.services.3.title"), href: "/accompagnement-continu" },
-                { label: t("cta.button"), href: "/audit-de-process" },
+                { label: t("home.proof.all"), href: localePath("/cas-clients", lang) },
+                { label: t("home.services.2.title"), href: localePath("/digitalisation-des-processus", lang) },
+                { label: t("home.services.3.title"), href: localePath("/accompagnement-continu", lang) },
+                { label: t("cta.button"), href: localePath("/audit-de-process", lang) },
               ].map((link) => (
                 <a key={link.label} href={link.href} className="text-sm text-background/50 hover:text-background transition-colors w-fit">
                   {link.label}
