@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
+    "check:hreflang": "bun scripts/check-hreflang.ts",
     "test:watch": "vitest",
     "format": "prettier --write ."
   },

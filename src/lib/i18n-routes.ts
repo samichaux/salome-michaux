@@ -16,6 +16,14 @@ const EN_TO_FR: Record<string, string> = Object.fromEntries(
   Object.entries(FR_TO_EN).map(([fr, en]) => [en, fr]),
 );
 
+/**
+ * Every route that exists in both languages, as `[frPath, enPath]`.
+ * Single source of truth for the hreflang reciprocity check
+ * (`bun run check:hreflang`) and its unit test.
+ */
+export const BILINGUAL_ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> =
+  Object.entries(FR_TO_EN).map(([fr, en]) => [fr, en] as const);
+
 /** Strips a trailing slash so no internal link ever triggers a 307. */
 function normalize(path: string): string {
   if (path.length > 1 && path.endsWith("/")) return path.slice(0, -1);
