@@ -231,6 +231,19 @@
   background: radial-gradient(circle at 45% 55%, hsl(var(--blue-pale) / 0.55) 0%, hsl(var(--mint) / 0.16) 65%, transparent 82%);
 }
 
+/* Final CTA — richer light-blue panel, deliberately more saturated than the section washes above it. */
+@utility bg-gradient-cta {
+  background:
+    radial-gradient(60% 65% at 12% 12%, hsl(var(--mint) / 0.22) 0%, transparent 62%),
+    radial-gradient(70% 70% at 90% 100%, hsl(var(--blue-light) / 0.45) 0%, transparent 65%),
+    linear-gradient(155deg, hsl(var(--blue-wash)) 0%, hsl(var(--blue-pale)) 60%, hsl(var(--blue-light) / 0.7) 100%);
+}
+
+/* Final CTA button — wider gradient range than bg-gradient-primary, ends on mint for more pull. */
+@utility bg-gradient-cta-button {
+  background: linear-gradient(120deg, hsl(var(--blue-signature)) 0%, hsl(var(--blue-deep)) 55%, hsl(var(--mint)) 145%);
+}
+
 /* Footer surface: deep ink lifted by the signature blue, mint as a faint hint. */
 @utility bg-gradient-footer {
   background:

@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-footer text-background/80">
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {/* Brand */}
           <div className="min-w-0 space-y-3">
@@ -110,7 +110,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-background/10">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-between">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-12 py-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-background/45">
             <span>© {new Date().getFullYear()} Salomé Michaux</span>
             <span aria-hidden="true" className="hidden sm:inline">
