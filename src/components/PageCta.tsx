@@ -12,8 +12,11 @@ const PageCta = ({ to }: PageCtaProps) => {
   return (
     <section id="contact" className="relative py-24 overflow-hidden bg-gradient-wash-up">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] rounded-full bg-blob-accent blur-3xl pointer-events-none" />
-      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <p className="font-jost text-xl text-primary mb-3">{t("cta.eyebrow")}</p>
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-12 text-center">
+        <div className="max-w-2xl mx-auto">
+        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/50 backdrop-blur-md border border-white/60 shadow-soft text-xs font-medium text-ink-soft mb-4">
+          {t("cta.eyebrow")}
+        </span>
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
         <p className="text-ink-soft mb-8 max-w-md mx-auto">{t("cta.subtitle")}</p>
         <Link
@@ -22,6 +25,7 @@ const PageCta = ({ to }: PageCtaProps) => {
         >
           {t("cta.button")}
         </Link>
+        </div>
       </div>
     </section>
   );

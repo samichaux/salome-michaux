@@ -105,7 +105,7 @@
   --ink-muted: 210 10% 54%;
 
   /* Semantic tokens */
-  --background: 213 60% 97%;
+  --background: 0 0% 100%;
   --foreground: 210 37% 16%;
 
   --card: 0 0% 100%;
@@ -216,20 +216,17 @@
   background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(var(--blue-tint)) 100%);
 }
 
+/* Picks up where wash-tint leaves off (blue-tint), so back-to-back sections don't seam. */
+@utility bg-gradient-wash-continue {
+  background: linear-gradient(180deg, hsl(var(--blue-tint)) 0%, hsl(var(--blue-wash)) 100%);
+}
+
 /* Card / panel surface: white lifting into the palest blue. */
 @utility bg-gradient-panel {
   background: linear-gradient(150deg, hsl(0 0% 100%) 0%, hsl(var(--blue-tint)) 70%, hsl(var(--blue-wash)) 100%);
 }
 
-/* Decorative blobs — soft amplitude, blue family, mint only as a minor stop. */
-@utility bg-blob-cool {
-  background: radial-gradient(circle at 35% 30%, hsl(var(--blue-light) / 0.6) 0%, hsl(var(--blue-signature) / 0.22) 55%, transparent 78%);
-}
-
-@utility bg-blob-deep {
-  background: radial-gradient(circle at 60% 40%, hsl(var(--blue-signature) / 0.3) 0%, hsl(var(--blue-deep) / 0.16) 60%, transparent 80%);
-}
-
+/* Decorative blob — soft amplitude, still used by PageCta. */
 @utility bg-blob-accent {
   background: radial-gradient(circle at 45% 55%, hsl(var(--blue-pale) / 0.55) 0%, hsl(var(--mint) / 0.16) 65%, transparent 82%);
 }
@@ -285,15 +282,6 @@
 .blob-2 { animation: blob-float-2 18s ease-in-out infinite; }
 .blob-3 { animation: blob-float-3 16s ease-in-out infinite; }
 
-/* Pulse for availability dot */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.5); }
-}
-.animate-pulse-dot {
-  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
 /* Fade in up for staggered hero content */
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(20px); }
@@ -302,6 +290,61 @@
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
   opacity: 0;
+}
+
+/* Flow network — replaces the blurred blobs. Nodes pulse, dashed paths drift,
+   echoing "connecting scattered tools into one process" rather than decorating for its own sake. */
+@keyframes node-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .55; transform: scale(1.35); }
+}
+.animate-node-pulse { animation: node-pulse 3.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -100; }
+}
+.animate-flow-dash { animation: flow-dash 6s linear infinite; }
+
+@keyframes cycle-spin {
+  to { transform: rotate(360deg); }
+}
+.animate-cycle-spin { animation: cycle-spin 4s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+.animate-arrow-bounce { animation: arrow-bounce 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-node-pulse, .animate-flow-dash, .animate-cycle-spin, .animate-arrow-bounce { animation: none; }
+}
+
+/* Crossfade carousel — 3 panels, each visible for ~1/3 of a 9s loop. */
+@keyframes crossfade-3 {
+  0%, 27% { opacity: 1; }
+  33%, 94% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-crossfade { animation: crossfade-3 9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-crossfade { animation: none; }
+  .animate-crossfade:not(:first-child) { display: none; }
+}
+
+/* Blue gradient panel for the featured case study — richer than bg-gradient-panel, meant for dark-on-blue content. */
+@utility bg-gradient-case {
+  background:
+    radial-gradient(120% 100% at 100% 0%, hsl(var(--mint) / 0.12) 0%, transparent 55%),
+    linear-gradient(135deg, hsl(var(--blue-signature)) 0%, hsl(var(--blue-deep)) 65%, hsl(210 37% 16%) 100%);
+}
+
+/* Tag pill with a thin gradient border — replaces the flat bg-secondary pill. */
+@utility tag-gradient {
+  background:
+    linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%)) padding-box,
+    linear-gradient(120deg, hsl(var(--blue-light)), hsl(var(--mint))) border-box;
+  border: 1px solid transparent;
 }
 
 /* Wavy underline */

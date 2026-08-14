@@ -13,8 +13,8 @@ const TrustBar = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-10 bg-card border-y border-border/50">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <section className="pt-8 pb-10 bg-card">
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-12 text-center">
         <p className="text-xs uppercase tracking-[0.18em] text-ink-muted mb-5">{t("home.trust.label")}</p>
         <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {clients.map((client) => (

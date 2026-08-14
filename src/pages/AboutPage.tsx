@@ -50,7 +50,10 @@ const AboutPage = () => {
                   <p className="text-ink-soft leading-relaxed">{t("about.intro")}</p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {skills.map((skill) => (
-                      <span key={skill} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-ink-muted font-medium">{skill}</span>
+                      <span key={skill} className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full tag-gradient text-ink-soft font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: `linear-gradient(120deg, hsl(var(--blue-signature)), hsl(var(--mint)))` }} />
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>

@@ -6,7 +6,6 @@ import PainPointsSection from "@/components/PainPointsSection";
 import FeaturedCaseSection from "@/components/FeaturedCaseSection";
 import MethodSection from "@/components/MethodSection";
 import PageCta from "@/components/PageCta";
-import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -32,7 +31,6 @@ const Index = () => {
         <ScrollReveal>
           <PageCta to="/audit-de-process" />
         </ScrollReveal>
-        <ToolsSection />
       </main>
       <Footer />
     </div>

@@ -178,10 +178,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.proof.desc": "Le suivi des candidats et des clients réuni dans un seul outil, aligné sur la façon de travailler de l'équipe. L'onboarding d'un nouveau client est passé de plusieurs heures à quatre clics.",
     "home.proof.link": "Lire le cas Purpose Recruiting",
     "home.proof.all": "Voir tous les cas clients",
-
-    // Home — closing
-    "home.tools.label": "Environnement technique",
-    "home.tools.desc": "Je choisis les technologies selon le processus à outiller, jamais l'inverse.",
   },
   en: {
     // Navbar
@@ -351,10 +347,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
     "home.proof.link": "Read the Purpose Recruiting case",
     "home.proof.all": "See all client cases",
-
-    // Home — closing
-    "home.tools.label": "Technical environment",
-    "home.tools.desc": "I pick the technology to fit the process, never the other way around.",
   },
 };
 
