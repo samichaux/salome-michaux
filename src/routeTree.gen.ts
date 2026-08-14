@@ -30,6 +30,7 @@ import { Route as CasClientsWwfRouteImport } from './routes/cas-clients.wwf'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnAboutRouteImport } from './routes/en/about'
 import { Route as EnBespokeSoftwareDevelopmentRouteImport } from './routes/en/bespoke-software-development'
+import { Route as EnCaseStudiesRouteImport } from './routes/en/case-studies'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -143,6 +144,11 @@ const EnBespokeSoftwareDevelopmentRoute =
     path: '/bespoke-software-development',
     getParentRoute: () => EnRouteRoute,
   } as any)
+const EnCaseStudiesRoute = EnCaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => EnRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -186,6 +193,7 @@ export interface FileRoutesByTo {
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients': typeof CasClientsIndexRoute
   '/en': typeof EnIndexRoute
 }
@@ -210,6 +218,7 @@ export interface FileRoutesById {
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
   '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -235,6 +244,7 @@ export interface FileRouteTypes {
     | '/cas-clients/wwf'
     | '/en/about'
     | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients/'
     | '/en/'
   fileRoutesByTo: FileRoutesByTo
@@ -257,6 +267,7 @@ export interface FileRouteTypes {
     | '/cas-clients/wwf'
     | '/en/about'
     | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients'
     | '/en'
   id:
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/cas-clients/wwf'
     | '/en/about'
     | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients/'
     | '/en/'
   fileRoutesById: FileRoutesById
@@ -454,18 +466,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnBespokeSoftwareDevelopmentRouteImport
       parentRoute: typeof EnRouteRoute
     }
+    '/en/case-studies': {
+      id: '/en/case-studies'
+      path: '/case-studies'
+      fullPath: '/en/case-studies'
+      preLoaderRoute: typeof EnCaseStudiesRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
   }
 }
 
 interface EnRouteRouteChildren {
   EnAboutRoute: typeof EnAboutRoute
   EnBespokeSoftwareDevelopmentRoute: typeof EnBespokeSoftwareDevelopmentRoute
+  EnCaseStudiesRoute: typeof EnCaseStudiesRoute
   EnIndexRoute: typeof EnIndexRoute
 }
 
 const EnRouteRouteChildren: EnRouteRouteChildren = {
   EnAboutRoute: EnAboutRoute,
   EnBespokeSoftwareDevelopmentRoute: EnBespokeSoftwareDevelopmentRoute,
+  EnCaseStudiesRoute: EnCaseStudiesRoute,
   EnIndexRoute: EnIndexRoute,
 }
 
