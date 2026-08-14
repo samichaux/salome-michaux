@@ -408,6 +408,67 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.proof.desc": "Candidate and client tracking brought together in a single tool, aligned with how the team actually works. Onboarding a new client went from several hours to four clicks.",
     "home.proof.link": "Read the Purpose Recruiting case",
     "home.proof.all": "See all client cases",
+
+    // Bespoke software development
+    "app.h1.before": "",
+    "app.h1.highlight": "Bespoke software development",
+    "app.h1.after": " for teams without IT",
+    "app.answer":
+      "Bespoke software is built around the way your organisation actually works, rather than forcing the work to fit a product. It replaces shared spreadsheets, double data entry and repurposed tools with one place where your team operates, under your own business rules and access rights.",
+    "app.meta": "Written by Salomé Michaux — updated 14 August 2026",
+    "app.s1.title": "When bespoke software is the right call",
+    "app.s1.text":
+      "Bespoke software earns its place when the process is your difference: case tracking, internal approvals, scheduling, regulatory reporting. If an off-the-shelf product covers 90 % of the need, I say so and stop there. Custom work is for what the market does not cover.",
+    "app.s2.title": "What a bespoke internal tool contains",
+    "app.s2.text":
+      "Screens per role, business rules that block errors at entry, a readable history, exports to the tools you already run, and the access rights your organisation requires. Everything sits on your own database, which stays yours.",
+    "app.s3.title": "How the project runs",
+    "app.s3.text":
+      "Process audit, design of screens and rules, iterative build tested with your teams, go-live, then ongoing support. You see the tool working on your own data well before it goes into service.",
+    "app.s4.title": "Proof: Purpose Recruiting",
+    "app.s4.text":
+      "For Purpose Recruiting, candidate and client tracking was brought together into a bespoke CRM and ATS aligned with how the team works. Onboarding a new client went from several hours to four clicks.",
+    "app.faq.q1": "How long does bespoke software development take?",
+    "app.faq.a1":
+      "A first production-ready version is usually built in a matter of weeks, then extended through iterations. The exact schedule is set after the process audit, once the scope of the first go-live is agreed.",
+    "app.faq.q2": "Who owns the software and the data?",
+    "app.faq.a2":
+      "You do. The code and the database belong to you, on your own hosting accounts. You can take the tool in-house or hand it to another provider at any point.",
+    "app.faq.q3": "What if my process changes after go-live?",
+    "app.faq.a3":
+      "That is the normal case. The tool is built to be changed: business rules are isolated, and ongoing support lets the screens evolve at the pace of the organisation.",
+    "app.faq.q4": "Do I need an in-house technical team?",
+    "app.faq.a4":
+      "No. These projects are made for organisations without an IT team. One business owner available for decisions and testing is enough.",
+    "app.faq.title": "Frequently asked questions",
+
+    // Case studies
+    "cases.h1.before": "",
+    "cases.h1.highlight": "Case studies",
+    "cases.h1.after": ": processes digitalised",
+    "cases.answer":
+      "These engagements share one pattern: an organisation with no in-house IT team, a process held together by hand, and a tool built and put into production with the people who use it. Each case sets out the starting problem, the tool delivered and what changed day to day.",
+    "cases.meta": "Written by Salomé Michaux — updated 14 August 2026",
+    "cases.1.client": "Purpose Recruiting",
+    "cases.1.title": "A bespoke CRM and ATS",
+    "cases.1.text":
+      "Candidate and client tracking brought together in a single tool, aligned with how the team works. Onboarding a new client went from several hours to four clicks.",
+    "cases.1.link": "Read the Purpose Recruiting case",
+    "cases.2.client": "WWF",
+    "cases.2.title": "An internal process, properly tooled",
+    "cases.2.text":
+      "An internal process mapped and then tooled, with screens per role and a readable history, replacing files travelling between teams.",
+    "cases.2.link": "Read the WWF case",
+    "cases.3.client": "Teach for Belgium",
+    "cases.3.title": "Programme tracking digitalised",
+    "cases.3.text":
+      "Programme and participant tracking centralised in a single tool, with exports to the software the organisation already uses.",
+    "cases.3.link": "Read the Teach for Belgium case",
+    "cases.4.client": "MediCheck",
+    "cases.4.title": "Digital product — engagement via dualoop",
+    "cases.4.text":
+      "Product framing and feature delivery inside an existing technical team, as Product Owner. Engagement via dualoop.",
+    "cases.4.link": "Read the MediCheck case",
   },
 };
 
@@ -455,3 +516,10 @@ export const LanguageProvider = ({
 };
 
 export const useLanguage = () => useContext(LanguageContext);
+
+/**
+ * Reads a translation outside of React — used by route `head()` builders so the
+ * FAQ JSON-LD is generated from exactly the same strings the page renders.
+ */
+export const translate = (lang: Lang, key: string): string =>
+  translations[lang][key] ?? key;
