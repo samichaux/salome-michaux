@@ -13,6 +13,7 @@ const FR_TO_EN: Record<string, string> = {
   "/": "/en",
   "/a-propos": "/en/about",
   "/application-metier-sur-mesure": "/en/bespoke-software-development",
+  "/cas-clients": "/en/case-studies",
   "/no-code-ou-developpement-sur-mesure": "/en/custom-software-vs-off-the-shelf",
   "/digitalisation-des-processus": "/en/business-process-automation",
   "/transformation-digitale-pme": "/en/digital-transformation-consultant",
@@ -20,7 +21,12 @@ const FR_TO_EN: Record<string, string> = {
 };
 
 /** English routes that actually exist. Everything else is "mirror absent". */
-const LIVE_EN_PATHS: ReadonlySet<string> = new Set(["/en", "/en/about"]);
+const LIVE_EN_PATHS: ReadonlySet<string> = new Set([
+  "/en",
+  "/en/about",
+  "/en/bespoke-software-development",
+  "/en/case-studies",
+]);
 
 const EN_TO_FR: Record<string, string> = Object.fromEntries(
   Object.entries(FR_TO_EN).map(([fr, en]) => [en, fr]),

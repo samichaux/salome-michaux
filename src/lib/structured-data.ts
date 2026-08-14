@@ -8,6 +8,19 @@ export type Locale = "fr" | "en";
 
 export const BASE_URL = "https://salomemichaux.eu";
 
+/** FAQPage node built from the same strings the page renders. */
+export function faqPageJsonLd(items: ReadonlyArray<{ question: string; answer: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
 const ORGANIZATION_ID = `${BASE_URL}/#organization`;
 const PERSON_ID = `${BASE_URL}/#person`;
 

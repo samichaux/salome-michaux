@@ -24,11 +24,14 @@ import { Route as SynchroniserSesOutilsRouteImport } from './routes/synchroniser
 import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as TransformationDigitalePmeRouteImport } from './routes/transformation-digitale-pme'
 import { Route as CasClientsIndexRouteImport } from './routes/cas-clients.index'
+import { Route as CasClientsMedicheckRouteImport } from './routes/cas-clients.medicheck'
 import { Route as CasClientsPurposeRecruitingRouteImport } from './routes/cas-clients.purpose-recruiting'
 import { Route as CasClientsTeachForBelgiumRouteImport } from './routes/cas-clients.teach-for-belgium'
 import { Route as CasClientsWwfRouteImport } from './routes/cas-clients.wwf'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnAboutRouteImport } from './routes/en/about'
+import { Route as EnBespokeSoftwareDevelopmentRouteImport } from './routes/en/bespoke-software-development'
+import { Route as EnCaseStudiesRouteImport } from './routes/en/case-studies'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -109,6 +112,11 @@ const CasClientsIndexRoute = CasClientsIndexRouteImport.update({
   path: '/cas-clients/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasClientsMedicheckRoute = CasClientsMedicheckRouteImport.update({
+  id: '/cas-clients/medicheck',
+  path: '/cas-clients/medicheck',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasClientsPurposeRecruitingRoute =
   CasClientsPurposeRecruitingRouteImport.update({
     id: '/cas-clients/purpose-recruiting',
@@ -136,6 +144,17 @@ const EnAboutRoute = EnAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => EnRouteRoute,
 } as any)
+const EnBespokeSoftwareDevelopmentRoute =
+  EnBespokeSoftwareDevelopmentRouteImport.update({
+    id: '/bespoke-software-development',
+    path: '/bespoke-software-development',
+    getParentRoute: () => EnRouteRoute,
+  } as any)
+const EnCaseStudiesRoute = EnCaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => EnRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -152,10 +171,13 @@ export interface FileRoutesByFullPath {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/medicheck': typeof CasClientsMedicheckRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -173,10 +195,13 @@ export interface FileRoutesByTo {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/medicheck': typeof CasClientsMedicheckRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients': typeof CasClientsIndexRoute
   '/en': typeof EnIndexRoute
 }
@@ -196,10 +221,13 @@ export interface FileRoutesById {
   '/synchroniser-ses-outils': typeof SynchroniserSesOutilsRoute
   '/tarifs': typeof TarifsRoute
   '/transformation-digitale-pme': typeof TransformationDigitalePmeRoute
+  '/cas-clients/medicheck': typeof CasClientsMedicheckRoute
   '/cas-clients/purpose-recruiting': typeof CasClientsPurposeRecruitingRoute
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
+  '/en/case-studies': typeof EnCaseStudiesRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -220,10 +248,13 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/tarifs'
     | '/transformation-digitale-pme'
+    | '/cas-clients/medicheck'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients/'
     | '/en/'
   fileRoutesByTo: FileRoutesByTo
@@ -241,10 +272,13 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/tarifs'
     | '/transformation-digitale-pme'
+    | '/cas-clients/medicheck'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients'
     | '/en'
   id:
@@ -263,10 +297,13 @@ export interface FileRouteTypes {
     | '/synchroniser-ses-outils'
     | '/tarifs'
     | '/transformation-digitale-pme'
+    | '/cas-clients/medicheck'
     | '/cas-clients/purpose-recruiting'
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
+    | '/en/case-studies'
     | '/cas-clients/'
     | '/en/'
   fileRoutesById: FileRoutesById
@@ -286,6 +323,7 @@ export interface RootRouteChildren {
   SynchroniserSesOutilsRoute: typeof SynchroniserSesOutilsRoute
   TarifsRoute: typeof TarifsRoute
   TransformationDigitalePmeRoute: typeof TransformationDigitalePmeRoute
+  CasClientsMedicheckRoute: typeof CasClientsMedicheckRoute
   CasClientsPurposeRecruitingRoute: typeof CasClientsPurposeRecruitingRoute
   CasClientsTeachForBelgiumRoute: typeof CasClientsTeachForBelgiumRoute
   CasClientsWwfRoute: typeof CasClientsWwfRoute
@@ -399,6 +437,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasClientsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cas-clients/medicheck': {
+      id: '/cas-clients/medicheck'
+      path: '/cas-clients/medicheck'
+      fullPath: '/cas-clients/medicheck'
+      preLoaderRoute: typeof CasClientsMedicheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cas-clients/purpose-recruiting': {
       id: '/cas-clients/purpose-recruiting'
       path: '/cas-clients/purpose-recruiting'
@@ -434,16 +479,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnAboutRouteImport
       parentRoute: typeof EnRouteRoute
     }
+    '/en/bespoke-software-development': {
+      id: '/en/bespoke-software-development'
+      path: '/bespoke-software-development'
+      fullPath: '/en/bespoke-software-development'
+      preLoaderRoute: typeof EnBespokeSoftwareDevelopmentRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/case-studies': {
+      id: '/en/case-studies'
+      path: '/case-studies'
+      fullPath: '/en/case-studies'
+      preLoaderRoute: typeof EnCaseStudiesRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
   }
 }
 
 interface EnRouteRouteChildren {
   EnAboutRoute: typeof EnAboutRoute
+  EnBespokeSoftwareDevelopmentRoute: typeof EnBespokeSoftwareDevelopmentRoute
+  EnCaseStudiesRoute: typeof EnCaseStudiesRoute
   EnIndexRoute: typeof EnIndexRoute
 }
 
 const EnRouteRouteChildren: EnRouteRouteChildren = {
   EnAboutRoute: EnAboutRoute,
+  EnBespokeSoftwareDevelopmentRoute: EnBespokeSoftwareDevelopmentRoute,
+  EnCaseStudiesRoute: EnCaseStudiesRoute,
   EnIndexRoute: EnIndexRoute,
 }
 
@@ -465,6 +528,7 @@ const rootRouteChildren: RootRouteChildren = {
   SynchroniserSesOutilsRoute: SynchroniserSesOutilsRoute,
   TarifsRoute: TarifsRoute,
   TransformationDigitalePmeRoute: TransformationDigitalePmeRoute,
+  CasClientsMedicheckRoute: CasClientsMedicheckRoute,
   CasClientsPurposeRecruitingRoute: CasClientsPurposeRecruitingRoute,
   CasClientsTeachForBelgiumRoute: CasClientsTeachForBelgiumRoute,
   CasClientsWwfRoute: CasClientsWwfRoute,
