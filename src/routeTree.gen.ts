@@ -29,6 +29,7 @@ import { Route as CasClientsTeachForBelgiumRouteImport } from './routes/cas-clie
 import { Route as CasClientsWwfRouteImport } from './routes/cas-clients.wwf'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnAboutRouteImport } from './routes/en/about'
+import { Route as EnBespokeSoftwareDevelopmentRouteImport } from './routes/en/bespoke-software-development'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -136,6 +137,12 @@ const EnAboutRoute = EnAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => EnRouteRoute,
 } as any)
+const EnBespokeSoftwareDevelopmentRoute =
+  EnBespokeSoftwareDevelopmentRouteImport.update({
+    id: '/bespoke-software-development',
+    path: '/bespoke-software-development',
+    getParentRoute: () => EnRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -156,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -177,6 +185,7 @@ export interface FileRoutesByTo {
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
   '/cas-clients': typeof CasClientsIndexRoute
   '/en': typeof EnIndexRoute
 }
@@ -200,6 +209,7 @@ export interface FileRoutesById {
   '/cas-clients/teach-for-belgium': typeof CasClientsTeachForBelgiumRoute
   '/cas-clients/wwf': typeof CasClientsWwfRoute
   '/en/about': typeof EnAboutRoute
+  '/en/bespoke-software-development': typeof EnBespokeSoftwareDevelopmentRoute
   '/cas-clients/': typeof CasClientsIndexRoute
   '/en/': typeof EnIndexRoute
 }
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
     | '/cas-clients/'
     | '/en/'
   fileRoutesByTo: FileRoutesByTo
@@ -245,6 +256,7 @@ export interface FileRouteTypes {
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
     | '/cas-clients'
     | '/en'
   id:
@@ -267,6 +279,7 @@ export interface FileRouteTypes {
     | '/cas-clients/teach-for-belgium'
     | '/cas-clients/wwf'
     | '/en/about'
+    | '/en/bespoke-software-development'
     | '/cas-clients/'
     | '/en/'
   fileRoutesById: FileRoutesById
@@ -434,16 +447,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnAboutRouteImport
       parentRoute: typeof EnRouteRoute
     }
+    '/en/bespoke-software-development': {
+      id: '/en/bespoke-software-development'
+      path: '/bespoke-software-development'
+      fullPath: '/en/bespoke-software-development'
+      preLoaderRoute: typeof EnBespokeSoftwareDevelopmentRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
   }
 }
 
 interface EnRouteRouteChildren {
   EnAboutRoute: typeof EnAboutRoute
+  EnBespokeSoftwareDevelopmentRoute: typeof EnBespokeSoftwareDevelopmentRoute
   EnIndexRoute: typeof EnIndexRoute
 }
 
 const EnRouteRouteChildren: EnRouteRouteChildren = {
   EnAboutRoute: EnAboutRoute,
+  EnBespokeSoftwareDevelopmentRoute: EnBespokeSoftwareDevelopmentRoute,
   EnIndexRoute: EnIndexRoute,
 }
 
